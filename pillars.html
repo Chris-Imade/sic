@@ -36,143 +36,405 @@
     ><![endif]-->
 
     <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+    <style>
+        .pillars-section {
+          background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+          padding: 80px 0;
+        }
+        .pillar-block {
+          background: white;
+          border-radius: 15px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+          padding: 30px;
+          margin-bottom: 30px;
+          transition: transform 0.3s ease;
+          height: 100%;
+        }
+        .pillar-block:hover {
+          transform: translateY(-10px);
+        }
+        .pillar-block .icon-box {
+          font-size: 50px;
+          color: #4a4a4a;
+          margin-bottom: 20px;
+          text-align: center;
+        }
+        .pillar-block h3 {
+          color: #2c3e50;
+          margin-bottom: 15px;
+          text-align: center;
+        }
+        .pillar-block p {
+          color: #7f8c8d;
+          text-align: center;
+        }
+        .sec-title h2 {
+          color: #2c3e50;
+          margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+          .pillar-block {
+            margin-bottom: 20px;
+          }
+        }
+      </style>
   </head>
 
   <body>
     <div class="page-wrapper">
-      <!-- Preloader -->
-
-      <div class="preloader"></div>
-
       <!-- Header span -->
 
-      <!-- Coming Soon -->
+      <!-- Header Span -->
 
-      <section class="coming-soon">
-        <div class="anim-icons full-width">
-          <span class="icon icon-circle-blue wow fadeIn"></span>
+      <span class="header-span"></span>
 
-          <span class="icon icon-dots wow fadeInleft"></span>
+      <!-- Main Header-->
 
-          <span class="icon icon-line-1 wow zoomIn"></span>
-
-          <span class="icon icon-circle-1 wow zoomIn"></span>
-        </div>
-
-        <div class="auto-container">
-          <div class="content">
-            <div class="logo">
-              <a href="index.html"><img src="images/logo-2.png" alt="" /></a>
+      <header class="main-header header-style-two">
+        <div class="main-box">
+          <div class="auto-container clearfix">
+            <div class="logo-box">
+              <div class="logo">
+                <a href="index.html"
+                  ><img src="images/logo-3.png" alt="" title=""  style="width: 150px;"
+                /></a>
+              </div>
             </div>
 
-            <h1>Coming Soon</h1>
+            <!--Nav Box-->
 
-            <div class="text">
-              We are currently working on an awesome new site. Stay tuned for
-              more information.<br />
-              Subscribe to our newsletter to stay updated on our progress
-            </div>
+            <div class="nav-outer clearfix">
+              <!--Mobile Navigation Toggler-->
 
-            <div class="timer">
-              <div
-                class="cs-countdown clearfix"
-                data-countdown="12/31/2025 05:06:59"
-              ></div>
-            </div>
+              <div class="mobile-nav-toggler">
+                <span class="icon flaticon-menu"></span>
+              </div>
 
-            <!--Emailed Form-->
+              <!-- Main Menu -->
 
-            <div class="emailed-form">
-              <form method="post" action="contact.html">
-                <div class="form-group">
-                  <input
-                    type="email"
-                    name="email"
-                    value=""
-                    placeholder="Enter your email"
-                    required
-                  />
+              <nav class="main-menu navbar-expand-md navbar-light">
+                <div class="navbar-header">
+                  <!-- Togg le Button -->
 
-                  <button type="submit" class="theme-btn">
-                    <i class="flaticon-arrow-pointing-to-right"></i>
+                  <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <span class="icon flaticon-menu-button"></span>
                   </button>
                 </div>
-              </form>
+
+                <div
+                  class="collapse navbar-collapse clearfix"
+                  id="navbarSupportedContent"
+                >
+                  <ul class="navigation clearfix">
+                    <li class="">
+                      <a href="index.html">Home</a>
+                    </li>
+
+                    <li class="">
+                      <a href="about-us.html">About</a>
+                    </li>
+
+                    <li class="current">
+                      <a href="pillars.html">Pillars</a>
+                    </li>
+
+                    <li class="">
+                      <a href="speakers.html">Speakers</a>
+                    </li>
+
+                    <li class="">
+                      <a href="schedule.html">Agenda</a>
+                    </li>
+
+                    <li class="">
+                      <a href="gallery.html">Showcase</a>
+                    </li>
+                    <li class="">
+                      <a href="register.html">Register</a>
+                    </li>
+
+                    <li><a href="contact.html">Contact</a></li>
+                  </ul>
+                </div>
+              </nav>
+
+              <!-- Main Menu End-->
+
+              <!-- Outer box -->
+
+              <div class="outer-box">
+                <!--Search Box-->
+
+                <div class="search-box-btn">
+                  <span class="flaticon-search"></span>
+                </div>
+
+                <!-- Button Box -->
+
+                <div class="btn-box">
+                  <a href="register.html" class="theme-btn btn-style-one"
+                    ><span class="btn-title">Get Tickets</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Menu  -->
+
+        <div class="mobile-menu">
+          <div class="menu-backdrop"></div>
+
+          <div class="close-btn">
+            <span class="icon flaticon-cancel-1"></span>
+          </div>
+
+          <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+
+          <nav class="menu-box">
+            <div class="nav-logo">
+              <a href="index.html"
+                ><img src="images/logo-2.png" alt="" title=""
+              /></a>
             </div>
 
-            <div class="social-links">
-              <ul class="social-icon-two social-icon-colored">
-                <li>
-                  <a href="coming-soon.html#"
-                    ><span class="fab fa-facebook-f"></span
-                  ></a>
-                </li>
+            <ul class="navigation clearfix">
+              <!--Keep This Empty / Menu will come through Javascript-->
+            </ul>
+          </nav>
+        </div>
+        <!-- End Mobile Menu -->
+      </header>
 
-                <li>
-                  <a href="coming-soon.html#"
-                    ><span class="fab fa-twitter"></span
-                  ></a>
-                </li>
-
-                <li>
-                  <a href="coming-soon.html#"
-                    ><span class="fab fa-linkedin-in"></span
-                  ></a>
-                </li>
-
-                <li>
-                  <a href="coming-soon.html#"
-                    ><span class="fab fa-behance"></span
-                  ></a>
-                </li>
-
-                <li>
-                  <a href="coming-soon.html#"
-                    ><span class="fab fa-dribbble"></span
-                  ></a>
-                </li>
-              </ul>
+      <section class="pillars-section">
+        <div class="auto-container">
+          <div class="sec-title text-center">
+            <h2>Our Thematic Pillars</h2>
+            <div class="text mb-5">SIC revolves around four thematic pillars designed to inspire and equip attendees for success in today's fast-paced world.</div>
+          </div>
+          
+          <div class="row">
+            <!-- Social Change Pillar -->
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="pillar-block">
+                <div class="icon-box">
+                  <i class="flaticon-global-1"></i>
+                </div>
+                <h3>Social Change</h3>
+                <p>Harness the power of innovative ideas and strategies to drive social impact. Learn how to create meaningful change in your community, tackle social challenges, and promote sustainability.</p>
+              </div>
+            </div>
+            
+            <!-- Technology and Innovation Pillar -->
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="pillar-block">
+                <div class="icon-box">
+                  <i class="flaticon-laptop"></i>
+                </div>
+                <h3>Technology and Innovation</h3>
+                <p>Explore cutting-edge technological advancements and innovations that are shaping the future. From AI to blockchain, get insights into the latest trends and how they can be applied to solve real-world problems.</p>
+              </div>
+            </div>
+            
+            <!-- Business and Entrepreneurship Pillar -->
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="pillar-block">
+                <div class="icon-box">
+                  <i class="flaticon-startup"></i>
+                </div>
+                <h3>Business and Entrepreneurship</h3>
+                <p>Whether you're starting out or scaling up, SIC offers sessions on business strategies, funding, marketing, and leadership. Learn from successful entrepreneurs and industry leaders.</p>
+              </div>
+            </div>
+            
+            <!-- Marketplace Pillar -->
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="pillar-block">
+                <div class="icon-box">
+                  <i class="flaticon-support-1"></i>
+                </div>
+                <h3>Marketplace (Faith in the Workplace)</h3>
+                <p>Discover how to integrate Christian principles into the workplace while maintaining excellence and professionalism. Marketplace offers unique sessions on faith-driven leadership and ethical business practices.</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- End Coming Soon -->
+      <!-- Main Footer -->
+
+      <footer class="main-footer">
+        <!--Widgets Section-->
+        <div class="widgets-section">
+          <div class="auto-container">
+            <div class="row">
+              <!--Big Column-->
+              <div class="big-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                <div class="row">
+                  <!--Footer Column-->
+                  <div
+                    class="footer-column col-xl-7 col-lg-6 col-md-6 col-sm-12"
+                  >
+                    <div class="footer-widget about-widget">
+                      <div class="logo">
+                        <a href="index.html"
+                          ><img src="images/logo.png" alt="SIC 2025 Logo"
+                        /></a>
+                      </div>
+
+                      <div class="text">
+                        <p>
+                          The Scale and Ideas Conference 2025 is a premier event
+                          focused on Social Change, Technology and Innovation,
+                          Business and Entrepreneurship, and Marketplace (Faith
+                          in the Workplace). Join us in shaping the future!
+                        </p>
+                      </div>
+
+                      <ul class="social-icon-one social-icon-colored">
+                        <li>
+                          <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fab fa-youtube"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!--Footer Column-->
+                  <div
+                    class="footer-column col-xl-5 col-lg-6 col-md-6 col-sm-12"
+                  >
+                    <div class="footer-widget useful-links">
+                      <h2 class="widget-title">Quick Links</h2>
+                      <ul class="user-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About</a></li>
+                        <li><a href="agenda.html">Agenda</a></li>
+                        <li><a href="speakers.html">Speakers</a></li>
+                        <li><a href="registration.html">Register</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--Big Column-->
+              <div class="big-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                <div class="row">
+                  <!--Footer Column-->
+                  <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                    <div class="footer-widget contact-widget">
+                      <h2 class="widget-title">Contact Us</h2>
+                      <div class="widget-content">
+                        <ul class="contact-list">
+                          <li>
+                            <span class="icon flaticon-clock"></span>
+                            <div class="text">Mon - Fri: 09:00 - 18:00</div>
+                          </li>
+                          <li>
+                            <span class="icon flaticon-phone"></span>
+                            <div class="text">
+                              <a href="tel:+2348034526182">+234 8034 526 182</a>
+                            </div>
+                          </li>
+                          <li>
+                            <span class="icon flaticon-paper-plane"></span>
+                            <div class="text">
+                              <a href="mailto:info@sic.africa"
+                                >info@sic.africa</a
+                              >
+                            </div>
+                          </li>
+                          <li>
+                            <span class="icon flaticon-worldwide"></span>
+                            <div class="text">
+                              Nigeria (Physical & Virtual Event)
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Footer Column-->
+                  <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                    <div class="footer-widget instagram-widget">
+                      <h2 class="widget-title">Our Gallery</h2>
+                      <div class="widget-content">
+                        <div class="outer clearfix">
+                          <figure class="image">
+                            <a
+                              href="images/gallery/1.jpg"
+                              class="lightbox-image"
+                              ><img src="images/resource/gw-1.jpg" alt=""
+                            /></a>
+                          </figure>
+                          <figure class="image">
+                            <a
+                              href="images/gallery/2.jpg"
+                              class="lightbox-image"
+                              ><img src="images/resource/gw-2.jpg" alt=""
+                            /></a>
+                          </figure>
+                          <figure class="image">
+                            <a
+                              href="images/gallery/3.jpg"
+                              class="lightbox-image"
+                              ><img src="images/resource/gw-3.jpg" alt=""
+                            /></a>
+                          </figure>
+                          <figure class="image">
+                            <a
+                              href="images/gallery/4.jpg"
+                              class="lightbox-image"
+                              ><img src="images/resource/gw-4.jpg" alt=""
+                            /></a>
+                          </figure>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Footer Bottom-->
+        <div class="footer-bottom">
+          <div class="auto-container">
+            <div class="inner-container clearfix">
+              <div class="copyright-text">
+                <p>© 2025 Scale and Ideas Conference. All Rights Reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- End Footer -->
     </div>
 
     <!--End pagewrapper-->
-
-    <!-- Color Palate / Color Switcher -->
-
-    <div class="color-palate">
-      <div class="color-trigger">
-        <i class="fa fa-cog"></i>
-      </div>
-
-      <div class="color-palate-head">
-        <h6>Choose Your Demo</h6>
-      </div>
-
-      <ul class="box-version option-box">
-        <li>Full width</li>
-        <li class="box">Boxed</li>
-      </ul>
-
-      <ul class="rtl-version option-box">
-        <li>LTR Version</li>
-        <li class="rtl">RTL Version</li>
-      </ul>
-
-      <div class="palate-foo">
-        <span
-          >You will find much more options for colors and styling in admin
-          panel. This color picker is used only for demonstation purposes.</span
-        >
-      </div>
-
-      <a href="coming-soon.html#" class="purchase-btn">Purchase now</a>
-    </div>
-    <!-- End Color Switcher -->
 
     <!--Search Popup-->
 
@@ -207,15 +469,15 @@
           <h3>Recent Search Keywords</h3>
 
           <ul class="recent-searches">
-            <li><a href="coming-soon.html#">Seo</a></li>
+            <li><a href="about-us.html#">Seo</a></li>
 
-            <li><a href="coming-soon.html#">Bussiness</a></li>
+            <li><a href="about-us.html#">Bussiness</a></li>
 
-            <li><a href="coming-soon.html#">Events</a></li>
+            <li><a href="about-us.html#">Events</a></li>
 
-            <li><a href="coming-soon.html#">Digital</a></li>
+            <li><a href="about-us.html#">Digital</a></li>
 
-            <li><a href="coming-soon.html#">Conferance</a></li>
+            <li><a href="about-us.html#">Conferance</a></li>
           </ul>
         </div>
       </div>
@@ -235,11 +497,11 @@
 
     <script src="js/jquery-ui.js"></script>
 
-    <script src="js/jquery.countdown.js"></script>
-
     <script src="js/jquery.fancybox.js"></script>
 
     <script src="js/appear.js"></script>
+
+    <script src="js/owl.js"></script>
 
     <script src="js/wow.js"></script>
 
