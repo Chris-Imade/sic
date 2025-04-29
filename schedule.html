@@ -95,7 +95,7 @@
                     </li>
 
                     <li class="">
-                      <a href="about-us.html">About</a>
+                      <a href="conference.html">Conference</a>
                     </li>
 
                     <li class="">
@@ -127,7 +127,6 @@
               <!-- Outer box -->
 
               <div class="outer-box">
-
                 <!-- Button Box -->
 
                 <div class="btn-box">
@@ -653,7 +652,7 @@
                       <h2 class="widget-title">Quick Links</h2>
                       <ul class="user-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about-us.html">About</a></li>
+                        <li><a href="conference.html">Conference</a></li>
                         <li><a href="agenda.html">Agenda</a></li>
                         <li><a href="speakers.html">Speakers</a></li>
                         <li><a href="registration.html">Register</a></li>
@@ -845,50 +844,52 @@
     <script src="js/color-settings.js"></script>
 
     <script>
-      document.querySelector(".subscribe-form form").addEventListener("submit", function(e) {
-        e.preventDefault();
+      document
+        .querySelector(".subscribe-form form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
 
-        const form = this;
-        const emailInput = form.querySelector('input[name="email"]');
-        const submitButton = form.querySelector('button[type="submit"]');
-        const originalButtonContent = submitButton.innerHTML;
+          const form = this;
+          const emailInput = form.querySelector('input[name="email"]');
+          const submitButton = form.querySelector('button[type="submit"]');
+          const originalButtonContent = submitButton.innerHTML;
 
-        // Create message element if it doesn't exist
-        let messageEl = form.querySelector(".subscription-message");
-        if (!messageEl) {
-          messageEl = document.createElement("div");
-          messageEl.className = "subscription-message";
-          form.appendChild(messageEl);
-        }
+          // Create message element if it doesn't exist
+          let messageEl = form.querySelector(".subscription-message");
+          if (!messageEl) {
+            messageEl = document.createElement("div");
+            messageEl.className = "subscription-message";
+            form.appendChild(messageEl);
+          }
 
-        // Show loading state
-        submitButton.innerHTML = '<i class="fa fa-spinner fa-spin"></i>';
-        submitButton.disabled = true;
+          // Show loading state
+          submitButton.innerHTML = '<i class="fa fa-spinner fa-spin"></i>';
+          submitButton.disabled = true;
 
-        fetch("https://sic-server.onrender.com/newsletter", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: emailInput.value,
-          }),
-        })
-          .then(response => response.json())
-          .then(data => {
-            messageEl.textContent = data.message;
-            messageEl.style.color = "#28a745"; // Green color for success
-            form.reset();
+          fetch("https://sic-server.onrender.com/newsletter", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              email: emailInput.value,
+            }),
           })
-          .catch(error => {
-            messageEl.textContent = "Failed to subscribe. Please try again.";
-            messageEl.style.color = "#dc3545"; // Red color for error
-          })
-          .finally(() => {
-            submitButton.innerHTML = originalButtonContent;
-            submitButton.disabled = false;
-          });
-      });
+            .then((response) => response.json())
+            .then((data) => {
+              messageEl.textContent = data.message;
+              messageEl.style.color = "#28a745"; // Green color for success
+              form.reset();
+            })
+            .catch((error) => {
+              messageEl.textContent = "Failed to subscribe. Please try again.";
+              messageEl.style.color = "#dc3545"; // Red color for error
+            })
+            .finally(() => {
+              submitButton.innerHTML = originalButtonContent;
+              submitButton.disabled = false;
+            });
+        });
     </script>
 
     <style>
@@ -904,8 +905,12 @@
       }
 
       @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
       }
     </style>
   </body>
