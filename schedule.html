@@ -127,11 +127,6 @@
               <!-- Outer box -->
 
               <div class="outer-box">
-                <!--Search Box-->
-
-                <div class="search-box-btn">
-                  <span class="flaticon-search"></span>
-                </div>
 
                 <!-- Button Box -->
 
@@ -685,7 +680,13 @@
                           <li>
                             <span class="icon flaticon-phone"></span>
                             <div class="text">
-                              <a href="tel:+2348034526182">+234 8034 526 182</a>
+                              <a href="tel:+2348132120048">+234 813 212 0048</a>
+                            </div>
+                          </li>
+                          <li>
+                            <span class="icon flaticon-phone"></span>
+                            <div class="text">
+                              <a href="tel:+2348095630414">+234 809 563 0414</a>
                             </div>
                           </li>
                           <li>
@@ -842,5 +843,70 @@
     <!-- Color Setting -->
 
     <script src="js/color-settings.js"></script>
+
+    <script>
+      document.querySelector(".subscribe-form form").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const form = this;
+        const emailInput = form.querySelector('input[name="email"]');
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalButtonContent = submitButton.innerHTML;
+
+        // Create message element if it doesn't exist
+        let messageEl = form.querySelector(".subscription-message");
+        if (!messageEl) {
+          messageEl = document.createElement("div");
+          messageEl.className = "subscription-message";
+          form.appendChild(messageEl);
+        }
+
+        // Show loading state
+        submitButton.innerHTML = '<i class="fa fa-spinner fa-spin"></i>';
+        submitButton.disabled = true;
+
+        fetch("https://sic-server.onrender.com/newsletter", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: emailInput.value,
+          }),
+        })
+          .then(response => response.json())
+          .then(data => {
+            messageEl.textContent = data.message;
+            messageEl.style.color = "#28a745"; // Green color for success
+            form.reset();
+          })
+          .catch(error => {
+            messageEl.textContent = "Failed to subscribe. Please try again.";
+            messageEl.style.color = "#dc3545"; // Red color for error
+          })
+          .finally(() => {
+            submitButton.innerHTML = originalButtonContent;
+            submitButton.disabled = false;
+          });
+      });
+    </script>
+
+    <style>
+      .subscription-message {
+        margin-top: 15px;
+        text-align: center;
+        font-size: 14px;
+        transition: all 0.3s ease;
+      }
+
+      .subscribe-form button .fa-spinner {
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
   </body>
 </html>

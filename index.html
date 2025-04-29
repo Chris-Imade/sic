@@ -1,78 +1,304 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-
     <title>SIC - Unleashing Potential for Impact</title>
-
-    <!-- Stylesheets -->
-
-    <link href="css/bootstrap.css" rel="stylesheet" />
-
-    <link href="css/style.css" rel="stylesheet" />
-
-    <link href="css/responsive.css" rel="stylesheet" />
-
-    <!--Color Switcher Mockup-->
-
-    <link href="css/color-switcher-design.css" rel="stylesheet" />
-
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
-
-    <link rel="icon" href="images/favicon.png" type="image/x-icon" />
-
-    <!-- Responsive -->
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
 
-    <!--[if lt IE 9
-      ]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script
-    ><![endif]-->
+    <!-- Stylesheets -->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+    <link href="css/color-switcher-design.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
 
-    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+    <style>
+      /* Podcast-specific styles */
+      .podcast-section {
+        background-color: #f8f9fa;
+        padding: 80px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .podcast-hero {
+        background: linear-gradient(135deg, #3a0ca3 0%, #4361ee 100%);
+        color: #fff;
+        padding: 100px 0 70px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .podcast-hero .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("images/patterns/podcast.jpg") repeat;
+        opacity: 0.1;
+      }
+
+      .podcast-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        margin-bottom: 30px;
+        overflow: hidden;
+      }
+
+      .podcast-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+      }
+
+      .podcast-card .card-img {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .podcast-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .podcast-card:hover img {
+        transform: scale(1.05);
+      }
+
+      .podcast-card .card-body {
+        padding: 25px;
+      }
+
+      .podcast-card .card-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+
+      .podcast-platforms {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .platform-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #f8f9fa;
+        color: #3a0ca3;
+        font-size: 22px;
+        transition: all 0.3s ease;
+      }
+
+      .platform-icon:hover {
+        background: #3a0ca3;
+        color: #fff;
+        transform: translateY(-3px);
+      }
+
+      .host-section {
+        padding: 80px 0;
+        background: #fff;
+      }
+
+      .host-image {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+
+      .host-image img {
+        width: 100%;
+        height: auto;
+      }
+
+      .conference-promo {
+        background: #f1f5f9;
+        padding: 60px 0;
+        position: relative;
+      }
+
+      .section-heading {
+        position: relative;
+        margin-bottom: 50px;
+      }
+
+      .section-heading:after {
+        content: "";
+        display: block;
+        width: 70px;
+        height: 4px;
+        background: #3a0ca3;
+        margin-top: 15px;
+      }
+
+      .section-heading.text-center:after {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .btn-podcast {
+        background: #3a0ca3;
+        color: #fff;
+        border-radius: 30px;
+        padding: 12px 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 2px solid #3a0ca3;
+      }
+
+      .btn-podcast:hover {
+        background: transparent;
+        color: #3a0ca3;
+      }
+
+      .btn-outline-podcast {
+        background: transparent;
+        color: #3a0ca3;
+        border-radius: 30px;
+        padding: 12px 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 2px solid #3a0ca3;
+      }
+
+      .btn-outline-podcast:hover {
+        background: #3a0ca3;
+        color: #fff;
+      }
+
+      .episode-card {
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+        transition: all 0.3s ease;
+      }
+
+      .episode-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+
+      .episode-card .card-body {
+        padding: 25px;
+      }
+
+      .episode-card .episode-number {
+        background: #3a0ca3;
+        color: #fff;
+        display: inline-block;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .episode-card .episode-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        line-height: 1.4;
+      }
+
+      .episode-card .episode-meta {
+        display: flex;
+        align-items: center;
+        color: #6c757d;
+        margin-bottom: 20px;
+      }
+
+      .episode-card .episode-meta i {
+        margin-right: 5px;
+      }
+
+      .episode-card .episode-meta span {
+        margin-right: 15px;
+      }
+
+      .play-button {
+        width: 60px;
+        height: 60px;
+        background: #3a0ca3;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 24px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      .episode-image {
+        position: relative;
+      }
+
+      .episode-image:hover .play-button {
+        opacity: 1;
+      }
+
+      .episode-image img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+      }
+    </style>
   </head>
 
   <body>
     <div class="page-wrapper">
-      <!-- Preloader -->
-
-      <div class="preloader"></div>
-      <!-- Header span -->
-
       <!-- Main Header-->
-
       <header class="main-header">
         <div class="main-box">
           <div class="auto-container clearfix">
             <div class="logo-box">
               <div class="logo">
                 <a href="index.html"
-                  ><img src="images/logo.png" alt="" title="" style="width: 150px;"
+                  ><img
+                    src="images/logo.png"
+                    alt=""
+                    title=""
+                    style="width: 150px"
                 /></a>
               </div>
             </div>
 
             <!--Nav Box-->
-
             <div class="nav-outer clearfix">
               <!--Mobile Navigation Toggler-->
-
               <div class="mobile-nav-toggler">
                 <span class="icon flaticon-menu"></span>
               </div>
 
               <!-- Main Menu -->
-
               <nav class="main-menu navbar-expand-md navbar-light">
                 <div class="navbar-header">
-                  <!-- Togg le Button -->
-
+                  <!-- Toggle Button -->
                   <button
                     class="navbar-toggler"
                     type="button"
@@ -94,30 +320,24 @@
                     <li class="current">
                       <a href="index.html">Home</a>
                     </li>
-
                     <li class="">
                       <a href="about-us.html">About</a>
                     </li>
-
                     <li class="">
                       <a href="pillars.html">Pillars</a>
                     </li>
-
                     <li class="">
                       <a href="speakers.html">Speakers</a>
                     </li>
-
                     <li class="">
-                      <a href="schedule.html">Agenda</a>
+                      <a href="conference.html">Conference</a>
                     </li>
-
                     <li class="">
                       <a href="gallery.html">Showcase</a>
                     </li>
                     <li class="">
                       <a href="register.html">Register</a>
                     </li>
-
                     <li><a href="contact.html">Contact</a></li>
                   </ul>
                 </div>
@@ -126,18 +346,8 @@
               <!-- Main Menu End-->
 
               <!-- Outer box -->
-
               <div class="outer-box">
-                <!--Search Box-->
-
-                <div class="search-box-outer">
-                  <div class="search-box-btn">
-                    <span class="flaticon-search"></span>
-                  </div>
-                </div>
-
                 <!-- Button Box -->
-
                 <div class="btn-box">
                   <a href="register.html" class="theme-btn btn-style-one"
                     ><span class="btn-title">Get Tickets</span></a
@@ -149,23 +359,21 @@
         </div>
 
         <!-- Mobile Menu  -->
-
         <div class="mobile-menu">
           <div class="menu-backdrop"></div>
-
           <div class="close-btn">
             <span class="icon flaticon-cancel-1"></span>
           </div>
-
-          <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
-
           <nav class="menu-box">
             <div class="nav-logo">
               <a href="index.html"
-                ><img src="images/logo-2.png" alt="" title="" style="width: 150px;"
+                ><img
+                  src="images/logo-2.png"
+                  alt=""
+                  title=""
+                  style="width: 150px"
               /></a>
             </div>
-
             <ul class="navigation clearfix">
               <!--Keep This Empty / Menu will come through Javascript-->
             </ul>
@@ -173,1415 +381,266 @@
         </div>
         <!-- End Mobile Menu -->
       </header>
-
       <!--End Main Header -->
 
-      <!-- Banner Section -->
-
-      <section class="banner-section">
-        <div class="banner-carousel owl-carousel owl-theme">
-          <!-- Slide Item -->
-
-          <div
-            class="slide-item"
-            style="background-image: url(images/main-slider/1.jpg)"
-          >
-            <div class="auto-container">
-              <div class="content-box">
-                <span class="title">May 16th - 17th, 2025</span>
-
-                <h2>Scale<br />and Ideas Conference</h2>
-
-                <ul class="info-list">
-                  <li><span class="icon fa fa-chair"></span> 2000 Seats</li>
-
-                  <li><span class="icon fa fa-user-alt"></span> 6 SPEAKERS</li>
-
-                  <li>
-                    <span class="icon fa fa-map-marker-alt"></span> Benin City,
-                    Nigeria. May 16th - 17th, 2025
-                  </li>
-                </ul>
-
-                <div class="btn-box">
-                  <a href="buy-ticket.html" class="theme-btn btn-style-two"
-                    ><span class="btn-title">Join the SIC 2025</span></a
-                  >
+      <!-- Podcast Hero Section -->
+      <section class="podcast-hero">
+        <div class="overlay"></div>
+        <div class="auto-container">
+          <div class="row align-items-center">
+            <div class="col-lg-7 col-md-12">
+              <div class="content">
+                <h1 class="mb-4">SIC Podcast</h1>
+                <h3 class="mb-4">
+                  Africa and its ideas, innovators, and impact builders are
+                  rising.
+                </h3>
+                <p class="mb-4">
+                  Each episode explores the parameters and what it takes to
+                  shape Africa's digital and entrepreneurial future. Whether
+                  you're a founder building from scratch or a young professional
+                  with a dream, this podcast will equip you with insights,
+                  tools, and inspiration to scale what matters—your businesses,
+                  your purpose, and your impact.
+                </p>
+                <div class="podcast-platforms mt-5">
+                  <a href="#" class="platform-icon">
+                    <i class="fab fa-spotify"></i>
+                  </a>
+                  <a href="#" class="platform-icon">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                  <a href="#" class="platform-icon">
+                    <i class="fab fa-apple"></i>
+                  </a>
+                  <a href="#" class="platform-icon">
+                    <i class="fab fa-google"></i>
+                  </a>
+                  <a href="#" class="platform-icon">
+                    <i class="fas fa-podcast"></i>
+                  </a>
                 </div>
               </div>
             </div>
-          </div>
-
-          <!-- Slide Item -->
-
-          <div
-            class="slide-item"
-            style="background-image: url(images/main-slider/2.jpg)"
-          >
-            <div class="auto-container">
-              <div class="content-box">
-                <span class="title">May 16th - 17th, 2025</span>
-
-                <h2>Innovate, Scale,<br /> and Transform Conference</h2>
-
-                <ul class="info-list">
-                  <li><span class="icon fa fa-chair"></span> 2000 Seats</li>
-
-                  <li><span class="icon fa fa-user-alt"></span> 6 SPEAKERS</li>
-
-                  <li>
-                    <span class="icon fa fa-map-marker-alt"></span> Benin City,
-                    Nigeria. May 16th - 17th, 2025
-                  </li>
-                </ul>
-
-                <div class="btn-box">
-                  <a href="buy-ticket.html" class="theme-btn btn-style-two"
-                    ><span class="btn-title">Join the SIC 2025</span></a
-                  >
-                </div>
+            <div class="col-lg-5 col-md-12 mt-5 mt-lg-0">
+              <div class="podcast-image">
+                <img
+                  src="images/patterns/sound-wave.webp"
+                  alt="SIC Podcast"
+                  class="img-fluid rounded-lg shadow-lg"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!--End Banner Section -->
-
-      <!-- Coming Soon -->
-
-      <section class="coming-soon-section">
+      <!-- Recent Episodes Section -->
+      <section class="podcast-section">
         <div class="auto-container">
-          <div class="outer-box">
-            <div class="time-counter">
-              <div
-                class="time-countdown clearfix"
-                data-countdown="03/16/2025"
-              ></div>
-            </div>
+          <div class="section-heading text-center">
+            <h2>Recent Episodes</h2>
           </div>
-        </div>
-      </section>
 
-      <!-- End Coming Soon -->
-
-      <!-- About Section -->
-
-      <section class="about-section">
-        <div class="anim-icons full-width">
-          <span class="icon icon-circle-blue wow fadeIn"></span>
-
-          <span class="icon icon-dots wow fadeInleft"></span>
-
-          <span class="icon icon-circle-1 wow zoomIn"></span>
-        </div>
-
-        <div class="auto-container">
           <div class="row">
-            <!-- Content Column -->
-
-            <div class="content-column col-lg-6 col-md-12 col-sm-12">
-              <div class="inner-column">
-                <div class="sec-title">
-                  <span class="title">ABOUT EVENT</span>
-
-                  <h2>Welcome to the Scale and Ideas Conference (SIC) 2025</h2>
-
-                  <div class="text">
-                    Join a dynamic gathering of visionaries where
-                    forward-thinkers, change-makers, entrepreneurs, and
-                    professionals gather to create impactful social and business
-                    solutions. SIC focuses on four key pillars that shape our
-                    society and future: Social Change, Technology and
-                    Innovation, Business and Entrepreneurship, and Marketplace –
-                    connecting faith with workplace success. Join us for
-                    thought-provoking sessions, networking, and opportunities to
-                    scale your ideas."
-                  </div>
-                </div>
-
-                <ul class="list-style-one">
-                  <li>
-                    Exclusive insights from industry leaders and innovators.
-                  </li>
-                  <li>
-                    Opportunities to network with entrepreneurs and
-                    professionals.
-                  </li>
-                  <li>
-                    Sessions focused on social change, technology, business, and
-                    faith-driven success.
-                  </li>
-                  <li>
-                    Collaborative discussions to help scale your ideas and
-                    impact.
-                  </li>
-                </ul>
-
-                <div class="btn-box">
-                  <a href="register.html" class="theme-btn btn-style-three"
-                    ><span class="btn-title">Register Now</span></a
-                  >
-                </div>
-              </div>
-            </div>
-
-            <!-- Image Column -->
-
-            <div class="image-column col-lg-6 col-md-12 col-sm-12">
-              <div class="image-box">
-                <figure class="image wow fadeIn">
-                  <img src="images/resource/about-img-1.jpg" alt="" />
-                </figure>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!--End About Section -->
-
-      <!-- Features Section Two -->
-
-      <section class="features-section-two">
-        <div class="auto-container">
-          <div class="anim-icons">
-            <span class="icon twist-line-1 wow zoomIn"></span>
-            <span
-              class="icon twist-line-2 wow zoomIn"
-              data-wow-delay="1s"
-            ></span>
-            <span
-              class="icon twist-line-3 wow zoomIn"
-              data-wow-delay="2s"
-            ></span>
-          </div>
-          <div class="row">
-            <!-- Title Block -->
-            <div class="title-block col-lg-4 col-md-12 col-sm-12 wow fadeInUp">
-              <div class="inner-box">
-                <div class="sec-title">
-                  <span class="title">Features</span>
-                  <h2>Why Attend SIC 2025?</h2>
-                </div>
-              </div>
-            </div>
-            <!-- Feature Block -->
-            <div
-              class="feature-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
-            >
-              <div class="inner-box">
-                <div class="icon-box">
-                  <span class="icon flaticon-lecture"></span>
-                </div>
-                <h4><a href="#">Inspiring Speakers</a></h4>
-                <div class="text">
-                  Hear from top industry leaders, innovators, and faith-driven
-                  entrepreneurs who are shaping the future.
-                </div>
-              </div>
-            </div>
-            <!-- Feature Block -->
-            <div
-              class="feature-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
-            >
-              <div class="inner-box">
-                <div class="icon-box">
-                  <span class="icon flaticon-search"></span>
-                </div>
-                <h4><a href="#">Transformative Experience</a></h4>
-                <div class="text">
-                  Gain practical knowledge and insights across business,
-                  technology, social impact, and faith integration.
-                </div>
-              </div>
-            </div>
-            <!-- Feature Block -->
-            <div
-              class="feature-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
-              data-wow-delay="400ms"
-            >
-              <div class="inner-box">
-                <div class="icon-box">
-                  <span class="icon flaticon-diamond-1"></span>
-                </div>
-                <h4><a href="#">Unparalleled Networking</a></h4>
-                <div class="text">
-                  Connect with like-minded professionals, entrepreneurs, and
-                  changemakers from Africa and beyond.
-                </div>
-              </div>
-            </div>
-            <!-- Feature Block -->
-            <div
-              class="feature-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
-              data-wow-delay="800ms"
-            >
-              <div class="inner-box">
-                <div class="icon-box">
-                  <span class="icon flaticon-success"></span>
-                </div>
-                <h4><a href="#">Workshops & Panels</a></h4>
-                <div class="text">
-                  Engage in interactive sessions designed to provide real-world
-                  strategies for success.
-                </div>
-              </div>
-            </div>
-            <!-- Feature Block -->
-            <div
-              class="feature-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
-              data-wow-delay="1200ms"
-            >
-              <div class="inner-box">
-                <div class="icon-box">
-                  <span class="icon flaticon-employee"></span>
-                </div>
-                <h4><a href="#">Global Perspectives</a></h4>
-                <div class="text">
-                  Gain exposure to international trends and best practices that
-                  can help you scale your ideas globally.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!--End Features Section -->
-
-      <!-- Speakers Section -->
-
-      <section
-        class="speakers-section"
-        style="background-image: url(images/background/6.jpg)"
-      >
-        <div class="auto-container">
-          <div class="sec-title light text-center">
-            <span class="title">Speakers</span>
-
-            <h2>Meet Our Speakers</h2>
-          </div>
-
-          <div class="row" style="display: flex; justify-content: center">
-            <!-- Speaker Block -->
-
-            <div class="speaker-block col-lg-3 col-md-6 col-sm-12">
-              <div class="inner-box">
-                <div class="image-box">
-                  <figure class="image">
-                    <a href="speakers-detail.html"
-                      ><img
-                        src="images/resource/speaker-2.webp"
-                        alt=""
-                        style="width: 280px; height: 280px; object-fit: cover"
-                    /></a>
-                  </figure>
-                </div>
-
-                <div class="info-box">
-                  <div class="inner">
-                    <h4 class="name">
-                      <a target="_blank" href="detail-cosmas.html">Cosmas Maduka</a>
-                    </h4>
-
-                    <span class="designation">Speaker</span>
-
-                    <ul class="social-links social-icon-colored">
-                      <li>
-                        <a href="index.html#"
-                          ><i class="fab fa-facebook-f"></i
-                        ></a>
-                      </li>
-
-                      <li>
-                        <a href="index.html#"><i class="fab fa-twitter"></i></a>
-                      </li>
-
-                      <li>
-                        <a href="index.html#"
-                          ><i class="fab fa-pinterest"></i
-                        ></a>
-                      </li>
-
-                      <li>
-                        <a href="index.html#"
-                          ><i class="fab fa-dribbble"></i
-                        ></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Speaker Block -->
-
-            <div class="speaker-block col-lg-3 col-md-6 col-sm-12">
-              <div class="inner-box">
-                <div class="image-box">
-                  <figure class="image">
-                    <a href="speakers-detail.html"
-                      ><img
-                        src="images/resource/speaker-3.jpg"
-                        alt=""
-                        style="width: 280px; height: 280px; object-fit: cover"
-                    /></a>
-                  </figure>
-                </div>
-
-                <div class="info-box">
-                  <div class="inner">
-                    <h4 class="name">
-                      <a target="_blank" href="detail-casaba.html">ID Cabasa</a>
-                    </h4>
-
-                    <span class="designation">Speaker</span>
-
-                    <ul class="social-links social-icon-colored">
-                      <li>
-                        <a href="index.html#"
-                          ><i class="fab fa-facebook-f"></i
-                        ></a>
-                      </li>
-
-                      <li>
-                        <a href="index.html#"><i class="fab fa-twitter"></i></a>
-                      </li>
-
-                      <li>
-                        <a href="index.html#"
-                          ><i class="fab fa-pinterest"></i
-                        ></a>
-                      </li>
-
-                      <li>
-                        <a href="index.html#"
-                          ><i class="fab fa-dribbble"></i
-                        ></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Speaker Block -->
-            <div class="speaker-block col-lg-3 col-md-6 col-sm-12">
-              <div class="inner-box">
-                <div class="image-box">
-                  <figure class="image">
-                    <a href="speakers-detail.html"
-                      ><img
-                        src="images/resource/Yanmo-Omorogbe.jpg"
-                        alt=""
-                        style="width: 280px; height: 280px; object-fit: cover"
-                    /></a>
-                  </figure>
-                </div>
-
-                <div class="info-box">
-                  <div class="inner">
-                    <h4 class="name">
-                      <a target="_blank" href="detail-yanmoe.html">Yanmo Omorogbe</a>
-                    </h4>
-
-                    <span class="designation">Speaker</span>
-
-                    <ul class="social-links social-icon-colored">
-                      <li>
-                        <a href="index.html#"
-                          ><i class="fab fa-facebook-f"></i
-                        ></a>
-                      </li>
-
-                      <li>
-                        <a href="index.html#"><i class="fab fa-twitter"></i></a>
-                      </li>
-
-                      <li>
-                        <a href="index.html#"
-                          ><i class="fab fa-pinterest"></i
-                        ></a>
-                      </li>
-
-                      <li>
-                        <a href="index.html#"
-                          ><i class="fab fa-dribbble"></i
-                        ></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Speaker Block -->
-            <div class="speaker-block col-lg-3 col-md-6 col-sm-12">
-              <div class="inner-box">
-                <div class="image-box">
-                  <figure class="image">
-                    <a href="speakers-detail.html"
-                      ><img
-                        src="images/resource/asemota.jpg"
-                        alt=""
-                        style="width: 280px; height: 280px; object-fit: cover"
-                    /></a>
-                  </figure>
-                </div>
-
-                <div class="info-box">
-                  <div class="inner">
-                    <h4 class="name">
-                      <a target="_blank" href="detail-asemota.html">Asemota Victor</a>
-                    </h4>
-
-                    <span class="designation">Speaker</span>
-
-                    <ul class="social-links social-icon-colored">
-                      <li>
-                        <a href="index.html#"
-                          ><i class="fab fa-facebook-f"></i
-                        ></a>
-                      </li>
-
-                      <li>
-                        <a href="index.html#"><i class="fab fa-twitter"></i></a>
-                      </li>
-
-                      <li>
-                        <a href="index.html#"
-                          ><i class="fab fa-pinterest"></i
-                        ></a>
-                      </li>
-
-                      <li>
-                        <a href="index.html#"
-                          ><i class="fab fa-dribbble"></i
-                        ></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- End Speakers Section -->
-
-      <!-- Fun Fact Section -->
-
-      <section class="fun-fact-section">
-        <div class="auto-container">
-          <div class="fact-counter">
-            <div
-              class="row clearfix"
-              style="display: flex; justify-content: center"
-            >
-              <!--Column-->
-
-              <div
-                class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp"
-              >
-                <div class="count-box">
-                  <span class="icon icon_headphones"></span>
-
-                  <span class="count-text" data-speed="3000" data-stop="2190"
-                    >0</span
-                  >
-
-                  <h4 class="counter-title">Participants</h4>
-                </div>
-              </div>
-
-              <!--Column-->
-
-              <div
-                class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp"
-                data-wow-delay="400ms"
-              >
-                <div class="count-box">
-                  <span class="icon icon_ribbon_alt"></span>
-
-                  <span class="count-text" data-speed="3000" data-stop="62"
-                    >0</span
-                  >
-
-                  <h4 class="counter-title">Awards Win</h4>
-                </div>
-              </div>
-
-              <!--Column-->
-
-              <div
-                class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp"
-                data-wow-delay="800ms"
-              >
-                <div class="count-box">
-                  <span class="icon">
-                    <svg
-                      style="width: 60px; height: 60px"
-                      xmlns="http://www.w3.org/2000/svg"
-                      xml:space="preserve"
-                      id="Speaker"
-                      x="0"
-                      y="0"
-                      version="1.1"
-                      viewBox="0 0 29 29"
-                    >
-                      <path
-                        d="M12.657 23.415a1.83 1.83 0 0 1-1.146-.406L6.85 19.28H3.84A1.842 1.842 0 0 1 2 17.44v-5.88c0-1.015.825-1.84 1.84-1.84h3.01l4.661-3.729a1.826 1.826 0 0 1 1.946-.222c.644.31 1.043.945 1.043 1.659v14.145c0 .714-.399 1.349-1.043 1.658-.256.123-.53.184-.8.184zM4 17.28h3.2c.227 0 .447.077.625.219l4.675 3.74V7.761l-4.675 3.74a1.001 1.001 0 0 1-.625.219H4v5.56zM19.803 20.803a.999.999 0 0 1-.707-1.707C20.306 17.887 21 16.211 21 14.5s-.694-3.387-1.904-4.596A.999.999 0 1 1 20.51 8.49C22.092 10.071 23 12.262 23 14.5s-.908 4.429-2.49 6.01a.993.993 0 0 1-.707.293z"
-                        fill="#ffffff"
-                        class="color000000 svgShape"
-                      ></path>
-                      <path
-                        d="M22.632 23.632a.999.999 0 0 1-.707-1.707C23.879 19.97 25 17.264 25 14.5s-1.121-5.47-3.075-7.425a.999.999 0 1 1 1.414-1.414C25.666 7.988 27 11.209 27 14.5s-1.334 6.512-3.661 8.839a.997.997 0 0 1-.707.293zM16.975 17.975a1 1 0 0 1-.707-1.707c.465-.465.732-1.11.732-1.768s-.267-1.303-.732-1.768a1.002 1.002 0 0 1 0-1.415 1.002 1.002 0 0 1 1.415 0C18.52 12.156 19 13.316 19 14.5s-.48 2.344-1.317 3.182a1.001 1.001 0 0 1-.708.293z"
-                        fill="#ffffff"
-                        class="color000000 svgShape"
-                      ></path>
-                    </svg>
-                  </span>
-
-                  <span class="count-text" data-speed="3000" data-stop="04"
-                    >0</span
-                  >
-
-                  <h4 class="counter-title">Speakers</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!--End Fun Fact Section -->
-
-      <!-- schedule Section -->
-
-      <section class="schedule-section">
-        <div class="anim-icons">
-          <span class="icon icon-circle-4 wow zoomIn"></span>
-
-          <span class="icon icon-circle-3 wow zoomIn"></span>
-        </div>
-
-        <div class="auto-container">
-          <div class="sec-title text-center">
-            <span class="title">About Conference</span>
-
-            <h2>Schedule Plan</h2>
-          </div>
-
-          <div class="schedule-tabs tabs-box">
-            <div class="btns-box">
-              <!--Tabs Box-->
-
-              <ul class="tab-buttons clearfix">
-                <li class="tab-btn active-btn" data-tab="#tab-1">
-                  <span class="day">Day 01</span>
-
-                  <span class="date">16</span>
-
-                  <span class="month">May</span> 2025
-                </li>
-
-                <li class="tab-btn" data-tab="#tab-2">
-                  <span class="day">Day 02</span>
-
-                  <span class="date">17</span>
-
-                  <span class="month">May</span> 2025
-                </li>
-              </ul>
-            </div>
-
-            <div class="tabs-content">
-              <!--Tab-->
-
-              <div class="tab active-tab" id="tab-1">
-                <div class="schedule-timeline">
-                  <!-- schedule Block -->
-
-                  <div class="schedule-block">
-                    <div class="inner-box">
-                      <div class="inner">
-                        <div class="date">
-                          09:00 AM <br />
-                          11:30 AM
-                        </div>
-
-                        <div class="speaker-info">
-                          <figure class="thumb">
-                            <img
-                              src="images/resource/thumb-1.jpg"
-                              alt=""
-                              style="
-                                width: 60px;
-                                height: 60px;
-                                object-fit: cover;
-                              "
-                            />
-                          </figure>
-
-                          <h5 class="name">ID Casaba</h5>
-
-                          <span class="designation">Speaker</span>
-                        </div>
-
-                        <h4>
-                          <a href="#"
-                            >If life were a game - these are the rules</a
-                          >
-                        </h4>
-
-                        <div class="text">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 64 64"
-                            id="location"
-                            style="width: 24px; height: 24px"
-                          >
-                            <path
-                              fill="#1e252d"
-                              d="M50.4,18.41a18.4,18.4,0,1,0-36.8,0C13.6,28.57,32,54.26,32,54.26S50.4,28.57,50.4,18.41ZM20,18.41a12,12,0,1,1,12,12A12,12,0,0,1,20,18.41Z"
-                            ></path>
-                            <path
-                              fill="#1e252d"
-                              d="M41.26,43c-1.38,2.25-2.72,4.33-3.9,6.11,5,.68,8.5,2.28,8.5,4.16,0,2.48-6.2,4.5-13.86,4.5s-13.86-2-13.86-4.5c0-1.89,3.52-3.49,8.51-4.16-1.18-1.78-2.52-3.87-3.9-6.12C10.65,44.36,1.91,48.42,1.91,53.23,1.91,59.18,15.38,64,32,64s30.09-4.82,30.09-10.77C62.09,48.42,53.35,44.36,41.26,43Z"
-                            ></path>
-                          </svg>
-                          Uniben Main Auditorium, Ugbowo
-                        </div>
-
-                        <div class="btn-box">
-                          <a href="register.html" class="theme-btn">Register</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- schedule Block -->
-
-                  <div class="schedule-block even">
-                    <div class="inner-box">
-                      <div class="inner">
-                        <div class="date">
-                          12:00 PM <br />
-                          03:00 PM
-                        </div>
-
-                        <div class="speaker-info">
-                          <figure class="thumb">
-                            <img
-                              src="images/resource/thumb-2.webp"
-                              alt=""
-                              style="
-                                width: 60px;
-                                height: 60px;
-                                object-fit: cover;
-                              "
-                            />
-                          </figure>
-
-                          <h5 class="name">Cosmas Maduka</h5>
-
-                          <span class="designation">Speaker</span>
-                        </div>
-
-                        <h4>
-                          <a href="#"
-                            >If life were a game - these are the rules (II)</a
-                          >
-                        </h4>
-
-                        <div class="text">
-                          Uniben Main Auditorium, Ugbowo
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 64 64"
-                            id="location"
-                            style="width: 24px; height: 24px"
-                          >
-                            <path
-                              fill="#1e252d"
-                              d="M50.4,18.41a18.4,18.4,0,1,0-36.8,0C13.6,28.57,32,54.26,32,54.26S50.4,28.57,50.4,18.41ZM20,18.41a12,12,0,1,1,12,12A12,12,0,0,1,20,18.41Z"
-                            ></path>
-                            <path
-                              fill="#1e252d"
-                              d="M41.26,43c-1.38,2.25-2.72,4.33-3.9,6.11,5,.68,8.5,2.28,8.5,4.16,0,2.48-6.2,4.5-13.86,4.5s-13.86-2-13.86-4.5c0-1.89,3.52-3.49,8.51-4.16-1.18-1.78-2.52-3.87-3.9-6.12C10.65,44.36,1.91,48.42,1.91,53.23,1.91,59.18,15.38,64,32,64s30.09-4.82,30.09-10.77C62.09,48.42,53.35,44.36,41.26,43Z"
-                            ></path>
-                          </svg>
-                        </div>
-
-                        <div class="btn-box">
-                          <a href="register.html" class="theme-btn">Register</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!--Tab-->
-
-              <div class="tab" id="tab-2">
-                <div class="schedule-timeline">
-                  <!-- schedule Block -->
-
-                  <div class="schedule-block">
-                    <div class="inner-box">
-                      <div class="inner">
-                        <div class="date">
-                          09:00 AM <br />
-                          11:00 AM
-                        </div>
-
-                        <div class="speaker-info">
-                          <figure class="thumb">
-                            <img
-                              src="images/resource/Yanmo-Omorogbe.jpg"
-                              alt=""
-                              style="
-                                width: 60px;
-                                height: 60px;
-                                object-fit: cover;
-                              "
-                            />
-                          </figure>
-
-                          <h5 class="name">Yanmoo Omorogbe</h5>
-
-                          <span class="designation">Speaker</span>
-                        </div>
-
-                        <h4>
-                          <a href="#"
-                            >Scaling Products for Impact</a
-                          >
-                        </h4>
-
-                        <div class="text">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 64 64"
-                            id="location"
-                            style="width: 24px; height: 24px"
-                          >
-                            <path
-                              fill="#1e252d"
-                              d="M50.4,18.41a18.4,18.4,0,1,0-36.8,0C13.6,28.57,32,54.26,32,54.26S50.4,28.57,50.4,18.41ZM20,18.41a12,12,0,1,1,12,12A12,12,0,0,1,20,18.41Z"
-                            ></path>
-                            <path
-                              fill="#1e252d"
-                              d="M41.26,43c-1.38,2.25-2.72,4.33-3.9,6.11,5,.68,8.5,2.28,8.5,4.16,0,2.48-6.2,4.5-13.86,4.5s-13.86-2-13.86-4.5c0-1.89,3.52-3.49,8.51-4.16-1.18-1.78-2.52-3.87-3.9-6.12C10.65,44.36,1.91,48.42,1.91,53.23,1.91,59.18,15.38,64,32,64s30.09-4.82,30.09-10.77C62.09,48.42,53.35,44.36,41.26,43Z"
-                            ></path>
-                          </svg>
-                          Ehizua Hub, Airport road.
-                        </div>
-
-                        <div class="btn-box">
-                          <a href="register.html" class="theme-btn">Register</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- schedule Block -->
-
-                  <div class="schedule-block even">
-                    <div class="inner-box">
-                      <div class="inner">
-                        <div class="date">
-                          12:00 PM <br />
-                          02:30 PM
-                        </div>
-
-                        <div class="speaker-info">
-                          <figure class="thumb">
-                            <img
-                              src="images/resource/asemota.jpg"
-                              alt=""
-                              style="
-                                width: 60px;
-                                height: 60px;
-                                object-fit: cover;
-                              "
-                            />
-                          </figure>
-
-                          <h5 class="name">Victor Asemota</h5>
-
-                          <span class="designation">Speaker</span>
-                        </div>
-
-                        <h4>
-                          <a href="#">The Funding Dilema</a>
-                        </h4>
-
-                        <div class="text">
-                          Uniben Main Auditorium. Ugbowo
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 64 64"
-                            id="location"
-                            style="width: 24px; height: 24px"
-                          >
-                            <path
-                              fill="#1e252d"
-                              d="M50.4,18.41a18.4,18.4,0,1,0-36.8,0C13.6,28.57,32,54.26,32,54.26S50.4,28.57,50.4,18.41ZM20,18.41a12,12,0,1,1,12,12A12,12,0,0,1,20,18.41Z"
-                            ></path>
-                            <path
-                              fill="#1e252d"
-                              d="M41.26,43c-1.38,2.25-2.72,4.33-3.9,6.11,5,.68,8.5,2.28,8.5,4.16,0,2.48-6.2,4.5-13.86,4.5s-13.86-2-13.86-4.5c0-1.89,3.52-3.49,8.51-4.16-1.18-1.78-2.52-3.87-3.9-6.12C10.65,44.36,1.91,48.42,1.91,53.23,1.91,59.18,15.38,64,32,64s30.09-4.82,30.09-10.77C62.09,48.42,53.35,44.36,41.26,43Z"
-                            ></path>
-                          </svg>
-                        </div>
-
-                        <div class="btn-box">
-                          <a href="register.html" class="theme-btn">Register</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- schedule Block -->
-
-                  <div class="schedule-block">
-                    <div class="inner-box">
-                      <div class="inner">
-                        <div class="date">
-                          04:00 PM <br />
-                          06:30 PM
-                        </div>
-
-                        <div class="speaker-info">
-                          <figure class="thumb">
-                            <img
-                              src="images/resource/asemota.jpg"
-                              alt=""
-                              style="
-                                width: 60px;
-                                height: 60px;
-                                object-fit: cover;
-                              "
-                            />
-                          </figure>
-
-                          <h5 class="name">Victor Asemota</h5>
-
-                          <span class="designation">Speaker</span>
-                        </div>
-
-                        <h4>
-                          <a href="#">Running Your Race</a>
-                        </h4>
-
-                        <div class="text">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 64 64"
-                            id="location"
-                            style="width: 24px; height: 24px"
-                          >
-                            <path
-                              fill="#1e252d"
-                              d="M50.4,18.41a18.4,18.4,0,1,0-36.8,0C13.6,28.57,32,54.26,32,54.26S50.4,28.57,50.4,18.41ZM20,18.41a12,12,0,1,1,12,12A12,12,0,0,1,20,18.41Z"
-                            ></path>
-                            <path
-                              fill="#1e252d"
-                              d="M41.26,43c-1.38,2.25-2.72,4.33-3.9,6.11,5,.68,8.5,2.28,8.5,4.16,0,2.48-6.2,4.5-13.86,4.5s-13.86-2-13.86-4.5c0-1.89,3.52-3.49,8.51-4.16-1.18-1.78-2.52-3.87-3.9-6.12C10.65,44.36,1.91,48.42,1.91,53.23,1.91,59.18,15.38,64,32,64s30.09-4.82,30.09-10.77C62.09,48.42,53.35,44.36,41.26,43Z"
-                            ></path>
-                          </svg>
-                          Uniben Main Auditorium. Ekewan Campus
-                        </div>
-
-                        <div class="btn-box">
-                          <a href="register.html" class="theme-btn">Register</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!--End schedule Section -->
-
-      <!-- Pricing Section -->
-
-      <section class="pricing-section">
-        <div class="anim-icons">
-          <span class="icon icon-circle-green wow fadeIn"></span>
-
-          <span class="icon icon-circle-blue wow fadeIn"></span>
-
-          <span class="icon icon-circle-pink wow fadeIn"></span>
-        </div>
-
-        <div class="auto-container">
-          <div class="sec-title text-center">
-            <span class="title">Get Ticket</span>
-
-            <h2>Choose a Ticket</h2>
-          </div>
-
-          <div class="outer-box">
-            <div class="row" style="display: flex; justify-content: center">
-              <!-- Pricing Block -->
-
-              <!-- <div
-                class="pricing-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
-              >
-                <div class="inner-box">
-                  <div class="icon-box">
-                    <div class="icon-outer">
-                      <span class="icon flaticon-paper-plane"></span>
-                    </div>
-                  </div>
-
-                  <div class="price-box">
-                    <div class="title">Day Pass</div>
-
-                    <h4 class="price">$35.99</h4>
-                  </div>
-
-                  <ul class="features">
-                    <li class="true">Conference Tickets</li>
-
-                    <li class="true">Free Lunch And Coffee</li>
-
-                    <li class="true">Certificate</li>
-
-                    <li class="false">Easy Access</li>
-
-                    <li class="false">Free Contacts</li>
-                  </ul>
-
-                  <div class="btn-box">
-                    <a href="buy-ticket.html" class="theme-btn">BUY Ticket</a>
-                  </div>
-                </div>
-              </div> -->
-
-              <!-- Pricing Block -->
-
-              <div
-                class="pricing-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
-                data-wow-delay="400ms"
-              >
-                <div class="inner-box">
-                  <div class="icon-box">
-                    <div class="icon-outer">
-                      <span class="icon flaticon-diamond-1"></span>
-                    </div>
-                  </div>
-
-                  <div class="price-box">
-                    <div class="title">Full Pass</div>
-
-                    <h4 class="price"><del>$99.99</del></h4>
-                  </div>
-
-                  <ul class="features">
-                    <li class="true">Access to Keynote Speeches</li>
-                    <li class="true">Hands-on Workshops & Demos</li>
-                    <li class="true">Networking with Industry Leaders</li>
-                    <li class="true">Exclusive Conference Swag</li>
-                    <li class="false">One-on-One Mentorship Sessions</li>
-                  </ul>
-
-                  <div class="btn-box">
-                    <a aria-disabled="true" href="#" class="theme-btn"
-                      >Free Tickets</a
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <!-- Pricing Block -->
-
-              <!-- <div
-                class="pricing-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
-                data-wow-delay="800ms"
-              >
-                <div class="inner-box">
-                  <div class="icon-box">
-                    <div class="icon-outer">
-                      <span class="icon flaticon-rocket-ship"></span>
-                    </div>
-                  </div>
-
-                  <div class="price-box">
-                    <div class="title">Group Pass</div>
-
-                    <h4 class="price">$199.99</h4>
-                  </div>
-
-                  <ul class="features">
-                    <li class="true">Conference Tickets</li>
-
-                    <li class="true">Free Lunch And Coffee</li>
-
-                    <li class="true">Certificate</li>
-
-                    <li class="true">Easy Access</li>
-
-                    <li class="true">Free Contacts</li>
-                  </ul>
-
-                  <div class="btn-box">
-                    <a href="buy-ticket.html" class="theme-btn">BUY Ticket</a>
-                  </div>
-                </div>
-              </div> -->
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!--End Pricing Section -->
-
-      <!-- Video Section -->
-
-      <section
-        class="video-section"
-        style="background-image: url(images/background/1.jpg)"
-      >
-        <div class="auto-container">
-          <div class="content-box">
-            <div class="text">WE’RE A LEADING INDUSTRY COMPANY</div>
-
-            <h2>
-              We Are Always at The Forefront to <br />
-              help position you and your company righty
-            </h2>
-          </div>
-        </div>
-      </section>
-
-      <!--End Video Section -->
-
-      <!-- Why Choose Us -->
-
-      <section class="features-section-two">
-        <div class="auto-container">
-          <div class="anim-icons">
-            <span class="icon twist-line-1 wow zoomIn"></span>
-            <span
-              class="icon twist-line-2 wow zoomIn"
-              data-wow-delay="1s"
-            ></span>
-            <span
-              class="icon twist-line-3 wow zoomIn"
-              data-wow-delay="2s"
-            ></span>
-          </div>
-          <div class="row">
-            <!-- Title Block -->
-            <div class="title-block col-lg-4 col-md-12 col-sm-12 wow fadeInUp">
-              <div class="inner-box">
-                <div class="sec-title">
-                  <span class="title">Features</span>
-                  <h2>Why Attend SIC 2025?</h2>
-                </div>
-              </div>
-            </div>
-            <!-- Feature Block -->
-            <div
-              class="feature-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
-            >
-              <div class="inner-box">
-                <div class="icon-box">
-                  <span class="icon flaticon-lecture"></span>
-                </div>
-                <h4><a href="#">Inspiring Speakers</a></h4>
-                <div class="text">
-                  Hear from top industry leaders, innovators, and faith-driven
-                  entrepreneurs who are shaping the future.
-                </div>
-              </div>
-            </div>
-            <!-- Feature Block -->
-            <div
-              class="feature-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
-            >
-              <div class="inner-box">
-                <div class="icon-box">
-                  <span class="icon flaticon-search"></span>
-                </div>
-                <h4><a href="#">Transformative Experience</a></h4>
-                <div class="text">
-                  Gain practical knowledge and insights across business,
-                  technology, social impact, and faith integration.
-                </div>
-              </div>
-            </div>
-            <!-- Feature Block -->
-            <div
-              class="feature-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
-              data-wow-delay="400ms"
-            >
-              <div class="inner-box">
-                <div class="icon-box">
-                  <span class="icon flaticon-diamond-1"></span>
-                </div>
-                <h4><a href="#">Unparalleled Networking</a></h4>
-                <div class="text">
-                  Connect with like-minded professionals, entrepreneurs, and
-                  changemakers from Africa and beyond.
-                </div>
-              </div>
-            </div>
-            <!-- Feature Block -->
-            <div
-              class="feature-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
-              data-wow-delay="800ms"
-            >
-              <div class="inner-box">
-                <div class="icon-box">
-                  <span class="icon flaticon-success"></span>
-                </div>
-                <h4><a href="#">Workshops & Panels</a></h4>
-                <div class="text">
-                  Engage in interactive sessions designed to provide real-world
-                  strategies for success.
-                </div>
-              </div>
-            </div>
-            <!-- Feature Block -->
-            <div
-              class="feature-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
-              data-wow-delay="1200ms"
-            >
-              <div class="inner-box">
-                <div class="icon-box">
-                  <span class="icon flaticon-employee"></span>
-                </div>
-                <h4><a href="#">Global Perspectives</a></h4>
-                <div class="text">
-                  Gain exposure to international trends and best practices that
-                  can help you scale your ideas globally.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="why-choose-us">
-        <div class="auto-container">
-          <div class="row">
-            <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
-              <div class="inner-column">
-                <div class="sec-title">
-                  <span class="title">JOIN THE EVENT</span>
-                  <h2>Why Attend SIC 2025?</h2>
-                  <div class="text">
-                    SIC 2025 is more than just an event—it's a movement designed
-                    to equip you with the tools, insights, and connections
-                    needed to drive impactful change. Whether you're an
-                    entrepreneur, a professional, or a student, this conference
-                    offers unparalleled opportunities for growth and success.
-                  </div>
-                </div>
-                <ul class="list-style-one">
-                  <li>Exclusive insights from global thought leaders</li>
-                  <li>
-                    Opportunities to network with top industry professionals
-                  </li>
-                  <li>Interactive workshops and panel discussions</li>
-                  <li>Faith-integrated business and leadership sessions</li>
-                </ul>
-                <div class="btn-box">
-                  <a href="register.html" class="theme-btn btn-style-two"
-                    ><span class="btn-title">Get Tickets</span></a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="image-column col-lg-6 col-md-12 col-sm-12">
-              <div class="image-box">
-                <figure class="image">
+            <!-- Episode Card 1 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="episode-card">
+                <div class="episode-image">
                   <img
-                    src="images/background/3.jpg"
-                    alt="SIC 2025 Conference"
+                    src="/images/patterns/AfricanMarkets.jpeg"
+                    alt="Episode 1"
                   />
-                </figure>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- End Why Choose Us -->
-
-      <!--Clients Section-->
-
-      <section class="clients-section">
-        <div class="anim-icons">
-          <span class="icon icon-dots-3 wow zoomIn"></span>
-
-          <span class="icon icon-circle-blue wow zoomIn"></span>
-        </div>
-
-        <div class="auto-container">
-          <div class="sec-title">
-            <span class="title">Clients</span>
-
-            <h2>Offcial Sponsors</h2>
-          </div>
-
-          <div class="sponsors-outer">
-            <div class="row">
-              <!-- Client Block -->
-
-              <div class="client-block col-lg-3 col-md-6 col-sm-12">
-                <figure class="image-box">
-                  <a href="index.html#"
-                    ><img
-                      src="images/clients/1.png"
-                      alt=""
-                      style="width: 200px; height: 150px; object-fit: cover"
-                  /></a>
-                </figure>
-              </div>
-
-              <!-- Client Block -->
-
-              <div class="client-block col-lg-3 col-md-6 col-sm-12">
-                <figure class="image-box">
-                  <a href="index.html#"
-                    ><img src="images/clients/2.png" alt=""
-                  /></a>
-                </figure>
-              </div>
-
-              <!-- Client Block -->
-
-              <div class="client-block col-lg-3 col-md-6 col-sm-12">
-                <figure class="image-box">
-                  <a href="index.html#"
-                    ><img src="images/clients/3.png" alt=""
-                  /></a>
-                </figure>
-              </div>
-
-              <!-- Client Block -->
-
-              <div class="client-block col-lg-3 col-md-6 col-sm-12">
-                <figure class="image-box">
-                  <a href="index.html#"
-                    ><img src="images/clients/4.png" alt=""
-                  /></a>
-                </figure>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!--End Clients Section-->
-
-      <!-- Register Section -->
-
-      <section class="register-section">
-        <div class="auto-container">
-          <div class="anim-icons full-width">
-            <span class="icon icon-circle-3 wow zoomIn"></span>
-          </div>
-
-          <div class="outer-box">
-            <div class="row no-gutters">
-              <div class="title-column col-lg-4 col-md-6 col-sm-12">
-                <div class="inner">
-                  <div class="sec-title light">
-                    <div class="icon-box">
-                      <span class="icon flaticon-rocket-ship"></span>
-                    </div>
-
-                    <h2>REGISTER NOW</h2>
-
-                    <div class="text">
-                      Join us for an immersive tech conference where innovation
-                      meets expertise! Secure your spot today to gain exclusive
-                      access to keynote speeches, hands-on workshops, and
-                      networking opportunities with industry leaders. Register
-                      now and be part of the future of technology!
-                    </div>
+                  <div class="play-button">
+                    <i class="fas fa-play"></i>
                   </div>
                 </div>
-              </div>
-
-              <!--Register Form-->
-
-              <div class="register-form col-lg-8 col-md-6 col-sm-12">
-                <div class="form-inner">
-                  <form method="post" action="contact.html">
-                    <div class="form-group">
-                      <span class="icon fa fa-user"></span>
-
-                      <input
-                        type="text"
-                        name="username"
-                        placeholder="Full name"
-                        required=""
-                      />
-                    </div>
-
-                    <div class="form-group">
-                      <span class="icon fa fa-envelope"></span>
-
-                      <input
-                        type="email"
-                        name="email"
-                        value=""
-                        placeholder="Email address"
-                        required
-                      />
-                    </div>
-
-                    <div class="form-group">
-                      <span class="icon fa fa-phone"></span>
-
-                      <input
-                        type="text"
-                        name="phone"
-                        placeholder="Phone"
-                        required=""
-                      />
-                    </div>
-
-                    <div class="form-group">
-                      <span class="icon fa fa-edit"></span>
-
-                      <textarea
-                        name="message"
-                        placeholder="Additional Message"
-                      ></textarea>
-                    </div>
-
-                    <div class="form-group text-end">
-                      <button type="submit" class="theme-btn btn-style-four">
-                        <span class="btn-title">Register Now</span>
-                      </button>
-                    </div>
-                  </form>
+                <div class="card-body">
+                  <span class="episode-number">Episode 01</span>
+                  <h3 class="episode-title">
+                    Building Tech Solutions for African Markets
+                  </h3>
+                  <div class="episode-meta">
+                    <span><i class="far fa-clock"></i> 45 min</span>
+                    <span><i class="far fa-calendar"></i> Apr 15, 2025</span>
+                  </div>
+                  <p>
+                    Exploring how innovators are creating technology solutions
+                    that address Africa's unique challenges and opportunities.
+                  </p>
+                  <a href="#" class="btn btn-outline-podcast mt-3"
+                    >Listen Now</a
+                  >
                 </div>
+              </div>
+            </div>
+
+            <!-- Episode Card 2 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="episode-card">
+                <div class="episode-image">
+                  <img
+                    src="/images/patterns/AfricanStartups.jpg"
+                    alt="Episode 2"
+                  />
+                  <div class="play-button">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <span class="episode-number">Episode 02</span>
+                  <h3 class="episode-title">
+                    Funding the Future: Investment in African Startups
+                  </h3>
+                  <div class="episode-meta">
+                    <span><i class="far fa-clock"></i> 52 min</span>
+                    <span><i class="far fa-calendar"></i> Apr 8, 2025</span>
+                  </div>
+                  <p>
+                    A deep dive into the funding landscape for African startups
+                    and how entrepreneurs can position themselves for
+                    investment.
+                  </p>
+                  <a href="#" class="btn btn-outline-podcast mt-3"
+                    >Listen Now</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Episode Card 3 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="episode-card">
+                <div class="episode-image">
+                  <img
+                    src="/images/patterns/WomenInnovationAfrica.jpg"
+                    alt="Episode 3"
+                  />
+                  <div class="play-button">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <span class="episode-number">Episode 03</span>
+                  <h3 class="episode-title">
+                    Women Leading Innovation in Africa
+                  </h3>
+                  <div class="episode-meta">
+                    <span><i class="far fa-clock"></i> 49 min</span>
+                    <span><i class="far fa-calendar"></i> Apr 1, 2025</span>
+                  </div>
+                  <p>
+                    Highlighting female entrepreneurs and leaders who are
+                    shaping Africa's innovation ecosystem and breaking barriers.
+                  </p>
+                  <a href="#" class="btn btn-outline-podcast mt-3"
+                    >Listen Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-5">
+            <a href="#" class="btn btn-podcast">View All Episodes</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Host Section -->
+      <section class="host-section">
+        <div class="auto-container">
+          <div class="row align-items-center">
+            <div class="col-lg-5 col-md-6">
+              <div class="host-image">
+                <img
+                  src="/images/patterns/precious.jpg"
+                  alt="Izoduwa Precious Asemota"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+            <div class="col-lg-7 col-md-6 mt-5 mt-md-0">
+              <div class="section-heading">
+                <h2>Meet Your Host</h2>
+              </div>
+              <h3>Izoduwa Precious Asemota</h3>
+              <p class="mb-4">
+                Global Technology Strategist, Startup Mentor, and Ecosystem
+                Builder
+              </p>
+              <p class="mb-4">
+                Izoduwa Precious Asemota brings a wealth of experience in
+                technology strategy and startup development to the SIC Podcast.
+                As a respected ecosystem builder, Precious has helped numerous
+                entrepreneurs navigate the complex landscape of scaling their
+                ideas from concept to impactful businesses.
+              </p>
+              <p class="mb-4">
+                On Scale, Precious explores the cutting edge of African
+                innovation, connecting listeners with the insights, tools, and
+                inspiration needed to build successful ventures that address
+                real challenges across the continent.
+              </p>
+              <div class="social-links mt-4">
+                <a href="#" class="btn btn-outline-podcast me-3"
+                  ><i class="fab fa-linkedin me-2"></i> Connect</a
+                >
+                <a
+                  target="_blank"
+                  href="https://x.com/asemotaizoduwa?s=11"
+                  class="btn btn-outline-podcast"
+                  ><i class="fab fa-twitter me-2"></i> Follow</a
+                >
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!--End Register Section -->
+      <!-- Conference Promo Section -->
+      <section class="conference-promo">
+        <div class="auto-container">
+          <div class="row align-items-center">
+            <div class="col-lg-7 col-md-12">
+              <div class="section-heading">
+                <h2>SIC Conference 2025</h2>
+              </div>
+              <h3>May 16th - 17th, 2025 | Benin City, Nigeria</h3>
+              <p class="mb-4">
+                Join a dynamic gathering of visionaries where forward-thinkers,
+                change-makers, entrepreneurs, and professionals gather to create
+                impactful social and business solutions.
+              </p>
+              <p class="mb-4">
+                SIC focuses on four key pillars that shape our society and
+                future: Social Change, Technology and Innovation, Business and
+                Entrepreneurship, and Marketplace – connecting faith with
+                workplace success.
+              </p>
+              <div class="btn-box mt-4">
+                <a href="conference.html" class="btn btn-podcast me-3"
+                  >Learn More</a
+                >
+                <a href="register.html" class="btn btn-outline-podcast"
+                  >Register Now</a
+                >
+              </div>
+            </div>
+            <div class="col-lg-5 col-md-12 mt-5 mt-lg-0">
+              <div class="image-box">
+                <img
+                  src="/api/placeholder/500/350"
+                  alt="SIC Conference"
+                  class="img-fluid rounded-lg shadow-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- Main Footer -->
-
       <footer class="main-footer">
         <!--Widgets Section-->
         <div class="widgets-section">
@@ -1662,7 +721,13 @@
                           <li>
                             <span class="icon flaticon-phone"></span>
                             <div class="text">
-                              <a href="tel:+2348034526182">+234 8034 526 182</a>
+                              <a href="tel:+2348132120048">+234 813 212 0048</a>
+                            </div>
+                          </li>
+                          <li>
+                            <span class="icon flaticon-phone"></span>
+                            <div class="text">
+                              <a href="tel:+2348095630414">+234 809 563 0414</a>
                             </div>
                           </li>
                           <li>
@@ -1739,87 +804,24 @@
           </div>
         </div>
       </footer>
-
       <!-- End Footer -->
     </div>
+    <!-- End Page Wrapper -->
 
-    <!--End pagewrapper-->
-
-    <!--Search Popup-->
-
-    <div id="search-popup" class="search-popup">
-      <div class="close-search theme-btn">
-        <span class="fas fa-window-close"></span>
-      </div>
-
-      <div class="popup-inner">
-        <div class="overlay-layer"></div>
-
-        <div class="search-form">
-          <form method="post" action="index.html">
-            <div class="form-group">
-              <fieldset>
-                <input
-                  type="search"
-                  class="form-control"
-                  name="search-input"
-                  value=""
-                  placeholder="Search Here"
-                  required
-                />
-
-                <input type="submit" value="Search Now!" class="theme-btn" />
-              </fieldset>
-            </div>
-          </form>
-
-          <br />
-
-          <h3>Recent Search Keywords</h3>
-
-          <ul class="recent-searches">
-            <li><a href="index.html#">Seo</a></li>
-
-            <li><a href="index.html#">Bussiness</a></li>
-
-            <li><a href="index.html#">Events</a></li>
-
-            <li><a href="index.html#">Digital</a></li>
-
-            <li><a href="index.html#">Conferance</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!--Scroll to top-->
-
+    <!-- Scroll To Top -->
     <div class="scroll-to-top scroll-to-target" data-target="html">
-      <span class="fa fa-angle-double-up"></span>
+      <span class="fa fa-angle-up"></span>
     </div>
 
+    <!-- JS -->
     <script src="js/jquery.js"></script>
-
     <script src="js/popper.min.js"></script>
-
     <script src="js/bootstrap.min.js"></script>
-
-    <script src="js/jquery-ui.js"></script>
-
     <script src="js/jquery.fancybox.js"></script>
-
-    <script src="js/appear.js"></script>
-
     <script src="js/owl.js"></script>
-
     <script src="js/jquery.countdown.js"></script>
-
     <script src="js/wow.js"></script>
-
+    <script src="js/appear.js"></script>
     <script src="js/script.js"></script>
-
-    <!-- Color Setting -->
-
-    <script src="js/color-settings.js"></script>
   </body>
 </html>
