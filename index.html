@@ -325,6 +325,35 @@
       .episode-card p {
         color: #444 !important;
       }
+
+      /* Disabled button styles */
+      .btn-outline-podcast.disabled,
+      .btn-outline-podcast:disabled {
+        background-color: #e9ecef !important;
+        border-color: #ced4da !important;
+        color: #6c757d !important;
+        cursor: not-allowed !important;
+        pointer-events: none; /* Prevents click and hover effects */
+      }
+
+      .btn-outline-podcast.disabled:hover,
+      .btn-outline-podcast:disabled:hover {
+        background-color: #e9ecef !important;
+        border-color: #ced4da !important;
+        color: #6c757d !important;
+      }
+
+      .play-button.disabled {
+        background: #adb5bd !important;
+        color: #f8f9fa !important;
+        cursor: not-allowed !important;
+        opacity: 0.65 !important; /* Keep it slightly visible but clearly disabled */
+        pointer-events: none; /* Prevents click and hover effects */
+      }
+
+      .episode-image:hover .play-button.disabled {
+        opacity: 0.65 !important; /* Ensure hover doesn't make it appear active */
+      }
     </style>
   </head>
 
@@ -499,7 +528,7 @@
       <section class="podcast-section">
         <div class="auto-container">
           <div class="section-heading text-center">
-            <h2>Recent Episodes</h2>
+            <h2>Upcoming Episodes</h2>
           </div>
 
           <div class="row">
@@ -511,7 +540,7 @@
                     src="/images/patterns/AfricanMarkets.jpeg"
                     alt="Episode 1"
                   />
-                  <div class="play-button">
+                  <div class="play-button disabled">
                     <i class="fas fa-play"></i>
                   </div>
                 </div>
@@ -522,13 +551,13 @@
                   </h3>
                   <div class="episode-meta">
                     <span><i class="far fa-clock"></i> 45 min</span>
-                    <span><i class="far fa-calendar"></i> Apr 15, 2025</span>
+                    <span><i class="far fa-calendar"></i> June, 2025</span>
                   </div>
                   <p>
                     Exploring how innovators are creating technology solutions
                     that address Africa's unique challenges and opportunities.
                   </p>
-                  <a href="#" class="btn btn-outline-podcast mt-3"
+                  <a class="btn btn-outline-podcast mt-3 disabled"
                     >Listen Now</a
                   >
                 </div>
@@ -543,7 +572,7 @@
                     src="/images/patterns/AfricanStartups.jpg"
                     alt="Episode 2"
                   />
-                  <div class="play-button">
+                  <div class="play-button disabled">
                     <i class="fas fa-play"></i>
                   </div>
                 </div>
@@ -554,14 +583,14 @@
                   </h3>
                   <div class="episode-meta">
                     <span><i class="far fa-clock"></i> 52 min</span>
-                    <span><i class="far fa-calendar"></i> Apr 8, 2025</span>
+                    <span><i class="far fa-calendar"></i> June, 2025</span>
                   </div>
                   <p>
                     A deep dive into the funding landscape for African startups
                     and how entrepreneurs can position themselves for
                     investment.
                   </p>
-                  <a href="#" class="btn btn-outline-podcast mt-3"
+                  <a class="btn btn-outline-podcast mt-3 disabled"
                     >Listen Now</a
                   >
                 </div>
@@ -576,7 +605,7 @@
                     src="/images/patterns/WomenInnovationAfrica.jpg"
                     alt="Episode 3"
                   />
-                  <div class="play-button">
+                  <div class="play-button disabled">
                     <i class="fas fa-play"></i>
                   </div>
                 </div>
@@ -587,13 +616,13 @@
                   </h3>
                   <div class="episode-meta">
                     <span><i class="far fa-clock"></i> 49 min</span>
-                    <span><i class="far fa-calendar"></i> Apr 1, 2025</span>
+                    <span><i class="far fa-calendar"></i> June, 2025</span>
                   </div>
                   <p>
                     Highlighting female entrepreneurs and leaders who are
                     shaping Africa's innovation ecosystem and breaking barriers.
                   </p>
-                  <a href="#" class="btn btn-outline-podcast mt-3"
+                  <a class="btn btn-outline-podcast mt-3 disabled"
                     >Listen Now</a
                   >
                 </div>
@@ -601,9 +630,9 @@
             </div>
           </div>
 
-          <div class="text-center mt-5">
+          <!-- <div class="text-center mt-5">
             <a href="#" class="btn btn-podcast">View All Episodes</a>
-          </div>
+          </div> -->
         </div>
       </section>
 
@@ -612,11 +641,12 @@
         <div class="auto-container">
           <div class="row align-items-center">
             <div class="col-lg-5 col-md-6">
-              <div class="host-image">
+              <div class="host-image" style="overflow: hidden; height: auto">
                 <img
                   src="/images/patterns/precious.jpg"
                   alt="Izoduwa Precious Asemota"
                   class="img-fluid"
+                  style="object-position: center top; margin-bottom: -20px"
                 />
               </div>
             </div>
@@ -658,48 +688,6 @@
         </div>
       </section>
 
-      <!-- Conference Promo Section -->
-      <section class="conference-promo">
-        <div class="auto-container">
-          <div class="row align-items-center">
-            <div class="col-lg-7 col-md-12">
-              <div class="section-heading">
-                <h2>SIC Conference 2025</h2>
-              </div>
-              <h3>May 16th - 17th, 2025 | Benin City, Nigeria</h3>
-              <p class="mb-4">
-                Join a dynamic gathering of visionaries where forward-thinkers,
-                change-makers, entrepreneurs, and professionals gather to create
-                impactful social and business solutions.
-              </p>
-              <p class="mb-4">
-                SIC focuses on four key pillars that shape our society and
-                future: Social Change, Technology and Innovation, Business and
-                Entrepreneurship, and Marketplace – connecting faith with
-                workplace success.
-              </p>
-              <div class="btn-box mt-4">
-                <a href="conference.html" class="btn btn-podcast me-3"
-                  >Learn More</a
-                >
-                <a href="register.html" class="btn btn-outline-podcast"
-                  >Register Now</a
-                >
-              </div>
-            </div>
-            <div class="col-lg-5 col-md-12 mt-5 mt-lg-0">
-              <div class="image-box">
-                <img
-                  src="/api/placeholder/500/350"
-                  alt="SIC Conference"
-                  class="img-fluid rounded-lg shadow-lg"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- Main Footer -->
       <footer class="main-footer">
         <!--Widgets Section-->
@@ -716,16 +704,18 @@
                     <div class="footer-widget about-widget">
                       <div class="logo">
                         <a href="index.html"
-                          ><img src="images/logo.png" alt="SIC 2025 Logo"
+                          ><img src="images/logo.png" alt="SIC Podcast Logo"
                         /></a>
                       </div>
 
                       <div class="text">
                         <p>
-                          The Scale and Ideas Conference 2025 is a premier event
-                          focused on Social Change, Technology and Innovation,
-                          Business and Entrepreneurship, and Marketplace (Faith
-                          in the Workplace). Join us in shaping the future!
+                          The Scale and Ideas Podcast explores Africa's
+                          innovation landscape. Hosted by Izoduwa Precious
+                          Asemota, we dive into the parameters and what it takes
+                          to shape Africa's digital and entrepreneurial future,
+                          equipping you with insights, tools, and inspiration to
+                          scale what matters.
                         </p>
                       </div>
 
@@ -858,7 +848,7 @@
           <div class="auto-container">
             <div class="inner-container clearfix">
               <div class="copyright-text">
-                <p>© 2025 Scale and Ideas Conference. All Rights Reserved.</p>
+                <p>© 2025 Scale and Ideas Podcast. All Rights Reserved.</p>
               </div>
             </div>
           </div>
