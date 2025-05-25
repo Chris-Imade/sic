@@ -8,19 +8,23 @@
 
     <!-- Stylesheets -->
 
-    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="../css/bootstrap.css" rel="stylesheet" />
 
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
 
-    <link href="css/responsive.css" rel="stylesheet" />
+    <link href="../css/responsive.css" rel="stylesheet" />
 
     <!--Color Switcher Mockup-->
 
-    <link href="css/color-switcher-design.css" rel="stylesheet" />
+    <link href="../css/color-switcher-design.css" rel="stylesheet" />
 
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../images/favicon.png"
+      type="image/x-icon"
+    />
 
-    <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="../images/favicon.png" type="image/x-icon" />
 
     <!-- Responsive -->
 
@@ -36,6 +40,11 @@
     ><![endif]-->
 
     <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
 
     <style>
       .registration-section {
@@ -130,130 +139,123 @@
 
       <span class="header-span"></span>
 
-      <!-- Main Header-->
+     <!-- Main Header-->
+     <header
+     class="main-header header-style-two"
+     style="
+       backdrop-filter: blur(10px);
+       -webkit-backdrop-filter: blur(10px);
+       /* background-color: rgb(255, 255, 255); */
+     "
+   >
+     <div class="main-box">
+       <div class="auto-container clearfix">
+         <div class="logo-box">
+           <div class="logo">
+             <a href="/"
+               ><img
+                 src="../images/logo-2.png"
+                 alt=""
+                 title=""
+                 style="width: 150px"
+             /></a>
+           </div>
+         </div>
 
-      <header class="main-header header-style-two">
-        <div class="main-box">
-          <div class="auto-container clearfix">
-            <div class="logo-box">
-              <div class="logo">
-                <a href="index.html"
-                  ><img
-                    src="images/logo-3.png"
-                    alt=""
-                    title=""
-                    style="width: 150px"
-                /></a>
-              </div>
-            </div>
+         <!--Nav Box-->
+         <div class="nav-outer clearfix">
+           <!--Mobile Navigation Toggler-->
+           <div class="mobile-nav-toggler">
+             <span class="icon flaticon-menu"></span>
+           </div>
 
-            <!--Nav Box-->
+           <!-- Main Menu -->
+           <nav class="main-menu navbar-expand-md navbar-light">
+             <div class="navbar-header">
+               <!-- Toggle Button -->
+               <button
+                 class="navbar-toggler"
+                 type="button"
+                 data-toggle="collapse"
+                 data-target="#navbarSupportedContent"
+                 aria-controls="navbarSupportedContent"
+                 aria-expanded="false"
+                 aria-label="Toggle navigation"
+               >
+                 <span class="icon flaticon-menu-button"></span>
+               </button>
+             </div>
 
-            <div class="nav-outer clearfix">
-              <!--Mobile Navigation Toggler-->
+             <div
+               class="collapse navbar-collapse clearfix"
+               id="navbarSupportedContent"
+             >
+               <ul class="navigation clearfix">
+                 <li>
+                   <a href="/">Home</a>
+                 </li>
+                 <li class="">
+                   <a href="/conference/">Conference</a>
+                 </li>
+                 <li>
+                   <a href="/pillars/">Pillars</a>
+                 </li>
+                 <li>
+                   <a href="/speakers/">Speakers</a>
+                 </li>
+                 <li>
+                   <a href="/schedule/">Agenda</a>
+                 </li>
+                 <li>
+                   <a href="/gallery/">Showcase</a>
+                 </li>
+                 <li class="current">
+                   <a href="/register/">Register</a>
+                 </li>
+                 <li><a href="/contact/">Contact</a></li>
+               </ul>
+             </div>
+           </nav>
 
-              <div class="mobile-nav-toggler">
-                <span class="icon flaticon-menu"></span>
-              </div>
+           <!-- Main Menu End-->
 
-              <!-- Main Menu -->
+           <!-- Outer box -->
+           <div class="outer-box">
+             <!-- Button Box -->
+             <div class="btn-box">
+               <a href="/register/" class="theme-btn btn-style-one"
+                 ><span class="btn-title">Get Tickets</span></a
+               >
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
 
-              <nav class="main-menu navbar-expand-md navbar-light">
-                <div class="navbar-header">
-                  <!-- Togg le Button -->
-
-                  <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                  >
-                    <span class="icon flaticon-menu-button"></span>
-                  </button>
-                </div>
-
-                <div
-                  class="collapse navbar-collapse clearfix"
-                  id="navbarSupportedContent"
-                >
-                  <ul class="navigation clearfix">
-                    <li class="">
-                      <a href="index.html">Home</a>
-                    </li>
-
-                    <li class="">
-                      <a href="conference.html">Conference</a>
-                    </li>
-
-                    <li class="">
-                      <a href="pillars.html">Pillars</a>
-                    </li>
-
-                    <li class="">
-                      <a href="speakers.html">Speakers</a>
-                    </li>
-
-                    <li class="">
-                      <a href="schedule.html">Agenda</a>
-                    </li>
-
-                    <li class="">
-                      <a href="gallery.html">Showcase</a>
-                    </li>
-                    <li class="current">
-                      <a href="register.html">Register</a>
-                    </li>
-
-                    <li><a href="contact.html">Contact</a></li>
-                  </ul>
-                </div>
-              </nav>
-
-              <!-- Main Menu End-->
-
-              <!-- Outer box -->
-
-              <div class="outer-box">
-                <!-- Button Box -->
-
-                <div class="btn-box">
-                  <a href="register.html" class="theme-btn btn-style-one"
-                    ><span class="btn-title">Get Tickets</span></a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobile Menu  -->
-
-        <div class="mobile-menu">
-          <div class="menu-backdrop"></div>
-
-          <div class="close-btn">
-            <span class="icon flaticon-cancel-1"></span>
-          </div>
-
-          <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
-
-          <nav class="menu-box">
-            <div class="nav-logo">
-              <a href="index.html"
-                ><img src="images/logo-2.png" alt="" title=""
-              /></a>
-            </div>
-
-            <ul class="navigation clearfix">
-              <!--Keep This Empty / Menu will come through Javascript-->
-            </ul>
-          </nav>
-        </div>
-        <!-- End Mobile Menu -->
-      </header>
+     <!-- Mobile Menu  -->
+     <div class="mobile-menu">
+       <div class="menu-backdrop"></div>
+       <div class="close-btn">
+         <span class="icon flaticon-cancel-1"></span>
+       </div>
+       <nav class="menu-box">
+         <div class="nav-logo">
+           <a href="index.html"
+             ><img
+               src="../images/logo-2.png"
+               alt=""
+               title=""
+               style="width: 150px"
+           /></a>
+         </div>
+         <ul class="navigation clearfix">
+           <!--Keep This Empty / Menu will come through Javascript-->
+         </ul>
+       </nav>
+     </div>
+     <!-- End Mobile Menu -->
+   </header>
+   <!--End Main Header -->
 
       <section class="registration-section">
         <div class="auto-container">
@@ -339,8 +341,8 @@
                   >
                     <div class="footer-widget about-widget">
                       <div class="logo">
-                        <a href="index.html"
-                          ><img src="images/logo.png" alt="SIC 2025 Logo"
+                        <a href="../index.html"
+                          ><img src="../images/logo.png" alt="SIC 2025 Logo"
                         /></a>
                       </div>
 
@@ -377,12 +379,12 @@
                     <div class="footer-widget useful-links">
                       <h2 class="widget-title">Quick Links</h2>
                       <ul class="user-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="conference.html">Conference</a></li>
-                        <li><a href="agenda.html">Agenda</a></li>
-                        <li><a href="speakers.html">Speakers</a></li>
-                        <li><a href="registration.html">Register</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="../conference/">Conference</a></li>
+                        <li><a href="../schedule/">Agenda</a></li>
+                        <li><a href="../speakers/">Speakers</a></li>
+                        <li><a href="./index.html">Register</a></li>
+                        <li><a href="../contact/">Contact</a></li>
                       </ul>
                     </div>
                   </div>
@@ -436,39 +438,7 @@
                   <!--Footer Column-->
                   <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                     <div class="footer-widget instagram-widget">
-                      <h2 class="widget-title">Our Gallery</h2>
-                      <div class="widget-content">
-                        <div class="outer clearfix">
-                          <figure class="image">
-                            <a
-                              href="images/gallery/1.jpg"
-                              class="lightbox-image"
-                              ><img src="images/resource/gw-1.jpg" alt=""
-                            /></a>
-                          </figure>
-                          <figure class="image">
-                            <a
-                              href="images/gallery/2.jpg"
-                              class="lightbox-image"
-                              ><img src="images/resource/gw-2.jpg" alt=""
-                            /></a>
-                          </figure>
-                          <figure class="image">
-                            <a
-                              href="images/gallery/3.jpg"
-                              class="lightbox-image"
-                              ><img src="images/resource/gw-3.jpg" alt=""
-                            /></a>
-                          </figure>
-                          <figure class="image">
-                            <a
-                              href="images/gallery/4.jpg"
-                              class="lightbox-image"
-                              ><img src="images/resource/gw-4.jpg" alt=""
-                            /></a>
-                          </figure>
-                        </div>
-                      </div>
+                     
                     </div>
                   </div>
                 </div>
@@ -604,26 +574,26 @@
       }
     </script>
 
-    <script src="js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
 
-    <script src="js/popper.min.js"></script>
+    <script src="../js/popper.min.js"></script>
 
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
-    <script src="js/jquery-ui.js"></script>
+    <script src="../js/jquery-ui.js"></script>
 
-    <script src="js/jquery.fancybox.js"></script>
+    <script src="../js/jquery.fancybox.js"></script>
 
-    <script src="js/appear.js"></script>
+    <script src="../js/appear.js"></script>
 
-    <script src="js/owl.js"></script>
+    <script src="../js/owl.js"></script>
 
-    <script src="js/wow.js"></script>
+    <script src="../js/wow.js"></script>
 
-    <script src="js/script.js"></script>
+    <script src="../js/script.js"></script>
 
     <!-- Color Setting -->
 
-    <script src="js/color-settings.js"></script>
+    <script src="../js/color-settings.js"></script>
   </body>
 </html>
