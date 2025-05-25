@@ -21,4 +21,5 @@
 /buy-ticket /buy-ticket.html 200
 /blog-grid /blog-grid.html 200
 /blog-sidebar /blog-sidebar.html 200
-/blog-single /blog-single.html 200 
+/blog-single /blog-single.html 200
+/ /index.html 200 
