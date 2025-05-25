@@ -43,22 +43,34 @@ export async function onRequest(context) {
 
     // If the path exists in our map, serve the corresponding HTML file
     if (urlMap[path]) {
-      console.log("Serving mapped file:", urlMap[path]);
-      // For custom domain, we need to handle the path differently
-      const targetPath = hostname.includes("pages.dev")
-        ? urlMap[path]
-        : path + ".html";
-      const response = await context.env.ASSETS.fetch(url.origin + targetPath);
+      console.log("Found path in urlMap:", path);
+      console.log("Will serve file:", urlMap[path]);
+
+      // Try to fetch the file directly
+      const response = await context.env.ASSETS.fetch(
+        url.origin + urlMap[path]
+      );
 
       if (!response.ok) {
-        console.error("Failed to fetch mapped file:", targetPath);
-        return new Response("Not Found", { status: 404 });
+        console.error("Failed to fetch mapped file:", urlMap[path]);
+        // Try alternative path for custom domain
+        const altPath = path + ".html";
+        console.log("Trying alternative path:", altPath);
+        const altResponse = await context.env.ASSETS.fetch(
+          url.origin + altPath
+        );
+
+        if (!altResponse.ok) {
+          console.error("Failed to fetch alternative path:", altPath);
+          return new Response("Not Found", { status: 404 });
+        }
+        return altResponse;
       }
       return response;
     }
 
     // If no mapping exists, try to serve the path as is
-    console.log("Attempting to serve path as is:", path);
+    console.log("No mapping found, trying to serve path as is:", path);
     const response = await context.env.ASSETS.fetch(context.request.url);
     if (!response.ok) {
       console.error("Failed to serve path:", path);
