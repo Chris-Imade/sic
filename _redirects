@@ -1,3 +1,10 @@
+# Handle trailing slashes
+/* /:splat 301
+/*/ /:splat 301
+
+# Handle 404s
+/* /index.html 404
+
 /conference /conference.html 200
 /speakers /speakers.html 200
 /schedule /schedule.html 200
