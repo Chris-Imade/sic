@@ -2,8 +2,9 @@ export async function onRequest(context) {
   try {
     const url = new URL(context.request.url);
     const path = url.pathname;
+    const hostname = url.hostname;
 
-    console.log("Processing request for path:", path);
+    console.log("Processing request for path:", path, "on hostname:", hostname);
 
     // If the path ends with .html, redirect to the clean URL
     if (path.endsWith(".html")) {
@@ -43,11 +44,14 @@ export async function onRequest(context) {
     // If the path exists in our map, serve the corresponding HTML file
     if (urlMap[path]) {
       console.log("Serving mapped file:", urlMap[path]);
-      const response = await context.env.ASSETS.fetch(
-        url.origin + urlMap[path]
-      );
+      // For custom domain, we need to handle the path differently
+      const targetPath = hostname.includes("pages.dev")
+        ? urlMap[path]
+        : path + ".html";
+      const response = await context.env.ASSETS.fetch(url.origin + targetPath);
+
       if (!response.ok) {
-        console.error("Failed to fetch mapped file:", urlMap[path]);
+        console.error("Failed to fetch mapped file:", targetPath);
         return new Response("Not Found", { status: 404 });
       }
       return response;
