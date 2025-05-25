@@ -1,6 +1,26 @@
-# Handle trailing slashes
-/* /:splat 301
-/*/ /:splat 301
+# Handle directory paths
+/conference/ /conference/index.html 200
+/speakers/ /speakers/index.html 200
+/schedule/ /schedule/index.html 200
+/register/ /register/index.html 200
+/contact/ /contact/index.html 200
+/pillars/ /pillars/index.html 200
+/gallery/ /gallery/index.html 200
+/about-us/ /about-us/index.html 200
+/blog/ /blog/index.html 200
+/blog/sidebar/ /blog/sidebar/index.html 200
+/blog/single/ /blog/single/index.html 200
+
+# Handle root paths without trailing slash
+/conference /conference/ 301
+/speakers /speakers/ 301
+/schedule /schedule/ 301
+/register /register/ 301
+/contact /contact/ 301
+/pillars /pillars/ 301
+/gallery /gallery/ 301
+/about-us /about-us/ 301
+/blog /blog/ 301
 
 # Handle 404s
 /* /index.html 404
