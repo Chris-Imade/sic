@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>SIC 2025 - Partnership Showcase</title>
+
+    <!-- Stylesheets -->
+
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+
+    <link href="../css/style.css" rel="stylesheet" />
+
+    <link href="../css/responsive.css" rel="stylesheet" />
+
+    <!--Color Switcher Mockup-->
+
+    <link href="../css/color-switcher-design.css" rel="stylesheet" />
+
+    <link
+      rel="shortcut icon"
+      href="../images/favicon.png"
+      type="image/x-icon"
+    />
+
+    <link rel="icon" href="../images/favicon.png" type="image/x-icon" />
+
+    <!-- Responsive -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+
+    <!--[if lt IE 9
+      ]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script
+    ><![endif]-->
+
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+    <style>
+      .showcase-section {
+        padding-bottom: 80px;
+        background: #ffffff;
+      }
+
+      .sec-title {
+        margin: 120px 0 60px;
+        position: relative;
+      }
+
+      .sec-title .title {
+        display: block;
+        font-size: 18px;
+        font-weight: 500;
+        color: #ff7200;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        opacity: 0.9;
+        position: relative;
+      }
+
+      .sec-title .title::after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 2px;
+        background: #ff7200;
+        margin: 15px auto 0;
+      }
+
+      .sec-title h2 {
+        font-size: 42px;
+        font-weight: 700;
+        color: #1a1a1a;
+        line-height: 1.2;
+        margin: 0;
+        background: linear-gradient(45deg, #1a1a1a, #333333);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .showcase-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+      }
+
+      .feature-card {
+        background: #ffffff;
+        padding: 40px 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .icon-box {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-bottom: 25px;
+      }
+
+      .gradient-bg-1 {
+        background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+      }
+      .gradient-bg-2 {
+        background: linear-gradient(45deg, #4facfe, #00f2fe);
+      }
+      .gradient-bg-3 {
+        background: linear-gradient(45deg, #7f7fd5, #91eae4);
+      }
+
+      .icon-box i {
+        font-size: 28px;
+        color: #ffffff;
+      }
+
+      .feature-card h3 {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #1a1a1a;
+      }
+
+      .feature-card p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #666666;
+        margin: 0;
+      }
+
+      .contact-container {
+        background: linear-gradient(45deg, #1a1a1a, #333333);
+        border-radius: 12px;
+        padding: 60px 40px;
+        text-align: center;
+        color: #ffffff;
+      }
+
+      .contact-content h3 {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .contact-content p {
+        font-size: 16px;
+        margin-bottom: 30px;
+        opacity: 0.9;
+      }
+
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        opacity: 0.9;
+        transition: opacity 0.3s ease;
+      }
+
+      .contact-link:hover {
+        opacity: 1;
+      }
+
+      .theme-btn.btn-style-one {
+        background: #ff7200;
+        color: #ffffff;
+        padding: 15px 35px;
+        border-radius: 30px;
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.3s ease;
+      }
+
+      .theme-btn.btn-style-one:hover {
+        background: #d61472;
+      }
+
+      @media (max-width: 768px) {
+        .showcase-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-info {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .sec-title {
+          margin: 80px 0 40px;
+        }
+
+        .sec-title .title {
+          font-size: 16px;
+        }
+
+        .sec-title h2 {
+          font-size: 32px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <!-- Header span -->
+
+      <!-- Header Span -->
+
+      <span class="header-span"></span>
+
+      <!-- Main Header-->
+      <header class="main-header header">
+        <div class="main-box">
+          <div class="auto-container clearfix">
+            <div class="logo-box">
+              <div class="logo">
+                <a href="/"
+                  ><img
+                    src="../images/logo.png"
+                    alt=""
+                    title=""
+                    style="width: 150px"
+                /></a>
+              </div>
+            </div>
+
+            <!--Nav Box-->
+            <div class="nav-outer clearfix">
+              <!--Mobile Navigation Toggler-->
+              <div class="mobile-nav-toggler">
+                <span class="icon flaticon-menu"></span>
+              </div>
+
+              <!-- Main Menu -->
+              <nav class="main-menu navbar-expand-md navbar-light">
+                <div class="navbar-header">
+                  <!-- Toggle Button -->
+                  <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <span class="icon flaticon-menu-button"></span>
+                  </button>
+                </div>
+
+                <div
+                  class="collapse navbar-collapse clearfix"
+                  id="navbarSupportedContent"
+                >
+                  <ul class="navigation clearfix">
+                    <li class="">
+                      <a href="/">Home</a>
+                    </li>
+                    <li class="">
+                      <a href="/conference/">Conference</a>
+                    </li>
+                    <li class="">
+                      <a href="/pillars/">Pillars</a>
+                    </li>
+                    <li class="">
+                      <a href="/speakers/">Speakers</a>
+                    </li>
+                    <li class="">
+                      <a href="/schedule/">Agenda</a>
+                    </li>
+                    <li class="current">
+                      <a href="/showcase/">Showcase</a>
+                    </li>
+                    <li class="">
+                      <a href="/register/">Register</a>
+                    </li>
+                    <li><a href="/contact/">Contact</a></li>
+                  </ul>
+                </div>
+              </nav>
+
+              <!-- Main Menu End-->
+
+              <!-- Outer box -->
+              <div class="outer-box">
+                <!-- Button Box -->
+                <div class="btn-box">
+                  <a href="/register/" class="theme-btn btn-style-one"
+                    ><span class="btn-title">Register</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+          <div class="menu-backdrop"></div>
+          <div class="close-btn">
+            <span class="icon flaticon-cancel-1"></span>
+          </div>
+          <nav class="menu-box">
+            <div class="nav-logo">
+              <a href="/"
+                ><img
+                  src="../images/logo-2.png"
+                  alt=""
+                  title=""
+                  style="width: 150px"
+              /></a>
+            </div>
+            <ul class="navigation clearfix">
+              <!--Keep This Empty / Menu will come through Javascript-->
+            </ul>
+          </nav>
+        </div>
+        <!-- End Mobile Menu -->
+      </header>
+      <!--End Main Header -->
+
+      <!--Page Title-->
+
+      <section
+        class="page-title"
+        style="background-image: url(../images/background/5.jpg)"
+      >
+        <div class="auto-container">
+          <h1>Partnership Showcase</h1>
+
+          <ul class="bread-crumb clearfix">
+            <li><a href="/">Home</a></li>
+
+            <li>Partner With Us</li>
+          </ul>
+        </div>
+      </section>
+
+      <!--End Page Title-->
+
+      <!-- Showcase Section -->
+
+      <section class="showcase-section">
+        <div class="auto-container">
+          <div class="sec-title text-center">
+            <span class="title">Partner With Us</span>
+            <h2>Showcase Your Brand at SIC</h2>
+          </div>
+
+          <div class="showcase-grid">
+            <!-- Feature Card -->
+            <div class="feature-card wow fadeInUp">
+              <div class="icon-box gradient-bg-1">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3>Growth Opportunities</h3>
+              <p>
+                Connect with Africa's fastest-growing network of innovators and
+                entrepreneurs.
+              </p>
+            </div>
+
+            <!-- Feature Card -->
+            <div class="feature-card wow fadeInUp" data-wow-delay="0.2s">
+              <div class="icon-box gradient-bg-2">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <h3>Strategic Partnerships</h3>
+              <p>
+                Form valuable alliances with industry leaders and
+                decision-makers.
+              </p>
+            </div>
+
+            <!-- Feature Card -->
+            <div class="feature-card wow fadeInUp" data-wow-delay="0.4s">
+              <div class="icon-box gradient-bg-3">
+                <i class="fas fa-bullhorn"></i>
+              </div>
+              <h3>Brand Visibility</h3>
+              <p>
+                Showcase your brand to a highly engaged audience of
+                change-makers.
+              </p>
+            </div>
+          </div>
+
+          <!-- Contact Section -->
+          <div class="contact-container wow fadeInUp" data-wow-delay="0.6s">
+            <div class="contact-content">
+              <h3>Ready to Partner With Us?</h3>
+              <p>
+                Join Africa's premier innovation conference and position your
+                brand for success.
+              </p>
+              <div class="contact-info">
+                <a href="mailto:projects@cyan.academy" class="contact-link">
+                  <i class="fas fa-envelope"></i>
+                  projects@cyan.academy
+                </a>
+                <a href="tel:+2348132120048" class="contact-link">
+                  <i class="fas fa-phone"></i>
+                  +234 813 212 0048
+                </a>
+                <a href="tel:+2348132120048" class="contact-link">
+                  <i class="fas fa-phone"></i>
+                  +234 809 563 0414
+                </a>
+              </div>
+              <a href="/contact/" class="theme-btn btn-style-one"
+                >Get Started</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--End Showcase Section -->
+
+      <!-- Main Footer -->
+
+      <footer class="main-footer">
+        <!--Widgets Section-->
+        <div class="widgets-section">
+          <div class="auto-container">
+            <div class="row">
+              <!--Big Column-->
+              <div class="big-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                <div class="row">
+                  <!--Footer Column-->
+                  <div
+                    class="footer-column col-xl-7 col-lg-6 col-md-6 col-sm-12"
+                  >
+                    <div class="footer-widget about-widget">
+                      <div class="logo">
+                        <a href="../index.html"
+                          ><img src="../images/logo.png" alt="SIC 2025 Logo"
+                        /></a>
+                      </div>
+
+                      <div class="text">
+                        <p>
+                          The Scale and Ideas Conference 2025 is a premier event
+                          focused on Social Change, Technology and Innovation,
+                          Business and Entrepreneurship, and Marketplace (Faith
+                          in the Workplace). Join us in shaping the future!
+                        </p>
+                      </div>
+
+                      <ul class="social-icon-one social-icon-colored">
+                        <li>
+                          <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fab fa-youtube"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!--Footer Column-->
+                  <div
+                    class="footer-column col-xl-5 col-lg-6 col-md-6 col-sm-12"
+                  >
+                    <div class="footer-widget useful-links">
+                      <h2 class="widget-title">Quick Links</h2>
+                      <ul class="user-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/conference/">Conference</a></li>
+                        <li><a href="/schedule/">Agenda</a></li>
+                        <li><a href="/speakers/">Speakers</a></li>
+                        <li><a href="/register/">Register</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--Big Column-->
+              <div class="big-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                <div class="row">
+                  <!--Footer Column-->
+                  <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                    <div class="footer-widget contact-widget">
+                      <h2 class="widget-title">Contact Us</h2>
+                      <div class="widget-content">
+                        <ul class="contact-list">
+                          <li>
+                            <span class="icon flaticon-clock"></span>
+                            <div class="text">Mon - Fri: 09:00 - 18:00</div>
+                          </li>
+                          <li>
+                            <span class="icon flaticon-phone"></span>
+                            <div class="text">
+                              <a href="tel:+2348132120048">+234 813 212 0048</a>
+                            </div>
+                          </li>
+                          <li>
+                            <span class="icon flaticon-phone"></span>
+                            <div class="text">
+                              <a href="tel:+2348095630414">+234 809 563 0414</a>
+                            </div>
+                          </li>
+                          <li>
+                            <span class="icon flaticon-paper-plane"></span>
+                            <div class="text">
+                              <a href="mailto:projects@cyan.academy"
+                                >projects@cyan.academy</a
+                              >
+                            </div>
+                          </li>
+                          <li>
+                            <span class="icon flaticon-worldwide"></span>
+                            <div class="text">
+                              Nigeria (Physical & Virtual Event)
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Footer Column-->
+                  <div class="footer-column col-lg-6 col-md-6 col-sm-12"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Footer Bottom-->
+        <div class="footer-bottom">
+          <div class="auto-container">
+            <div class="inner-container clearfix">
+              <div class="copyright-text">
+                <p>© 2025 Scale and Ideas Conference. All Rights Reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- End Footer -->
+    </div>
+
+    <!--End pagewrapper-->
+
+    <!--Search Popup-->
+
+    <div id="search-popup" class="search-popup">
+      <div class="close-search theme-btn">
+        <span class="fas fa-window-close"></span>
+      </div>
+
+      <div class="popup-inner">
+        <div class="overlay-layer"></div>
+
+        <div class="search-form">
+          <form method="post" action="index.html">
+            <div class="form-group">
+              <fieldset>
+                <input
+                  type="search"
+                  class="form-control"
+                  name="search-input"
+                  value=""
+                  placeholder="Search Here"
+                  required
+                />
+
+                <input type="submit" value="Search Now!" class="theme-btn" />
+              </fieldset>
+            </div>
+          </form>
+
+          <br />
+
+          <h3>Recent Search Keywords</h3>
+
+          <ul class="recent-searches">
+            <li><a href="#">Partnership</a></li>
+            <li><a href="#">Sponsorship</a></li>
+            <li><a href="#">Innovation</a></li>
+            <li><a href="#">Business</a></li>
+            <li><a href="#">Conference</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!--Scroll to top-->
+
+    <div class="scroll-to-top scroll-to-target" data-target="html">
+      <span class="fa fa-angle-double-up"></span>
+    </div>
+
+    <script src="../js/jquery.js"></script>
+
+    <script src="../js/popper.min.js"></script>
+
+    <script src="../js/bootstrap.min.js"></script>
+
+    <script src="../js/jquery-ui.js"></script>
+
+    <script src="../js/jquery.fancybox.js"></script>
+
+    <script src="../js/appear.js"></script>
+
+    <script src="../js/owl.js"></script>
+
+    <script src="../js/wow.js"></script>
+
+    <script src="../js/script.js"></script>
+
+    <!-- Color Setting -->
+
+    <script src="../js/color-settings.js"></script>
+
+    <!--Google Map APi Key-->
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPH8h1UpcK01BdcvoZeOzq-_wJqRxN1Pc"></script>
+
+    <script src="js/map-script.js"></script>
+
+    <!--End Google Map APi-->
+  </body>
+</html>

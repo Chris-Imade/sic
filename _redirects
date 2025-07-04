@@ -1,0 +1,50 @@
+# Handle directory paths
+/conference/ /conference/index.html 200
+/speakers/ /speakers/index.html 200
+/schedule/ /schedule/index.html 200
+/register/ /register/index.html 200
+/contact/ /contact/index.html 200
+/pillars/ /pillars/index.html 200
+/gallery/ /gallery/index.html 200
+/about-us/ /about-us/index.html 200
+/blog/ /blog/index.html 200
+/blog/sidebar/ /blog/sidebar/index.html 200
+/blog/single/ /blog/single/index.html 200
+
+# Handle root paths without trailing slash
+/conference /conference/ 301
+/speakers /speakers/ 301
+/schedule /schedule/ 301
+/register /register/ 301
+/contact /contact/ 301
+/pillars /pillars/ 301
+/gallery /gallery/ 301
+/about-us /about-us/ 301
+/blog /blog/ 301
+
+# Handle 404s
+/* /index.html 404
+
+/conference /conference.html 200
+/speakers /speakers.html 200
+/schedule /schedule.html 200
+/detail-yanmoe /detail-yanmoe.html 200
+/detail-casaba /detail-casaba.html 200
+/detail-asemota /detail-asemota.html 200
+/detail-izoduwa /detail-izoduwa.html 200
+/register /register.html 200
+/contact /contact.html 200
+/pillars /pillars.html 200
+/coming-soon /coming-soon.html 200
+/gallery /gallery.html 200
+/about-us /about-us.html 200
+/speakers-detail /speakers-detail.html 200
+/pricing /pricing.html 200
+/login /login.html 200
+/error-page /error-page.html 200
+/event-detail /event-detail.html 200
+/faqs /faqs.html 200
+/buy-ticket /buy-ticket.html 200
+/blog-grid /blog-grid.html 200
+/blog-sidebar /blog-sidebar.html 200
+/blog-single /blog-single.html 200 

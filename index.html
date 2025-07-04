@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>SIC - Unleashing Potential for Impact</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+
+    <!-- Stylesheets -->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+    <link href="css/color-switcher-design.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Podcast-specific styles */
+      .podcast-section {
+        background-color: #f8f9fa;
+        padding: 80px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .podcast-hero {
+        background: linear-gradient(135deg, #382e61 0%, #131335 100%);
+        color: #fff;
+        padding: 100px 0 70px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .podcast-hero .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("images/patterns/podcast.jpg") repeat;
+        opacity: 0.1;
+      }
+
+      .podcast-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        margin-bottom: 30px;
+        overflow: hidden;
+      }
+
+      .podcast-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+      }
+
+      .podcast-card .card-img {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .podcast-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .podcast-card:hover img {
+        transform: scale(1.05);
+      }
+
+      .podcast-card .card-body {
+        padding: 25px;
+      }
+
+      .podcast-card .card-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+
+      .podcast-platforms {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .platform-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #f8f9fa;
+        color: #131335;
+        font-size: 22px;
+        transition: all 0.3s ease;
+      }
+
+      .platform-icon:hover {
+        background: #131335;
+        color: #fff;
+        transform: translateY(-3px);
+      }
+
+      .host-section {
+        padding: 80px 0;
+        background: #fff;
+      }
+
+      .host-image {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+
+      .host-image img {
+        width: 100%;
+        height: auto;
+      }
+
+      .conference-promo {
+        background: #f1f5f9;
+        padding: 60px 0;
+        position: relative;
+      }
+
+      .section-heading {
+        position: relative;
+        margin-bottom: 50px;
+      }
+
+      .section-heading:after {
+        content: "";
+        display: block;
+        width: 70px;
+        height: 4px;
+        background: #131335;
+        margin-top: 15px;
+      }
+
+      .section-heading.text-center:after {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .btn-podcast {
+        background: #131335;
+        color: #fff;
+        border-radius: 30px;
+        padding: 12px 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 2px solid #131335;
+      }
+
+      .btn-podcast:hover {
+        background: transparent;
+        color: #131335;
+      }
+
+      .btn-outline-podcast {
+        background: transparent;
+        color: #131335;
+        border-radius: 30px;
+        padding: 12px 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 2px solid #131335;
+      }
+
+      .btn-outline-podcast:hover {
+        background: #131335;
+        color: #fff;
+      }
+
+      .episode-card {
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+        transition: all 0.3s ease;
+      }
+
+      .episode-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+
+      .episode-card .card-body {
+        padding: 25px;
+      }
+
+      .episode-card .episode-number {
+        background: #131335;
+        color: #fff;
+        display: inline-block;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .episode-card .episode-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        line-height: 1.4;
+      }
+
+      .episode-card .episode-meta {
+        display: flex;
+        align-items: center;
+        color: #6c757d;
+        margin-bottom: 20px;
+      }
+
+      .episode-card .episode-meta i {
+        margin-right: 5px;
+      }
+
+      .episode-card .episode-meta span {
+        margin-right: 15px;
+      }
+
+      .play-button {
+        width: 60px;
+        height: 60px;
+        background: #131335;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 24px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      .episode-image {
+        position: relative;
+      }
+
+      .episode-image:hover .play-button {
+        opacity: 1;
+      }
+
+      .episode-image img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+      }
+
+      /* Enhanced text readability */
+      p,
+      .text,
+      li,
+      .contact-list li {
+        color: #333 !important;
+        font-weight: 400;
+      }
+
+      .banner-section .content-box .text,
+      .about-section .text,
+      .conference-promo p,
+      .podcast-hero p {
+        color: #333 !important;
+        font-weight: 400;
+      }
+
+      .dark-section p,
+      .dark-section .text,
+      .main-footer p,
+      .main-footer .text,
+      .podcast-hero p {
+        color: #f0f0f0 !important;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #222 !important;
+      }
+
+      .main-footer h2,
+      .podcast-hero h1,
+      .podcast-hero h2 {
+        color: #fff !important;
+      }
+
+      .btn-title {
+        font-weight: 600;
+      }
+
+      /* Make sure text in dark sections remains visible */
+      .podcast-hero,
+      .main-footer {
+        color: #f0f0f0;
+      }
+
+      .episode-card .episode-title {
+        color: #222 !important;
+      }
+
+      .episode-card p {
+        color: #444 !important;
+      }
+
+      /* Disabled button styles */
+      .btn-outline-podcast.disabled,
+      .btn-outline-podcast:disabled {
+        background-color: #e9ecef !important;
+        border-color: #ced4da !important;
+        color: #6c757d !important;
+        cursor: not-allowed !important;
+        pointer-events: none; /* Prevents click and hover effects */
+      }
+
+      .btn-outline-podcast.disabled:hover,
+      .btn-outline-podcast:disabled:hover {
+        background-color: #e9ecef !important;
+        border-color: #ced4da !important;
+        color: #6c757d !important;
+      }
+
+      .play-button.disabled {
+        background: #adb5bd !important;
+        color: #f8f9fa !important;
+        cursor: not-allowed !important;
+        opacity: 0.65 !important; /* Keep it slightly visible but clearly disabled */
+        pointer-events: none; /* Prevents click and hover effects */
+      }
+
+      .episode-image:hover .play-button.disabled {
+        opacity: 0.65 !important; /* Ensure hover doesn't make it appear active */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <!-- Main Header-->
+      <header class="main-header">
+        <div class="main-box">
+          <div class="auto-container clearfix">
+            <div class="logo-box">
+              <div class="logo">
+                <a href="index.html"
+                  ><img
+                    src="images/logo.png"
+                    alt=""
+                    title=""
+                    style="width: 150px"
+                /></a>
+              </div>
+            </div>
+
+            <!--Nav Box-->
+            <div class="nav-outer clearfix">
+              <!--Mobile Navigation Toggler-->
+              <div class="mobile-nav-toggler">
+                <span class="icon flaticon-menu"></span>
+              </div>
+
+              <!-- Main Menu -->
+              <nav class="main-menu navbar-expand-md navbar-light">
+                <div class="navbar-header">
+                  <!-- Toggle Button -->
+                  <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <span class="icon flaticon-menu-button"></span>
+                  </button>
+                </div>
+
+                <div
+                  class="collapse navbar-collapse clearfix"
+                  id="navbarSupportedContent"
+                >
+                  <ul class="navigation clearfix">
+                    <li class="current">
+                      <a href="/">Home</a>
+                    </li>
+                    <li class="">
+                      <a href="/conference/">Conference</a>
+                    </li>
+                    <li class="">
+                      <a href="/pillars/">Pillars</a>
+                    </li>
+                    <li class="">
+                      <a href="/speakers/">Speakers</a>
+                    </li>
+                    <li class="">
+                      <a href="/schedule/">Agenda</a>
+                    </li>
+                    <li class="">
+                      <a href="/showcase/">Showcase</a>
+                    </li>
+                    <li class="">
+                      <a href="/register/">Register</a>
+                    </li>
+                    <li><a href="/contact/">Contact</a></li>
+                  </ul>
+                </div>
+              </nav>
+
+              <!-- Main Menu End-->
+
+              <!-- Outer box -->
+              <div class="outer-box">
+                <!-- Button Box -->
+                <div class="btn-box">
+                  <a href="register/" class="theme-btn btn-style-one"
+                    ><span class="btn-title">Get Tickets</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+          <div class="menu-backdrop"></div>
+          <div class="close-btn">
+            <span class="icon flaticon-cancel-1"></span>
+          </div>
+          <nav class="menu-box">
+            <div class="nav-logo">
+              <a href="index.html"
+                ><img
+                  src="images/logo-2.png"
+                  alt=""
+                  title=""
+                  style="width: 150px"
+              /></a>
+            </div>
+            <ul class="navigation clearfix">
+              <!--Keep This Empty / Menu will come through Javascript-->
+            </ul>
+          </nav>
+        </div>
+        <!-- End Mobile Menu -->
+      </header>
+      <!--End Main Header -->
+
+      <!-- Podcast Hero Section -->
+      <section class="podcast-hero">
+        <div class="overlay"></div>
+        <div class="auto-container">
+          <div class="row align-items-center">
+            <div class="col-lg-7 col-md-12">
+              <div class="content">
+                <h1 class="mb-4">Scale and Ideas Podcast</h1>
+                <p class="mb-4">
+                  Africa and its ideas, innovators, and impact builders are
+                  rising. Hosted by Izoduwa Precious Asemota, a global
+                  technology strategist, startup mentor, and ecosystem builder,
+                  Scale is where bold ideas meet real-world execution.
+                </p>
+                <p class="mb-4">
+                  Each episode explores the parameters and what it takes to
+                  shape Africa's digital and entrepreneurial future. Whether
+                  you're a founder building from scratch or a young professional
+                  with a dream, this podcast will equip you with insights,
+                  tools, and inspiration to scale what matters—your businesses,
+                  your purpose, and your impact.
+                </p>
+                <div class="podcast-platforms mt-5">
+                  <a href="#" class="platform-icon">
+                    <i class="fab fa-spotify"></i>
+                  </a>
+                  <a href="#" class="platform-icon">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                  <a href="#" class="platform-icon">
+                    <i class="fab fa-apple"></i>
+                  </a>
+                  <a href="#" class="platform-icon">
+                    <i class="fab fa-google"></i>
+                  </a>
+                  <a href="#" class="platform-icon">
+                    <i class="fas fa-podcast"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5 col-md-12 mt-5 mt-lg-0">
+              <div class="podcast-image">
+                <img
+                  src="images/patterns/sound-wave.webp"
+                  alt="SIC Podcast"
+                  class="img-fluid rounded-lg shadow-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recent Episodes Section -->
+      <section class="podcast-section">
+        <div class="auto-container">
+          <div class="section-heading text-center">
+            <h2>Upcoming Episodes</h2>
+          </div>
+
+          <div class="row">
+            <!-- Episode Card 1 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="episode-card">
+                <div class="episode-image">
+                  <img
+                    src="/images/patterns/AfricanMarkets.jpeg"
+                    alt="Episode 1"
+                  />
+                  <div class="play-button disabled">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <span class="episode-number">Episode 01</span>
+                  <h3 class="episode-title">
+                    Building Tech Solutions for African Markets
+                  </h3>
+                  <div class="episode-meta">
+                    <span><i class="far fa-clock"></i> 45 min</span>
+                    <span><i class="far fa-calendar"></i> June, 2025</span>
+                  </div>
+                  <p>
+                    Exploring how innovators are creating technology solutions
+                    that address Africa's unique challenges and opportunities.
+                  </p>
+                  <a href="#" class="btn btn-outline-podcast mt-3"
+                    >Coming in June</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Episode Card 2 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="episode-card">
+                <div class="episode-image">
+                  <img
+                    src="/images/patterns/AfricanStartups.jpg"
+                    alt="Episode 2"
+                  />
+                  <div class="play-button disabled">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <span class="episode-number">Episode 02</span>
+                  <h3 class="episode-title">
+                    Funding the Future: Investment in African Startups
+                  </h3>
+                  <div class="episode-meta">
+                    <span><i class="far fa-clock"></i> 52 min</span>
+                    <span><i class="far fa-calendar"></i> June, 2025</span>
+                  </div>
+                  <p>
+                    A deep dive into the funding landscape for African startups
+                    and how entrepreneurs can position themselves for
+                    investment.
+                  </p>
+                  <a href="#" class="btn btn-outline-podcast mt-3"
+                    >Coming in June</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Episode Card 3 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="episode-card">
+                <div class="episode-image">
+                  <img
+                    src="/images/patterns/WomenInnovationAfrica.jpg"
+                    alt="Episode 3"
+                  />
+                  <div class="play-button disabled">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <span class="episode-number">Episode 03</span>
+                  <h3 class="episode-title">
+                    Women Leading Innovation in Africa
+                  </h3>
+                  <div class="episode-meta">
+                    <span><i class="far fa-clock"></i> 49 min</span>
+                    <span><i class="far fa-calendar"></i> June, 2025</span>
+                  </div>
+                  <p>
+                    Highlighting female entrepreneurs and leaders who are
+                    shaping Africa's innovation ecosystem and breaking barriers.
+                  </p>
+                  <a href="#" class="btn btn-outline-podcast mt-3"
+                    >Coming in June</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="text-center mt-5">
+            <a href="#" class="btn btn-podcast">View All Episodes</a>
+          </div> -->
+        </div>
+      </section>
+
+      <!-- Host Section -->
+      <section class="host-section">
+        <div class="auto-container">
+          <div class="row align-items-center">
+            <div class="col-lg-5 col-md-6">
+              <div class="host-image" style="overflow: hidden; height: auto">
+                <img
+                  src="/images/patterns/precious.jpg"
+                  alt="Izoduwa Precious Asemota"
+                  class="img-fluid"
+                  style="object-position: center top; margin-bottom: -20px"
+                />
+              </div>
+            </div>
+            <div class="col-lg-7 col-md-6 mt-5 mt-md-0">
+              <div class="section-heading">
+                <h2>Meet Your Host</h2>
+              </div>
+              <h3>Izoduwa Precious Asemota</h3>
+              <p class="mb-4">
+                Global Technology Strategist, Startup Mentor, and Ecosystem
+                Builder
+              </p>
+              <p class="mb-4">
+                Izoduwa Precious Asemota is a trailblazing leader and the former
+                lead of the Edo Innovation Hub (Edo Innovates), a pioneering
+                center that champions digital transformation in Nigeria.
+              </p>
+              <p class="mb-4">
+                With a passion for fostering innovation and empowering the next
+                generation of tech professionals, Asemota played a pivotal role
+                in training and certifying over 61,000 young people across Edo
+                State, Nigeria, including those from marginalised communities,
+                in various technology fields.
+              </p>
+              <div id="host-bio-extra" style="display: none">
+                <p class="mb-4">
+                  As the driving force behind the Edo Tech Conference and the
+                  Edo Youth Impact Forum, Precious has connected budding
+                  entrepreneurs with essential resources, mentorship, and
+                  funding, facilitating the growth of startups and positioning
+                  them for success in competitive markets.
+                </p>
+                <p class="mb-4">
+                  Under his leadership, Edo Innovates secured significant
+                  partnerships with global tech giants like Amazon Web Services,
+                  the Bill and Melinda Gates Foundation, Microsoft, CCHub, the
+                  World Bank and Meta (Facebook), further solidifying its
+                  reputation as a hub of innovation and opportunity.
+                </p>
+                <p class="mb-4">
+                  His work in securing over $920,000 in funding for startups,
+                  curating state-led Incubation programs, and pioneering digital
+                  skills initiatives demonstrates his commitment to raising a
+                  new generation of tech-savvy leaders who are breaking
+                  boundaries and creating economic opportunities.
+                </p>
+                <p class="mb-4">
+                  He has led a multi-agency network for Edo State's Labour
+                  Market Information System in partnership with GIZ to help
+                  data-driven decision-making in governance. On Scale and Ideas,
+                  Precious explores the cutting edge of African innovation,
+                  connecting listeners with the insights, tools, and inspiration
+                  needed to build successful ventures that address real
+                  challenges across the continent.
+                </p>
+                <button
+                  id="show-less-btn"
+                  style="
+                    background: transparent;
+                    border: none;
+                    color: #131335;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    padding: 0;
+                    margin-bottom: 20px;
+                  "
+                >
+                  SHOW LESS
+                </button>
+              </div>
+              <button
+                id="read-more-btn"
+                style="
+                  background: transparent;
+                  border: none;
+                  color: #131335;
+                  font-weight: 700;
+                  text-transform: uppercase;
+                  cursor: pointer;
+                  padding: 0;
+                  margin-bottom: 20px;
+                "
+              >
+                READ MORE
+              </button>
+              <script>
+                var readMoreBtn = document.getElementById("read-more-btn");
+                var showLessBtn;
+                var hostBioExtra = document.getElementById("host-bio-extra");
+                readMoreBtn.onclick = function () {
+                  hostBioExtra.style.display = "block";
+                  readMoreBtn.style.display = "none";
+                  // Get the show less button after it's rendered
+                  showLessBtn = document.getElementById("show-less-btn");
+                  showLessBtn.onclick = function () {
+                    hostBioExtra.style.display = "none";
+                    readMoreBtn.style.display = "inline-block";
+                  };
+                };
+              </script>
+              <div class="social-links mt-4">
+                <a
+                  href="https://www.izoduwaasemota.com/"
+                  target="_blank"
+                  class="btn btn-outline-podcast me-3"
+                  ><i class="fas fa-globe me-2"></i> Website</a
+                >
+                <a
+                  target="_blank"
+                  href="https://x.com/asemotaizoduwa?s=11"
+                  class="btn btn-outline-podcast"
+                  ><i class="fab fa-twitter me-2"></i> Follow</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Footer -->
+      <footer class="main-footer">
+        <!--Widgets Section-->
+        <div class="widgets-section">
+          <div class="auto-container">
+            <div class="row">
+              <!--Big Column-->
+              <div class="big-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                <div class="row">
+                  <!--Footer Column-->
+                  <div
+                    class="footer-column col-xl-7 col-lg-6 col-md-6 col-sm-12"
+                  >
+                    <div class="footer-widget about-widget">
+                      <div class="logo">
+                        <a href="index.html"
+                          ><img src="images/logo.png" alt="SIC Podcast Logo"
+                        /></a>
+                      </div>
+
+                      <div class="text">
+                        <p>
+                          The Scale and Ideas Podcast explores Africa's
+                          innovation landscape. Hosted by Izoduwa Precious
+                          Asemota, we dive into the parameters and what it takes
+                          to shape Africa's digital and entrepreneurial future,
+                          equipping you with insights, tools, and inspiration to
+                          scale what matters.
+                        </p>
+                      </div>
+
+                      <ul class="social-icon-one social-icon-colored">
+                        <li>
+                          <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fab fa-youtube"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!--Footer Column-->
+                  <div
+                    class="footer-column col-xl-5 col-lg-6 col-md-6 col-sm-12"
+                  >
+                    <div class="footer-widget useful-links">
+                      <h2 class="widget-title">Quick Links</h2>
+                      <ul class="user-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="conference/">Conference</a></li>
+                        <li><a href="schedule/">Agenda</a></li>
+                        <li><a href="speakers/">Speakers</a></li>
+                        <li><a href="register/">Register</a></li>
+                        <li><a href="contact/">Contact</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--Big Column-->
+              <div class="big-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                <div class="row">
+                  <!--Footer Column-->
+                  <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                    <div class="footer-widget contact-widget">
+                      <h2 class="widget-title">Contact Us</h2>
+                      <div class="widget-content">
+                        <ul class="contact-list">
+                          <li>
+                            <span class="icon flaticon-clock"></span>
+                            <div class="text">Mon - Fri: 09:00 - 18:00</div>
+                          </li>
+                          <li>
+                            <span class="icon flaticon-phone"></span>
+                            <div class="text">
+                              <a href="tel:+2348132120048">+234 813 212 0048</a>
+                            </div>
+                          </li>
+                          <li>
+                            <span class="icon flaticon-phone"></span>
+                            <div class="text">
+                              <a href="tel:+2348095630414">+234 809 563 0414</a>
+                            </div>
+                          </li>
+                          <li>
+                            <span class="icon flaticon-paper-plane"></span>
+                            <div class="text">
+                              <a href="mailto:asemota@sic.africa"
+                                >asemota@sic.africa</a
+                              >
+                            </div>
+                          </li>
+                          <li>
+                            <span class="icon flaticon-worldwide"></span>
+                            <div class="text">
+                              Nigeria (Physical & Virtual Event)
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Footer Bottom-->
+        <div class="footer-bottom">
+          <div class="auto-container">
+            <div class="inner-container clearfix">
+              <div class="copyright-text">
+                <p>© 2025 Scale and Ideas Podcast. All Rights Reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- End Footer -->
+    </div>
+    <!-- End Page Wrapper -->
+
+    <!-- Scroll To Top -->
+    <div class="scroll-to-top scroll-to-target" data-target="html">
+      <span class="fa fa-angle-up"></span>
+    </div>
+
+    <!-- JS -->
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
+    <script src="js/owl.js"></script>
+    <script src="js/jquery.countdown.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/appear.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

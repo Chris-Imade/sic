@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>SIC - Unleashing Potential for Impact</title>
+
+    <!-- Stylesheets -->
+
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+
+    <link href="../css/style.css" rel="stylesheet" />
+
+    <link href="../css/responsive.css" rel="stylesheet" />
+
+    <!--Color Switcher Mockup-->
+
+    <link href="../css/color-switcher-design.css" rel="stylesheet" />
+
+    <link
+      rel="shortcut icon"
+      href="../images/favicon.png"
+      type="image/x-icon"
+    />
+
+    <link rel="icon" href="../images/favicon.png" type="image/x-icon" />
+
+    <!-- Responsive -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+
+    <!--[if lt IE 9
+      ]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script
+    ><![endif]-->
+
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .registration-section {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        padding: 80px 0;
+      }
+      .registration-form {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+      }
+      .registration-form h2 {
+        color: #2c3e50;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .form-control {
+        border-radius: 8px;
+        padding: 12px 15px;
+      }
+      .btn-register {
+        background: #ff7200;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 25px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        width: 100%;
+      }
+      .btn-register:hover {
+        background: #d76101;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        color: white;
+      }
+      .ticket-types {
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 30px;
+      }
+      @media (max-width: 768px) {
+        .registration-form {
+          padding: 20px;
+        }
+      }
+      .container {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background: blue;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .message {
+        margin-top: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <!-- Header span -->
+
+      <!-- Header Span -->
+
+      <span class="header-span"></span>
+
+      <!-- Main Header-->
+      <header class="main-header header">
+        <div class="main-box">
+          <div class="auto-container clearfix">
+            <div class="logo-box">
+              <div class="logo">
+                <a href="/"
+                  ><img
+                    src="../images/logo.png"
+                    alt=""
+                    title=""
+                    style="width: 150px"
+                /></a>
+              </div>
+            </div>
+
+            <!--Nav Box-->
+            <div class="nav-outer clearfix">
+              <!--Mobile Navigation Toggler-->
+              <div class="mobile-nav-toggler">
+                <span class="icon flaticon-menu"></span>
+              </div>
+
+              <!-- Main Menu -->
+              <nav class="main-menu navbar-expand-md navbar-light">
+                <div class="navbar-header">
+                  <!-- Toggle Button -->
+                  <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <span class="icon flaticon-menu-button"></span>
+                  </button>
+                </div>
+
+                <div
+                  class="collapse navbar-collapse clearfix"
+                  id="navbarSupportedContent"
+                >
+                  <ul class="navigation clearfix">
+                    <li class="">
+                      <a href="/">Home</a>
+                    </li>
+                    <li class="">
+                      <a href="/conference/">Conference</a>
+                    </li>
+                    <li class="">
+                      <a href="/pillars/">Pillars</a>
+                    </li>
+                    <li class="">
+                      <a href="/speakers/">Speakers</a>
+                    </li>
+                    <li class="">
+                      <a href="/schedule/">Agenda</a>
+                    </li>
+                    <li class="">
+                      <a href="/showcase/">Showcase</a>
+                    </li>
+                    <li class="current">
+                      <a href="/register/">Register</a>
+                    </li>
+                    <li><a href="/contact/">Contact</a></li>
+                  </ul>
+                </div>
+              </nav>
+
+              <!-- Main Menu End-->
+
+              <!-- Outer box -->
+              <div class="outer-box">
+                <!-- Button Box -->
+                <div class="btn-box">
+                  <a href="/register/" class="theme-btn btn-style-one"
+                    ><span class="btn-title">Register</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+          <div class="menu-backdrop"></div>
+          <div class="close-btn">
+            <span class="icon flaticon-cancel-1"></span>
+          </div>
+          <nav class="menu-box">
+            <div class="nav-logo">
+              <a href="/"
+                ><img
+                  src="../images/logo-2.png"
+                  alt=""
+                  title=""
+                  style="width: 150px"
+              /></a>
+            </div>
+            <ul class="navigation clearfix">
+              <!--Keep This Empty / Menu will come through Javascript-->
+            </ul>
+          </nav>
+        </div>
+        <!-- End Mobile Menu -->
+      </header>
+      <!--End Main Header -->
+
+      <section class="registration-section">
+        <div class="auto-container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+              <div class="registration-form">
+                <h2>Register for SIC 2025</h2>
+
+                <form onsubmit="submitForm(event)">
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                      <input
+                        type="text"
+                        id="firstName"
+                        class="form-control"
+                        placeholder="First Name"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <input
+                        type="text"
+                        id="lastName"
+                        class="form-control"
+                        placeholder="Last Name"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <input
+                      type="email"
+                      id="email"
+                      class="form-control"
+                      placeholder="Email Address"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <input
+                      type="tel"
+                      id="phone"
+                      class="form-control"
+                      placeholder="Phone Number"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="ticket">Ticket Type</label>
+                    <select id="ticket" class="form-control" required>
+                      <option value="">Select Attendance Type</option>
+                      <option value="physical">Physical Event</option>
+                      <option value="virtual">Virtual Event</option>
+                    </select>
+                  </div>
+
+                  <button type="submit" class="btn btn-register">
+                    Complete Registration
+                  </button>
+                  <p class="message" id="message"></p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Footer -->
+
+      <footer class="main-footer">
+        <!--Widgets Section-->
+        <div class="widgets-section">
+          <div class="auto-container">
+            <div class="row">
+              <!--Big Column-->
+              <div class="big-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                <div class="row">
+                  <!--Footer Column-->
+                  <div
+                    class="footer-column col-xl-7 col-lg-6 col-md-6 col-sm-12"
+                  >
+                    <div class="footer-widget about-widget">
+                      <div class="logo">
+                        <a href="../index.html"
+                          ><img src="../images/logo.png" alt="SIC 2025 Logo"
+                        /></a>
+                      </div>
+
+                      <div class="text">
+                        <p>
+                          The Scale and Ideas Conference 2025 is a premier event
+                          focused on Social Change, Technology and Innovation,
+                          Business and Entrepreneurship, and Marketplace (Faith
+                          in the Workplace). Join us in shaping the future!
+                        </p>
+                      </div>
+
+                      <ul class="social-icon-one social-icon-colored">
+                        <li>
+                          <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fab fa-youtube"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!--Footer Column-->
+                  <div
+                    class="footer-column col-xl-5 col-lg-6 col-md-6 col-sm-12"
+                  >
+                    <div class="footer-widget useful-links">
+                      <h2 class="widget-title">Quick Links</h2>
+                      <ul class="user-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/conference/">Conference</a></li>
+                        <li><a href="/schedule/">Agenda</a></li>
+                        <li><a href="/speakers/">Speakers</a></li>
+                        <li><a href="/register/">Register</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--Big Column-->
+              <div class="big-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                <div class="row">
+                  <!--Footer Column-->
+                  <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                    <div class="footer-widget contact-widget">
+                      <h2 class="widget-title">Contact Us</h2>
+                      <div class="widget-content">
+                        <ul class="contact-list">
+                          <li>
+                            <span class="icon flaticon-clock"></span>
+                            <div class="text">Mon - Fri: 09:00 - 18:00</div>
+                          </li>
+                          <li>
+                            <span class="icon flaticon-phone"></span>
+                            <div class="text">
+                              <a href="tel:+2348132120048">+234 813 212 0048</a>
+                            </div>
+                          </li>
+                          <li>
+                            <span class="icon flaticon-phone"></span>
+                            <div class="text">
+                              <a href="tel:+2348095630414">+234 809 563 0414</a>
+                            </div>
+                          </li>
+                          <li>
+                            <span class="icon flaticon-paper-plane"></span>
+                            <div class="text">
+                              <a href="mailto:projects@cyan.academy"
+                                >projects@cyan.academy</a
+                              >
+                            </div>
+                          </li>
+                          <li>
+                            <span class="icon flaticon-worldwide"></span>
+                            <div class="text">
+                              Nigeria (Physical & Virtual Event)
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Footer Column-->
+                  <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                    <div class="footer-widget instagram-widget"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Footer Bottom-->
+        <div class="footer-bottom">
+          <div class="auto-container">
+            <div class="inner-container clearfix">
+              <div class="copyright-text">
+                <p>© 2025 Scale and Ideas Conference. All Rights Reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- End Footer -->
+    </div>
+
+    <!--End pagewrapper-->
+
+    <!--Search Popup-->
+
+    <div id="search-popup" class="search-popup">
+      <div class="close-search theme-btn">
+        <span class="fas fa-window-close"></span>
+      </div>
+
+      <div class="popup-inner">
+        <div class="overlay-layer"></div>
+
+        <div class="search-form">
+          <form method="post" action="index.html">
+            <div class="form-group">
+              <fieldset>
+                <input
+                  type="search"
+                  class="form-control"
+                  name="search-input"
+                  value=""
+                  placeholder="Search Here"
+                  required
+                />
+
+                <input type="submit" value="Search Now!" class="theme-btn" />
+              </fieldset>
+            </div>
+          </form>
+
+      </div>
+    </div>
+
+    <!--Scroll to top-->
+
+    <div class="scroll-to-top scroll-to-target" data-target="html">
+      <span class="fa fa-angle-double-up"></span>
+    </div>
+
+    <script>
+      function submitForm(e) {
+        e.preventDefault();
+        const message = document.getElementById("message");
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const ticket = document.getElementById("ticket").value;
+
+        if (!firstName || !lastName || !email || !ticket) {
+          message.innerHTML = "Please fill all required fields.";
+          message.style.color = "red";
+          return;
+        }
+
+        const submitButton = document.querySelector(".btn-register");
+        submitButton.innerText = "Loading...";
+        submitButton.disabled = true;
+        message.innerHTML = "";
+
+        fetch("https://sic-server.onrender.com/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            firstName: firstName,
+            lastName: lastName,
+            email,
+            phone,
+            ticket,
+          }),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            message.innerHTML = "Registration Successful!";
+            message.style.color = "green";
+
+            // Optional: Reset form after successful submission
+            e.target.reset();
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            message.innerHTML = "Registration Failed. Please try again.";
+            message.style.color = "red";
+          })
+          .finally(() => {
+            submitButton.innerText = "Complete Registration";
+            submitButton.disabled = false;
+          });
+      }
+    </script>
+
+    <script src="../js/jquery.js"></script>
+
+    <script src="../js/popper.min.js"></script>
+
+    <script src="../js/bootstrap.min.js"></script>
+
+    <script src="../js/jquery-ui.js"></script>
+
+    <script src="../js/jquery.fancybox.js"></script>
+
+    <script src="../js/appear.js"></script>
+
+    <script src="../js/owl.js"></script>
+
+    <script src="../js/wow.js"></script>
+
+    <script src="../js/script.js"></script>
+
+    <!-- Color Setting -->
+
+    <script src="../js/color-settings.js"></script>
+  </body>
+</html>
