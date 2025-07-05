@@ -536,22 +536,21 @@
             gender,
           }),
         })
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("Network response was not ok");
-            }
-            return response.json();
-          })
+          .then((response) => response.json())
           .then((data) => {
-            message.innerHTML = "Registration Successful!";
-            message.style.color = "green";
-
-            // Optional: Reset form after successful submission
-            e.target.reset();
+            if (data.status === 200) {
+              message.innerHTML = data.message;
+              message.style.color = "green";
+              e.target.reset();
+            } else {
+              message.innerHTML = data.message;
+              message.style.color = "red";
+            }
           })
           .catch((error) => {
             console.error("Error:", error);
-            message.innerHTML = "Registration Failed. Please try again.";
+            message.innerHTML =
+              "An unexpected error occurred. Please try again.";
             message.style.color = "red";
           })
           .finally(() => {

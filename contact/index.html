@@ -523,19 +523,19 @@
           },
           body: JSON.stringify(formData),
         })
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("Network response was not ok");
-            }
-            return response.json();
-          })
+          .then((response) => response.json())
           .then((data) => {
-            messageContainer.innerHTML =
-              '<p style="color:green;">Message sent successfully!</p>';
-            form.reset();
+            if (data.status === 200) {
+              messageContainer.innerHTML = `<p style="color:green;">${data.message}</p>`;
+              form.reset();
+            } else {
+              messageContainer.innerHTML = `<p style="color:red;">${data.message}</p>`;
+            }
           })
           .catch((error) => {
-            messageContainer.innerHTML = `<p style="color:red;">Failed to send message. ${error.message}</p>`;
+            console.error("Error:", error);
+            messageContainer.innerHTML =
+              '<p style="color:red;">An unexpected error occurred. Please try again.</p>';
           })
           .finally(() => {
             submitButton.disabled = false;
