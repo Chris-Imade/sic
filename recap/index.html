@@ -23,7 +23,7 @@
         }
         
         .nav-dropdown-btn {
-            background: linear-gradient(135deg, #382e61 0%, #131335 100%);
+            background: linear-gradient(135deg, #101130e6 0%, rgba(16, 17, 48, 0.8) 100%);
             color: white;
             padding: 12px 24px;
             font-size: 16px;
@@ -38,9 +38,9 @@
         }
         
         .nav-dropdown-btn:hover {
-            background: linear-gradient(135deg, #131335 0%, #2c1810 100%);
+            background: linear-gradient(135deg, rgba(16, 17, 48, 0.9) 0%, rgba(16, 17, 48, 0.7) 100%);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(56, 46, 97, 0.3);
+            box-shadow: 0 8px 25px rgba(16, 17, 48, 0.4);
         }
         
         .nav-dropdown-content {
@@ -85,16 +85,16 @@
         }
         
         .nav-dropdown-content a:hover {
-            background: linear-gradient(90deg, rgba(56, 46, 97, 0.1), transparent);
-            border-left-color: #382e61;
-            color: #382e61;
+            background: linear-gradient(90deg, rgba(16, 17, 48, 0.1), transparent);
+            border-left-color: #101130e6;
+            color: #101130e6;
             transform: translateX(5px);
         }
         
         .nav-dropdown-content a.current {
-            background: linear-gradient(90deg, rgba(56, 46, 97, 0.15), transparent);
-            border-left-color: #382e61;
-            color: #382e61;
+            background: linear-gradient(90deg, rgba(16, 17, 48, 0.15), transparent);
+            border-left-color: #101130e6;
+            color: #101130e6;
             font-weight: 600;
         }
         
@@ -105,63 +105,228 @@
             }
         }
         
-        .recap-hero {
-            background: linear-gradient(135deg, rgba(56, 46, 97, 0.95) 0%, rgba(19, 19, 53, 0.95) 100%), url('../images/tech-images/teach-submit.jpeg');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            padding: 120px 0 80px;
+        /* Hero Carousel Styles */
+        .hero-carousel {
             position: relative;
+            height: 100vh;
             overflow: hidden;
         }
         
-        .recap-hero::before {
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            display: flex;
+            align-items: center;
+        }
+        
+        .carousel-slide.active {
+            opacity: 1;
+        }
+        
+        .carousel-slide::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(56, 46, 97, 0.3);
+            background: linear-gradient(135deg, rgba(16, 17, 48, 0.85) 0%, rgba(16, 17, 48, 0.7) 100%);
             z-index: 1;
         }
         
+        .carousel-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .carousel-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: slideInUp 1s ease-out;
+        }
+        
+        .carousel-content p {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            animation: slideInUp 1s ease-out 0.3s both;
+        }
+        
+        .carousel-indicators {
+            position: absolute;
+            bottom: 30px;
+            left: 35%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            z-index: 3;
+            width: 100%;
+        }
+        
+        .indicator {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .indicator.active {
+            background: white;
+            transform: scale(1.2);
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Video Section with Left Video, Right Text */
+        .video-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .video-content-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-top: 50px;
+        }
+        
+        .video-container {
+            flex: 1;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(16, 17, 48, 0.15);
+            transition: all 0.4s ease;
+        }
+        
+        .video-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 35px 70px rgba(16, 17, 48, 0.2);
+        }
+        
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .video-text-content {
+            flex: 1;
+            padding-left: 40px;
+        }
+        
+        .video-text-content h3 {
+            font-size: 2.5rem;
+            color: #101130e6;
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+        
+        .video-text-content p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .tech-highlight {
+            background: #101130e6;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+        
+        .tech-highlight h4 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .tech-highlight p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .video-content-wrapper {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .video-text-content {
+                padding-left: 0;
+            }
+        }
+        
+        /* Enhanced Gallery Section */
         .gallery-section {
-            padding: 80px 0;
+            padding: 100px 0;
             background: #f8f9fa;
         }
         
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
         }
         
         .gallery-item {
             position: relative;
-            border-radius: 16px;
+            border-radius: 20px;
             overflow: hidden;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+            cursor: zoom-in;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 15px 35px rgba(16, 17, 48, 0.1);
             background: white;
         }
         
         .gallery-item:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(16, 17, 48, 0.2);
+        }
+        
+        .gallery-item.zoomed {
+            cursor: zoom-out;
         }
         
         .gallery-item img {
             width: 100%;
-            height: 250px;
+            height: 280px;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .gallery-item:hover img {
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
         
         .gallery-overlay {
@@ -169,17 +334,31 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            background: linear-gradient(transparent, rgba(16, 17, 48, 0.9));
             color: white;
-            padding: 20px;
+            padding: 25px;
             transform: translateY(100%);
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
         }
         
         .gallery-item:hover .gallery-overlay {
             transform: translateY(0);
         }
         
+        .gallery-overlay h4 {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .gallery-overlay p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        
+        /* Enhanced Lightbox */
         .lightbox {
             display: none;
             position: fixed;
@@ -188,68 +367,93 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.9);
+            background-color: rgba(0,0,0,0.95);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         
         .lightbox-content {
             position: relative;
             margin: auto;
-            padding: 20px;
+            padding: 40px;
             width: 90%;
-            max-width: 800px;
+            max-width: 1000px;
             top: 50%;
             transform: translateY(-50%);
+            animation: slideInScale 0.4s ease;
+        }
+        
+        @keyframes slideInScale {
+            from {
+                opacity: 0;
+                transform: translateY(-50%) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(-50%) scale(1);
+            }
         }
         
         .lightbox img {
             width: 100%;
             height: auto;
-            border-radius: 8px;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
         }
         
         .close {
             position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 50px;
+            font-weight: 300;
             cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
         }
         
         .close:hover {
-            color: #bbb;
+            color: #101130e6;
+            transform: scale(1.1);
         }
         
         .nav-arrows {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255,255,255,0.2);
+            background: rgba(16, 17, 48, 0.8);
             color: white;
             border: none;
-            padding: 15px 20px;
-            font-size: 24px;
+            padding: 20px 25px;
+            font-size: 28px;
             cursor: pointer;
             border-radius: 50%;
             transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
         
         .nav-arrows:hover {
-            background: rgba(255,255,255,0.4);
+            background: #101130e6;
+            transform: translateY(-50%) scale(1.1);
         }
         
         .prev {
-            left: 20px;
+            left: 30px;
         }
         
         .next {
-            right: 20px;
+            right: 30px;
         }
         
         .stats-section {
             padding: 80px 0;
-            background: #131335;
+            background: #101130e6;
             color: white;
         }
         
@@ -282,7 +486,7 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             margin-bottom: 30px;
             transition: all 0.4s ease;
-            border-top: 4px solid #382e61;
+            border-top: 4px solid #101130e6;
         }
         
         .highlight-card:hover {
@@ -294,7 +498,7 @@
         .highlight-icon {
             width: 70px;
             height: 70px;
-            background: linear-gradient(135deg, #382e61 0%, #131335 100%);
+            background: linear-gradient(135deg, #101130e6 0%, rgba(16, 17, 48, 0.9) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -307,7 +511,7 @@
         
         .highlight-card:hover .highlight-icon {
             transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 8px 25px rgba(56, 46, 97, 0.3);
+            box-shadow: 0 8px 25px rgba(16, 17, 48, 0.4);
         }
     </style>
 </head>
@@ -375,8 +579,7 @@
                                     <a href="/schedule/">Agenda</a>
                                     <a href="/showcase/">Showcase</a>
                                     <a href="/recap/" class="current">Event Recap</a>
-                                    <a href="/sic-tech/">SIC Tech</a>
-                                    <a href="/register/">Register</a>
+                                                    <a href="/register/">Register</a>
                                     <a href="/contact/">Contact</a>
                                 </div>
                             </div>
@@ -404,20 +607,57 @@
         </header>
         <!--End Main Header -->
 
-        <!-- Recap Hero Section -->
-        <section class="recap-hero">
-            <div class="overlay"></div>
+        <!-- Hero Carousel Section -->
+        <section class="hero-carousel">
+            <div class="carousel-slide active" style="background-image: url('../images/recap-assets/DSC_4855.jpg')">
+                <div class="auto-container">
+                    <div class="carousel-content">
+                        <h1>SIC Event Recap</h1>
+                        <p>Relive the moments that shaped minds and transformed ideas. The Scale and Ideas Conference has been a catalyst for innovation, bringing together visionaries, entrepreneurs, and changemakers from across Africa and beyond.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-slide" style="background-image: url('../images/recap-assets/uniben-auditorium/BEE05215.jpg')">
+                <div class="auto-container">
+                    <div class="carousel-content">
+                        <h1>Innovation in Action</h1>
+                        <p>From inspiring keynotes to transformative workshops, each SIC event has left an indelible mark on participants, fostering connections that continue to drive impact long after the conference ends.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-slide" style="background-image: url('../images/recap-assets/uniben-auditorium/BEE05370.jpg')">
+                <div class="auto-container">
+                    <div class="carousel-content">
+                        <h1>Transforming Africa's Future</h1>
+                        <p>Experience the energy and inspiration from our most recent Scale and Ideas Conference, where technology meets innovation and ideas become reality.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-indicators">
+                <div class="indicator active" onclick="currentSlide(1)"></div>
+                <div class="indicator" onclick="currentSlide(2)"></div>
+                <div class="indicator" onclick="currentSlide(3)"></div>
+            </div>
+        </section>
+        
+        <!-- Video Section with Tech Innovation Content -->
+        <section class="video-section">
             <div class="auto-container">
-                <div class="row align-items-center">
-                    <div class="col-lg-8 col-md-12">
-                        <div class="content">
-                            <h1 class="mb-4">SIC Event Recap</h1>
-                            <p class="mb-4">
-                                Relive the moments that shaped minds and transformed ideas. The Scale and Ideas Conference has been a catalyst for innovation, bringing together visionaries, entrepreneurs, and changemakers from across Africa and beyond.
-                            </p>
-                            <p class="mb-4">
-                                From inspiring keynotes to transformative workshops, each SIC event has left an indelible mark on participants, fostering connections that continue to drive impact long after the conference ends.
-                            </p>
+                <div class="video-content-wrapper">
+                    <div class="video-container">
+                        <video controls autoplay muted poster="../images/recap-assets/DSC_5014.jpg">
+                            <source src="../images/recap-assets/VID-20221202-WA0014.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    
+                    <div class="video-text-content">
+                        <div class="tech-highlight">
+                            <h4>SIC's Tech Impact</h4>
+                            <p>From blockchain innovations to AI-driven solutions, SIC has become the premier platform where African tech leaders share insights, forge partnerships, and inspire the next generation of innovators. Edo State stands at the forefront of this digital revolution.</p>
                         </div>
                     </div>
                 </div>
@@ -469,50 +709,66 @@
 
                 <div class="gallery-grid">
                     <div class="gallery-item" onclick="openLightbox(0)">
-                        <img src="https://via.placeholder.com/400x250/382e61/ffffff?text=Opening+Ceremony" alt="Opening Ceremony">
+                        <img src="../images/recap-assets/uniben-auditorium/BEE05215.jpg" alt="Main Auditorium">
                         <div class="gallery-overlay">
-                            <h4>Opening Ceremony</h4>
-                            <p>Welcoming participants to SIC 2024</p>
+                            <h4>University of Benin Main Auditorium</h4>
+                            <p>The venue for our most recent conference</p>
                         </div>
                     </div>
                     
                     <div class="gallery-item" onclick="openLightbox(1)">
-                        <img src="https://via.placeholder.com/400x250/131335/ffffff?text=Keynote+Session" alt="Keynote Session">
+                        <img src="../images/recap-assets/uniben-auditorium/BEE05370.jpg" alt="Conference Session">
                         <div class="gallery-overlay">
                             <h4>Keynote Presentations</h4>
-                            <p>Industry leaders sharing insights</p>
+                            <p>Industry leaders sharing transformative insights</p>
                         </div>
                     </div>
                     
                     <div class="gallery-item" onclick="openLightbox(2)">
-                        <img src="https://via.placeholder.com/400x250/382e61/ffffff?text=Panel+Discussion" alt="Panel Discussion">
+                        <img src="../images/recap-assets/uniben-auditorium/BEE05375.jpg" alt="Audience Engagement">
                         <div class="gallery-overlay">
-                            <h4>Panel Discussions</h4>
-                            <p>Collaborative conversations on innovation</p>
+                            <h4>Engaged Audience</h4>
+                            <p>Participants actively learning and networking</p>
                         </div>
                     </div>
                     
                     <div class="gallery-item" onclick="openLightbox(3)">
-                        <img src="https://via.placeholder.com/400x250/131335/ffffff?text=Networking+Session" alt="Networking">
+                        <img src="../images/recap-assets/uniben-auditorium/BEE05437.jpg" alt="Speaker Session">
                         <div class="gallery-overlay">
-                            <h4>Networking Sessions</h4>
-                            <p>Building connections and partnerships</p>
+                            <h4>Interactive Sessions</h4>
+                            <p>Dynamic presentations and Q&A segments</p>
                         </div>
                     </div>
                     
                     <div class="gallery-item" onclick="openLightbox(4)">
-                        <img src="https://via.placeholder.com/400x250/382e61/ffffff?text=Workshop+Activities" alt="Workshops">
+                        <img src="../images/recap-assets/uniben-auditorium/BEE05486.jpg" alt="Conference Atmosphere">
                         <div class="gallery-overlay">
-                            <h4>Interactive Workshops</h4>
-                            <p>Hands-on learning experiences</p>
+                            <h4>Conference Atmosphere</h4>
+                            <p>The energy and excitement of SIC</p>
                         </div>
                     </div>
                     
                     <div class="gallery-item" onclick="openLightbox(5)">
-                        <img src="https://via.placeholder.com/400x250/131335/ffffff?text=Startup+Showcase" alt="Startup Showcase">
+                        <img src="../images/recap-assets/uniben-auditorium/BEE05639.jpg" alt="Networking">
                         <div class="gallery-overlay">
-                            <h4>Startup Showcase</h4>
-                            <p>Emerging entrepreneurs presenting ideas</p>
+                            <h4>Networking Opportunities</h4>
+                            <p>Building lasting professional connections</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openLightbox(6)">
+                        <img src="../images/recap-assets/uniben-auditorium/BEE05753.jpg" alt="Workshop Session">
+                        <div class="gallery-overlay">
+                            <h4>Workshop Activities</h4>
+                            <p>Hands-on learning and skill development</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openLightbox(7)">
+                        <img src="../images/recap-assets/uniben-auditorium/BEE05949.jpg" alt="Closing Session">
+                        <div class="gallery-overlay">
+                            <h4>Memorable Moments</h4>
+                            <p>Capturing the impact of SIC on participants</p>
                         </div>
                     </div>
                 </div>
@@ -682,25 +938,68 @@
     <script src="../js/script.js"></script>
 
     <script>
+        // Hero Carousel Functionality
+        let slideIndex = 1;
+        showSlide(slideIndex);
+        
+        // Auto-advance slides every 5 seconds
+        setInterval(function() {
+            slideIndex++;
+            if (slideIndex > 3) slideIndex = 1;
+            showSlide(slideIndex);
+        }, 5000);
+        
+        function currentSlide(n) {
+            showSlide(slideIndex = n);
+        }
+        
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const indicators = document.querySelectorAll('.indicator');
+            
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            if (slides[slideIndex - 1]) {
+                slides[slideIndex - 1].classList.add('active');
+            }
+            if (indicators[slideIndex - 1]) {
+                indicators[slideIndex - 1].classList.add('active');
+            }
+        }
+        
+        // Enhanced Gallery Functionality
         const images = [
-            'https://via.placeholder.com/800x500/382e61/ffffff?text=Opening+Ceremony',
-            'https://via.placeholder.com/800x500/131335/ffffff?text=Keynote+Session',
-            'https://via.placeholder.com/800x500/382e61/ffffff?text=Panel+Discussion',
-            'https://via.placeholder.com/800x500/131335/ffffff?text=Networking+Session',
-            'https://via.placeholder.com/800x500/382e61/ffffff?text=Workshop+Activities',
-            'https://via.placeholder.com/800x500/131335/ffffff?text=Startup+Showcase'
+            '../images/recap-assets/uniben-auditorium/BEE05215.jpg',
+            '../images/recap-assets/uniben-auditorium/BEE05370.jpg',
+            '../images/recap-assets/uniben-auditorium/BEE05375.jpg',
+            '../images/recap-assets/uniben-auditorium/BEE05437.jpg',
+            '../images/recap-assets/uniben-auditorium/BEE05486.jpg',
+            '../images/recap-assets/uniben-auditorium/BEE05639.jpg',
+            '../images/recap-assets/uniben-auditorium/BEE05753.jpg',
+            '../images/recap-assets/uniben-auditorium/BEE05949.jpg'
         ];
 
         let currentImageIndex = 0;
 
         function openLightbox(index) {
             currentImageIndex = index;
-            document.getElementById('lightbox').style.display = 'block';
-            document.getElementById('lightbox-img').src = images[index];
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            
+            lightbox.style.display = 'block';
+            img.src = images[index];
+            
+            // Prevent body scroll when lightbox is open
+            document.body.style.overflow = 'hidden';
         }
 
         function closeLightbox() {
             document.getElementById('lightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
 
         function changeImage(direction) {
@@ -713,7 +1012,7 @@
             document.getElementById('lightbox-img').src = images[currentImageIndex];
         }
 
-        // Close lightbox when clicking outside the image
+        // Enhanced lightbox interactions
         document.getElementById('lightbox').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeLightbox();
@@ -731,6 +1030,13 @@
                     changeImage(1);
                 }
             }
+        });
+        
+        // Gallery item zoom effect on click
+        document.querySelectorAll('.gallery-item').forEach((item, index) => {
+            item.addEventListener('click', function() {
+                openLightbox(index);
+            });
         });
     </script>
 </body>
