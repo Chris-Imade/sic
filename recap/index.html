@@ -1,1043 +1,1257 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8" />
-    <title>SIC - Event Recap | Unleashing Potential for Impact</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    
+    <title>SIC - Conference | Unleashing Potential for Impact</title>
     <!-- Stylesheets -->
     <link href="../css/bootstrap.css" rel="stylesheet" />
     <link href="../css/style.css" rel="stylesheet" />
     <link href="../css/responsive.css" rel="stylesheet" />
     <link href="../css/color-switcher-design.css" rel="stylesheet" />
-    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../images/favicon.png"
+      type="image/x-icon"
+    />
     <link rel="icon" href="../images/favicon.png" type="image/x-icon" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-    
-    <style>
-        /* Modern Navigation Dropdown */
-        .nav-dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .nav-dropdown-btn {
-            background: linear-gradient(135deg, #101130e6 0%, rgba(16, 17, 48, 0.8) 100%);
-            color: white;
-            padding: 12px 24px;
-            font-size: 16px;
-            font-weight: 600;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .nav-dropdown-btn:hover {
-            background: linear-gradient(135deg, rgba(16, 17, 48, 0.9) 0%, rgba(16, 17, 48, 0.7) 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(16, 17, 48, 0.4);
-        }
-        
-        .nav-dropdown-content {
-            display: none;
-            position: absolute;
-            right: 0;
-            background: white;
-            min-width: 280px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-            z-index: 1000;
-            padding: 12px 0;
-            margin-top: 8px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .nav-dropdown:hover .nav-dropdown-content {
-            display: block;
-            animation: fadeInDown 0.3s ease;
-        }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .nav-dropdown-content a {
-            color: #333;
-            padding: 12px 20px;
-            text-decoration: none;
-            display: block;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            border-left: 3px solid transparent;
-        }
-        
-        .nav-dropdown-content a:hover {
-            background: linear-gradient(90deg, rgba(16, 17, 48, 0.1), transparent);
-            border-left-color: #101130e6;
-            color: #101130e6;
-            transform: translateX(5px);
-        }
-        
-        .nav-dropdown-content a.current {
-            background: linear-gradient(90deg, rgba(16, 17, 48, 0.15), transparent);
-            border-left-color: #101130e6;
-            color: #101130e6;
-            font-weight: 600;
-        }
-        
-        /* Hide default navigation on desktop, show dropdown */
-        @media (min-width: 992px) {
-            .main-menu .navigation {
-                display: none;
-            }
-        }
-        
-        /* Hero Carousel Styles */
-        .hero-carousel {
-            position: relative;
-            height: 100vh;
-            overflow: hidden;
-        }
-        
-        .carousel-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 1.5s ease-in-out;
-            display: flex;
-            align-items: center;
-        }
-        
-        .carousel-slide.active {
-            opacity: 1;
-        }
-        
-        .carousel-slide::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(16, 17, 48, 0.85) 0%, rgba(16, 17, 48, 0.7) 100%);
-            z-index: 1;
-        }
-        
-        .carousel-content {
-            position: relative;
-            z-index: 2;
-            color: white;
-            max-width: 800px;
-            padding: 0 20px;
-        }
-        
-        .carousel-content h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            animation: slideInUp 1s ease-out;
-        }
-        
-        .carousel-content p {
-            font-size: 1.3rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            opacity: 0.95;
-            animation: slideInUp 1s ease-out 0.3s both;
-        }
-        
-        .carousel-indicators {
-            position: absolute;
-            bottom: 30px;
-            left: 35%;
-            transform: translateX(-50%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            z-index: 3;
-            width: 100%;
-        }
-        
-        .indicator {
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .indicator.active {
-            background: white;
-            transform: scale(1.2);
-        }
-        
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Video Section with Left Video, Right Text */
-        .video-section {
-            padding: 100px 0;
-            background: white;
-        }
-        
-        .video-content-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            margin-top: 50px;
-        }
-        
-        .video-container {
-            flex: 1;
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 25px 50px rgba(16, 17, 48, 0.15);
-            transition: all 0.4s ease;
-        }
-        
-        .video-container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 35px 70px rgba(16, 17, 48, 0.2);
-        }
-        
-        .video-container video {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .video-text-content {
-            flex: 1;
-            padding-left: 40px;
-        }
-        
-        .video-text-content h3 {
-            font-size: 2.5rem;
-            color: #101130e6;
-            font-weight: 700;
-            margin-bottom: 25px;
-            line-height: 1.2;
-        }
-        
-        .video-text-content p {
-            font-size: 1.1rem;
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-        
-        .tech-highlight {
-            background: #101130e6;
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
-            margin-top: 30px;
-        }
-        
-        .tech-highlight h4 {
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-        
-        .tech-highlight p {
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 0;
-        }
-        
-        @media (max-width: 768px) {
-            .video-content-wrapper {
-                flex-direction: column;
-                gap: 40px;
-            }
-            
-            .video-text-content {
-                padding-left: 0;
-            }
-        }
-        
-        /* Enhanced Gallery Section */
-        .gallery-section {
-            padding: 100px 0;
-            background: #f8f9fa;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .gallery-item {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            cursor: zoom-in;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 15px 35px rgba(16, 17, 48, 0.1);
-            background: white;
-        }
-        
-        .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(16, 17, 48, 0.2);
-        }
-        
-        .gallery-item.zoomed {
-            cursor: zoom-out;
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.03);
-        }
-        
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(16, 17, 48, 0.9));
-            color: white;
-            padding: 25px;
-            transform: translateY(100%);
-            transition: transform 0.4s ease;
-        }
-        
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
-        }
-        
-        .gallery-overlay h4 {
-            color: white;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        
-        .gallery-overlay p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.95rem;
-            margin: 0;
-        }
-        
-        /* Enhanced Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.95);
-            backdrop-filter: blur(5px);
-            animation: fadeIn 0.3s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .lightbox-content {
-            position: relative;
-            margin: auto;
-            padding: 40px;
-            width: 90%;
-            max-width: 1000px;
-            top: 50%;
-            transform: translateY(-50%);
-            animation: slideInScale 0.4s ease;
-        }
-        
-        @keyframes slideInScale {
-            from {
-                opacity: 0;
-                transform: translateY(-50%) scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(-50%) scale(1);
-            }
-        }
-        
-        .lightbox img {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-        }
-        
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 40px;
-            color: white;
-            font-size: 50px;
-            font-weight: 300;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-        
-        .close:hover {
-            color: #101130e6;
-            transform: scale(1.1);
-        }
-        
-        .nav-arrows {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(16, 17, 48, 0.8);
-            color: white;
-            border: none;
-            padding: 20px 25px;
-            font-size: 28px;
-            cursor: pointer;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-        
-        .nav-arrows:hover {
-            background: #101130e6;
-            transform: translateY(-50%) scale(1.1);
-        }
-        
-        .prev {
-            left: 30px;
-        }
-        
-        .next {
-            right: 30px;
-        }
-        
-        .stats-section {
-            padding: 80px 0;
-            background: #101130e6;
-            color: white;
-        }
-        
-        .stat-card {
-            text-align: center;
-            padding: 40px 20px;
-        }
-        
-        .stat-number {
-            font-size: 48px;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-        
-        .stat-label {
-            font-size: 18px;
-            color: #ccc;
-        }
-        
-        .highlights-section {
-            padding: 80px 0;
-            background: #fff;
-        }
-        
-        .highlight-card {
-            background: #fff;
-            border-radius: 16px;
-            padding: 35px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-            transition: all 0.4s ease;
-            border-top: 4px solid #101130e6;
-        }
-        
-        .highlight-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-            border-top-width: 6px;
-        }
-        
-        .highlight-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #101130e6 0%, rgba(16, 17, 48, 0.9) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 28px;
-            margin-bottom: 25px;
-            transition: all 0.3s ease;
-        }
-        
-        .highlight-card:hover .highlight-icon {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 8px 25px rgba(16, 17, 48, 0.4);
-        }
-    </style>
-</head>
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+  </head>
 
-<body>
+  <body>
     <div class="page-wrapper">
-        <!-- Main Header-->
-        <header class="main-header">
-            <div class="main-box">
-                <div class="auto-container clearfix">
-                    <div class="logo-box">
-                        <div class="logo">
-                            <a href="../index.html"><img src="../images/logo.png" alt="" title="" style="width: 150px" /></a>
-                        </div>
-                    </div>
-
-                    <!--Nav Box-->
-                    <div class="nav-outer clearfix">
-                        <!--Mobile Navigation Toggler-->
-                        <div class="mobile-nav-toggler">
-                            <span class="icon flaticon-menu"></span>
-                        </div>
-
-                        <!-- Main Menu -->
-                        <nav class="main-menu navbar-expand-md navbar-light">
-                            <div class="navbar-header">
-                                <!-- Toggle Button -->
-                                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                    aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="icon flaticon-menu-button"></span>
-                                </button>
-                            </div>
-
-                            <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
-                                <ul class="navigation clearfix">
-                                    <li><a href="/">Home</a></li>
-                                    <li><a href="/conference/">Conference</a></li>
-                                    <li><a href="/pillars/">Pillars</a></li>
-                                    <li><a href="/speakers/">Speakers</a></li>
-                                    <li><a href="/schedule/">Agenda</a></li>
-                                    <li><a href="/showcase/">Showcase</a></li>
-                                    <li class="current"><a href="/recap/">Event Recap</a></li>
-                                    <li><a href="/register/">Register</a></li>
-                                    <li><a href="/contact/">Contact</a></li>
-                                </ul>
-                            </div>
-                        </nav>
-
-                        <!-- Main Menu End-->
-
-                        <!-- Outer box -->
-                        <div class="outer-box">
-                            <!-- Navigation Dropdown -->
-                            <div class="nav-dropdown">
-                                <button class="nav-dropdown-btn">
-                                    <span>Menu</span>
-                                    <i class="fas fa-chevron-down"></i>
-                                </button>
-                                <div class="nav-dropdown-content">
-                                    <a href="/">Home</a>
-                                    <a href="/conference/">Conference</a>
-                                    <a href="/pillars/">Pillars</a>
-                                    <a href="/speakers/">Speakers</a>
-                                    <a href="/schedule/">Agenda</a>
-                                    <a href="/showcase/">Showcase</a>
-                                    <a href="/recap/" class="current">Event Recap</a>
-                                                    <a href="/register/">Register</a>
-                                    <a href="/contact/">Contact</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <!-- Main Header-->
+      <header
+        class="main-header"
+        style="
+          background: rgba(56, 46, 97, 0.5);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+        "
+      >
+        <div class="main-box">
+          <div class="auto-container clearfix">
+            <div class="logo-box">
+              <div class="logo">
+                <a href="index.html"
+                  ><img
+                    src="/images/logo.png"
+                    alt=""
+                    title=""
+                    style="width: 150px"
+                /></a>
+              </div>
             </div>
 
-            <!-- Mobile Menu  -->
-            <div class="mobile-menu">
-                <div class="menu-backdrop"></div>
-                <div class="close-btn">
-                    <span class="icon flaticon-cancel-1"></span>
-                </div>
-                <nav class="menu-box">
-                    <div class="nav-logo">
-                        <a href="../index.html"><img src="../images/logo-2.png" alt="" title="" style="width: 150px" /></a>
-                    </div>
-                    <ul class="navigation clearfix">
-                        <!--Keep This Empty / Menu will come through Javascript-->
-                    </ul>
-                </nav>
-            </div>
-            <!-- End Mobile Menu -->
-        </header>
-        <!--End Main Header -->
+            <!--Nav Box-->
+            <div class="nav-outer clearfix">
+              <!--Mobile Navigation Toggler-->
+              <div class="mobile-nav-toggler">
+                <span class="icon flaticon-menu"></span>
+              </div>
 
-        <!-- Hero Carousel Section -->
-        <section class="hero-carousel">
-            <div class="carousel-slide active" style="background-image: url('../images/recap-assets/DSC_4855.jpg')">
-                <div class="auto-container">
-                    <div class="carousel-content">
-                        <h1>SIC Event Recap</h1>
-                        <p>Relive the moments that shaped minds and transformed ideas. The Scale and Ideas Conference has been a catalyst for innovation, bringing together visionaries, entrepreneurs, and changemakers from across Africa and beyond.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="carousel-slide" style="background-image: url('../images/recap-assets/uniben-auditorium/BEE05215.jpg')">
-                <div class="auto-container">
-                    <div class="carousel-content">
-                        <h1>Innovation in Action</h1>
-                        <p>From inspiring keynotes to transformative workshops, each SIC event has left an indelible mark on participants, fostering connections that continue to drive impact long after the conference ends.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="carousel-slide" style="background-image: url('../images/recap-assets/uniben-auditorium/BEE05370.jpg')">
-                <div class="auto-container">
-                    <div class="carousel-content">
-                        <h1>Transforming Africa's Future</h1>
-                        <p>Experience the energy and inspiration from our most recent Scale and Ideas Conference, where technology meets innovation and ideas become reality.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="carousel-indicators">
-                <div class="indicator active" onclick="currentSlide(1)"></div>
-                <div class="indicator" onclick="currentSlide(2)"></div>
-                <div class="indicator" onclick="currentSlide(3)"></div>
-            </div>
-        </section>
-        
-        <!-- Video Section with Tech Innovation Content -->
-        <section class="video-section">
-            <div class="auto-container">
-                <div class="video-content-wrapper">
-                    <div class="video-container">
-                        <video controls autoplay muted poster="../images/recap-assets/DSC_5014.jpg">
-                            <source src="../images/recap-assets/VID-20221202-WA0014.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    
-                    <div class="video-text-content">
-                        <div class="tech-highlight">
-                            <h4>SIC's Tech Impact</h4>
-                            <p>From blockchain innovations to AI-driven solutions, SIC has become the premier platform where African tech leaders share insights, forge partnerships, and inspire the next generation of innovators. Edo State stands at the forefront of this digital revolution.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Stats Section -->
-        <section class="stats-section">
-            <div class="auto-container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stat-card">
-                            <div class="stat-number">2,190+</div>
-                            <div class="stat-label">Total Participants</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stat-card">
-                            <div class="stat-number">25+</div>
-                            <div class="stat-label">Industry Speakers</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stat-card">
-                            <div class="stat-number">15+</div>
-                            <div class="stat-label">Countries Represented</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="stat-card">
-                            <div class="stat-number">50+</div>
-                            <div class="stat-label">Startups Showcased</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gallery Section -->
-        <section class="gallery-section">
-            <div class="auto-container">
-                <div class="sec-title text-center">
-                    <span class="title">Memories</span>
-                    <h2>Event Gallery</h2>
-                    <div class="text">
-                        Explore moments captured from our previous conferences - from inspiring presentations to networking sessions and collaborative workshops.
-                    </div>
+              <!-- Main Menu -->
+              <nav class="main-menu navbar-expand-md navbar-light">
+                <div class="navbar-header">
+                  <!-- Toggle Button -->
+                  <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <span class="icon flaticon-menu-button"></span>
+                  </button>
                 </div>
 
-                <div class="gallery-grid">
-                    <div class="gallery-item" onclick="openLightbox(0)">
-                        <img src="../images/recap-assets/uniben-auditorium/BEE05215.jpg" alt="Main Auditorium">
-                        <div class="gallery-overlay">
-                            <h4>University of Benin Main Auditorium</h4>
-                            <p>The venue for our most recent conference</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item" onclick="openLightbox(1)">
-                        <img src="../images/recap-assets/uniben-auditorium/BEE05370.jpg" alt="Conference Session">
-                        <div class="gallery-overlay">
-                            <h4>Keynote Presentations</h4>
-                            <p>Industry leaders sharing transformative insights</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item" onclick="openLightbox(2)">
-                        <img src="../images/recap-assets/uniben-auditorium/BEE05375.jpg" alt="Audience Engagement">
-                        <div class="gallery-overlay">
-                            <h4>Engaged Audience</h4>
-                            <p>Participants actively learning and networking</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item" onclick="openLightbox(3)">
-                        <img src="../images/recap-assets/uniben-auditorium/BEE05437.jpg" alt="Speaker Session">
-                        <div class="gallery-overlay">
-                            <h4>Interactive Sessions</h4>
-                            <p>Dynamic presentations and Q&A segments</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item" onclick="openLightbox(4)">
-                        <img src="../images/recap-assets/uniben-auditorium/BEE05486.jpg" alt="Conference Atmosphere">
-                        <div class="gallery-overlay">
-                            <h4>Conference Atmosphere</h4>
-                            <p>The energy and excitement of SIC</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item" onclick="openLightbox(5)">
-                        <img src="../images/recap-assets/uniben-auditorium/BEE05639.jpg" alt="Networking">
-                        <div class="gallery-overlay">
-                            <h4>Networking Opportunities</h4>
-                            <p>Building lasting professional connections</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item" onclick="openLightbox(6)">
-                        <img src="../images/recap-assets/uniben-auditorium/BEE05753.jpg" alt="Workshop Session">
-                        <div class="gallery-overlay">
-                            <h4>Workshop Activities</h4>
-                            <p>Hands-on learning and skill development</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item" onclick="openLightbox(7)">
-                        <img src="../images/recap-assets/uniben-auditorium/BEE05949.jpg" alt="Closing Session">
-                        <div class="gallery-overlay">
-                            <h4>Memorable Moments</h4>
-                            <p>Capturing the impact of SIC on participants</p>
-                        </div>
-                    </div>
+                <div
+                  class="collapse navbar-collapse clearfix"
+                  id="navbarSupportedContent"
+                >
+                  <ul class="navigation clearfix">
+                    <li class="">
+                      <a href="/">Home</a>
+                    </li>
+                    <li class="">
+                      <a href="/conference/">Conference</a>
+                    </li>
+                    <li class="">
+                      <a href="/pillars/">Pillars</a>
+                    </li>
+                    <li class="">
+                      <a href="/speakers/">Speakers</a>
+                    </li>
+                    <li class="">
+                      <a href="/schedule/">Agenda</a>
+                    </li>
+                    <li class="">
+                      <a href="/showcase/">Showcase</a>
+                    </li>
+                    <li class="current">
+                      <a href="/recap/">Event Recap</a>
+                    </li>
+                    <li><a href="/contact/">Contact</a></li>
+                  </ul>
                 </div>
-            </div>
-        </section>
+              </nav>
 
-        <!-- Highlights Section -->
-        <section class="highlights-section">
-            <div class="auto-container">
-                <div class="sec-title text-center">
-                    <span class="title">Key Moments</span>
-                    <h2>Event Highlights</h2>
+              <!-- Main Menu End-->
+
+              <!-- Outer box -->
+              <div class="outer-box">
+                <!-- Button Box -->
+                <div class="btn-box">
+                  <a href="/register/" class="theme-btn btn-style-one"
+                    ><span class="btn-title">Register</span></a
+                  >
                 </div>
-
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="highlight-card">
-                            <div class="highlight-icon">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <h4>Innovation Showcase</h4>
-                            <p>Groundbreaking technologies and solutions were presented by emerging startups, demonstrating Africa's growing innovation ecosystem.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-md-6">
-                        <div class="highlight-card">
-                            <div class="highlight-icon">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                            <h4>Strategic Partnerships</h4>
-                            <p>Multiple partnerships were formed between investors, entrepreneurs, and established companies, fostering collaborative growth.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-md-6">
-                        <div class="highlight-card">
-                            <div class="highlight-icon">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <h4>Knowledge Transfer</h4>
-                            <p>Intensive workshops and masterclasses equipped participants with practical skills and industry insights.</p>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-        </section>
-
-        <!-- Lightbox -->
-        <div id="lightbox" class="lightbox">
-            <div class="lightbox-content">
-                <span class="close" onclick="closeLightbox()">&times;</span>
-                <button class="nav-arrows prev" onclick="changeImage(-1)">&#10094;</button>
-                <img id="lightbox-img" src="" alt="">
-                <button class="nav-arrows next" onclick="changeImage(1)">&#10095;</button>
-            </div>
+          </div>
         </div>
 
-        <!-- Main Footer -->
-        <footer class="main-footer">
-            <!--Widgets Section-->
-            <div class="widgets-section">
-                <div class="auto-container">
-                    <div class="row">
-                        <!--Big Column-->
-                        <div class="big-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
-                            <div class="row">
-                                <!--Footer Column-->
-                                <div class="footer-column col-xl-7 col-lg-6 col-md-6 col-sm-12">
-                                    <div class="footer-widget about-widget">
-                                        <div class="logo">
-                                            <a href="../index.html"><img src="../images/logo.png" alt="SIC Logo" /></a>
-                                        </div>
-                                        <div class="text">
-                                            <p>The Scale and Ideas Conference explores Africa's innovation landscape, equipping you with insights, tools, and inspiration to scale what matters.</p>
-                                        </div>
-                                        <ul class="social-icon-one social-icon-colored">
-                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+          <div class="menu-backdrop"></div>
+          <div class="close-btn">
+            <span class="icon flaticon-cancel-1"></span>
+          </div>
+          <nav class="menu-box">
+            <div class="nav-logo">
+              <a href="index.html"
+                ><img
+                  src="/images/logo-2.png"
+                  alt=""
+                  title=""
+                  style="width: 150px"
+              /></a>
+            </div>
+            <ul class="navigation clearfix">
+              <!--Keep This Empty / Menu will come through Javascript-->
+            </ul>
+          </nav>
+        </div>
+        <!-- End Mobile Menu -->
+      </header>
+      <!--End Main Header -->
 
-                                <!--Footer Column-->
-                                <div class="footer-column col-xl-5 col-lg-6 col-md-6 col-sm-12">
-                                    <div class="footer-widget useful-links">
-                                        <h2 class="widget-title">Quick Links</h2>
-                                        <ul class="user-links">
-                                            <li><a href="/">Home</a></li>
-                                            <li><a href="../conference/">Conference</a></li>
-                                            <li><a href="../schedule/">Agenda</a></li>
-                                            <li><a href="../speakers/">Speakers</a></li>
-                                            <li><a href="../register/">Register</a></li>
-                                            <li><a href="../contact/">Contact</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Big Column-->
-                        <div class="big-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
-                            <div class="row">
-                                <!--Footer Column-->
-                                <div class="footer-column col-lg-6 col-md-6 col-sm-12">
-                                    <div class="footer-widget contact-widget">
-                                        <h2 class="widget-title">Contact Us</h2>
-                                        <div class="widget-content">
-                                            <ul class="contact-list">
-                                                <li>
-                                                    <span class="icon flaticon-clock"></span>
-                                                    <div class="text">Mon - Fri: 09:00 - 18:00</div>
-                                                </li>
-                                                <li>
-                                                    <span class="icon flaticon-phone"></span>
-                                                    <div class="text"><a href="tel:+2348132120048">+234 813 212 0048</a></div>
-                                                </li>
-                                                <li>
-                                                    <span class="icon flaticon-paper-plane"></span>
-                                                    <div class="text"><a href="mailto:asemota@sic.africa">asemota@sic.africa</a></div>
-                                                </li>
-                                                <li>
-                                                    <span class="icon flaticon-worldwide"></span>
-                                                    <div class="text">Nigeria (Physical & Virtual Event)</div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      <!-- Banner Section -->
+      <section class="banner-section">
+        <div class="banner-carousel owl-carousel owl-theme">
+          <!-- Slide Item -->
+          <div
+            class="slide-item"
+            style="background-image: url(../images/main-slider/1.jpg)"
+          >
+            <div class="auto-container">
+              <div class="content-box">
+                <span class="title">August 29th, 2025</span>
+                <h2>Scale<br />and Ideas Conference</h2>
+                <ul class="info-list">
+                  <li><span class="icon fa fa-chair"></span> 2000 Seats</li>
+                  <li><span class="icon fa fa-user-alt"></span> 2 SPEAKERS</li>
+                  <li>
+                    <span class="icon fa fa-map-marker-alt"></span> Benin City,
+                    Nigeria. August 29th, 2025
+                  </li>
+                </ul>
+                <div class="btn-box">
+                  <a href="/register/" class="theme-btn btn-style-two"
+                    ><span class="btn-title">Join the SIC 2025</span></a
+                  >
                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide Item -->
+          <div
+            class="slide-item"
+            style="background-image: url(../images/main-slider/2.jpg)"
+          >
+            <div class="auto-container">
+              <div class="content-box">
+                <span class="title">August 29th, 2025</span>
+                <h2>
+                  Innovate, Scale, and<br />
+                  Transform
+                </h2>
+                <ul class="info-list">
+                  <li><span class="icon fa fa-chair"></span> 2000 Seats</li>
+                  <li><span class="icon fa fa-user-alt"></span> 2 SPEAKERS</li>
+                  <li>
+                    <span class="icon fa fa-map-marker-alt"></span> Benin City,
+                    Nigeria. August 29th, 2025
+                  </li>
+                </ul>
+                <div class="btn-box">
+                  <a href="/register/" class="theme-btn btn-style-two"
+                    ><span class="btn-title">Join the SIC 2025</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--End Banner Section -->
+
+      <!-- Coming Soon -->
+      <section class="coming-soon-section">
+        <div class="auto-container">
+          <div class="outer-box">
+            <div class="time-counter">
+              <div
+                class="time-countdown clearfix"
+                data-countdown="08/29/2025"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Coming Soon -->
+
+      <!-- About Section -->
+      <section class="about-section">
+        <div class="anim-icons full-width">
+          <span class="icon icon-circle-blue wow fadeIn"></span>
+          <span class="icon icon-dots wow fadeInleft"></span>
+          <span class="icon icon-circle-1 wow zoomIn"></span>
+        </div>
+
+        <div class="auto-container">
+          <div class="row">
+            <!-- Content Column -->
+            <div class="content-column col-lg-6 col-md-12 col-sm-12">
+              <div class="inner-column">
+                <div class="sec-title">
+                  <span class="title">ABOUT EVENT</span>
+                  <h2>Welcome to the Scale and Ideas Conference (SIC) 2025</h2>
+                  <div class="text">
+                    The human mind may be likened to a garden, which may be
+                    intelligently cultivated or allowed to run wild. But whether
+                    cultivated or neglected, it must and will produce. At SIC,
+                    we plant useful seeds into your mind. As it falls, it will
+                    accumulate and then reproduce its kind. SIC focuses on four
+                    key pillars that shape our society and future: Social
+                    Change, Technology and Innovation, Business and
+                    Entrepreneurship, and Marketplace – connecting faith with
+                    workplace success. Join us for thought-provoking sessions,
+                    networking, and opportunities to scale your ideas.
+                  </div>
+                </div>
+
+                <ul class="list-style-one">
+                  <li>
+                    Exclusive insights from industry leaders and innovators.
+                  </li>
+                  <li>
+                    Opportunities to network with entrepreneurs and
+                    professionals.
+                  </li>
+                  <li>
+                    Sessions focused on social change, technology, business, and
+                    faith-driven success.
+                  </li>
+                  <li>
+                    Collaborative discussions to help scale your ideas and
+                    impact.
+                  </li>
+                </ul>
+
+                <div class="btn-box">
+                  <a href="/register/" class="theme-btn btn-style-three"
+                    ><span class="btn-title">Pre-Register</span></a
+                  >
+                </div>
+              </div>
             </div>
 
-            <!--Footer Bottom-->
-            <div class="footer-bottom">
-                <div class="auto-container">
-                    <div class="inner-container clearfix">
-                        <div class="copyright-text">
-                            <p>© 2025 Scale and Ideas Conference. All Rights Reserved.</p>
-                        </div>
-                    </div>
-                </div>
+            <!-- Image Column -->
+            <div class="image-column col-lg-6 col-md-12 col-sm-12">
+              <div class="image-box">
+                <figure class="image wow fadeIn">
+                  <img
+                    src="../images/patterns/precious.jpg"
+                    alt=""
+                    style="object-fit: contain"
+                  />
+                </figure>
+              </div>
             </div>
-        </footer>
-        <!-- End Footer -->
+          </div>
+        </div>
+      </section>
+      <!--End About Section -->
+
+      <!-- Features Section -->
+      <section class="features-section-two">
+        <div class="auto-container">
+          <div class="anim-icons">
+            <span class="icon twist-line-1 wow zoomIn"></span>
+            <span
+              class="icon twist-line-2 wow zoomIn"
+              data-wow-delay="1s"
+            ></span>
+            <span
+              class="icon twist-line-3 wow zoomIn"
+              data-wow-delay="2s"
+            ></span>
+          </div>
+          <div class="row">
+            <!-- Title Block -->
+            <div class="title-block col-lg-4 col-md-12 col-sm-12 wow fadeInUp">
+              <div class="inner-box">
+                <div class="sec-title">
+                  <span class="title">Features</span>
+                  <h2>Why Attend SIC 2025?</h2>
+                </div>
+              </div>
+            </div>
+            <!-- Feature Block -->
+            <div
+              class="feature-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
+            >
+              <div class="inner-box">
+                <div class="icon-box">
+                  <span class="icon flaticon-lecture"></span>
+                </div>
+                <h4><a href="#">Inspiring Speakers</a></h4>
+                <div class="text">
+                  Hear from top industry leaders, innovators, and faith-driven
+                  entrepreneurs who are shaping the future.
+                </div>
+              </div>
+            </div>
+            <!-- Feature Block -->
+            <div
+              class="feature-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
+            >
+              <div class="inner-box">
+                <div class="icon-box">
+                  <span class="icon flaticon-search"></span>
+                </div>
+                <h4><a href="#">Transformative Experience</a></h4>
+                <div class="text">
+                  Gain practical knowledge and insights across business,
+                  technology, social impact, and faith integration.
+                </div>
+              </div>
+            </div>
+            <!-- Feature Block -->
+            <div
+              class="feature-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
+              data-wow-delay="400ms"
+            >
+              <div class="inner-box">
+                <div class="icon-box">
+                  <span class="icon flaticon-diamond-1"></span>
+                </div>
+                <h4><a href="#">Unparalleled Networking</a></h4>
+                <div class="text">
+                  Connect with like-minded professionals, entrepreneurs, and
+                  changemakers from Africa and beyond.
+                </div>
+              </div>
+            </div>
+            <!-- Feature Block -->
+            <div
+              class="feature-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
+              data-wow-delay="800ms"
+            >
+              <div class="inner-box">
+                <div class="icon-box">
+                  <span class="icon flaticon-success"></span>
+                </div>
+                <h4><a href="#">Workshops & Panels</a></h4>
+                <div class="text">
+                  Engage in interactive sessions designed to provide real-world
+                  strategies for success.
+                </div>
+              </div>
+            </div>
+            <!-- Feature Block -->
+            <div
+              class="feature-block-two col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
+              data-wow-delay="1200ms"
+            >
+              <div class="inner-box">
+                <div class="icon-box">
+                  <span class="icon flaticon-employee"></span>
+                </div>
+                <h4><a href="#">Global Perspectives</a></h4>
+                <div class="text">
+                  Gain exposure to international trends and best practices that
+                  can help you scale your ideas globally.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--End Features Section -->
+
+      <!-- Speakers Section -->
+      <section
+        class="speakers-section"
+        style="background-image: url(../images/background/6.jpg)"
+      >
+        <div class="auto-container">
+          <div class="sec-title light text-center">
+            <span class="title">Speakers</span>
+            <h2>Meet Our Speakers</h2>
+          </div>
+
+          <div class="row" style="display: flex; justify-content: center">
+            <!-- Speaker Block -->
+            <div class="speaker-block col-lg-3 col-md-6 col-sm-12">
+              <div class="inner-box">
+                <div class="image-box">
+                  <figure class="image">
+                    <a href="#"
+                      ><img
+                        src="../images/patterns/precious.jpg"
+                        alt=""
+                        style="width: 280px; height: 280px; object-fit: cover"
+                    /></a>
+                  </figure>
+                </div>
+
+                <div class="info-box">
+                  <div class="inner">
+                    <h4 class="name">
+                      <a target="_blank" href="#"
+                        >Izoduwa Precious Asemota</a
+                      >
+                    </h4>
+                    <span class="designation">Speaker</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Speaker Block -->
+            <div class="speaker-block col-lg-3 col-md-6 col-sm-12">
+              <div class="inner-box">
+                <div class="image-box">
+                  <figure class="image">
+                    <a href="#"
+                      ><img
+                        src="../images/resource/speaker-3.jpg"
+                        alt=""
+                        style="width: 280px; height: 280px; object-fit: cover"
+                    /></a>
+                  </figure>
+                </div>
+
+                <div class="info-box">
+                  <div class="inner">
+                    <h4 class="name">
+                      <a target="_blank" href="#"
+                        >ID Cabasa</a
+                      >
+                    </h4>
+                    <span class="designation">Speaker</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Speaker Block -->
+            <div class="speaker-block col-lg-3 col-md-6 col-sm-12">
+              <div class="inner-box">
+                <div class="image-box">
+                  <figure class="image">
+                    <a href="#"
+                      ><img
+                        src="../images/patterns/mike.jpeg"
+                        alt=""
+                        style="width: 280px; height: 280px; object-fit: cover"
+                    /></a>
+                  </figure>
+                </div>
+
+                <div class="info-box">
+                  <div class="inner">
+                    <h4 class="name">
+                      <a target="_blank" href="#"
+                        >Mike Mpanya</a
+                      >
+                    </h4>
+                    <span class="designation">Speaker</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Speaker Block -->
+            <div class="speaker-block col-lg-3 col-md-6 col-sm-12">
+              <div class="inner-box">
+                <div class="image-box">
+                  <figure class="image">
+                    <a href="#"
+                      ><img
+                        src="../images/patterns/stephane.webp"
+                        alt=""
+                        style="width: 280px; height: 280px; object-fit: cover"
+                    /></a>
+                  </figure>
+                </div>
+
+                <div class="info-box">
+                  <div class="inner">
+                    <h4 class="name">
+                      <a target="_blank" href="#"
+                        >Stephane Nwolley Jnr.</a
+                      >
+                    </h4>
+                    <span class="designation">Speaker</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Speakers Section -->
+
+      <!-- Fun Fact Section -->
+      <section class="fun-fact-section">
+        <div class="auto-container">
+          <div class="fact-counter">
+            <div
+              class="row clearfix"
+              style="display: flex; justify-content: center"
+            >
+              <!--Column-->
+              <div
+                class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp"
+              >
+                <div class="count-box">
+                  <span class="icon icon_headphones"></span>
+                  <span class="count-text" data-speed="3000" data-stop="2190"
+                    >0</span
+                  >
+                  <h4 class="counter-title">Participants</h4>
+                </div>
+              </div>
+
+              <!--Column-->
+              <div
+                class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp"
+                data-wow-delay="800ms"
+              >
+                <div class="count-box">
+                  <span class="icon">
+                    <svg
+                      style="width: 60px; height: 60px"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xml:space="preserve"
+                      id="Speaker"
+                      x="0"
+                      y="0"
+                      version="1.1"
+                      viewBox="0 0 29 29"
+                    >
+                      <path
+                        d="M12.657 23.415a1.83 1.83 0 0 1-1.146-.406L6.85 19.28H3.84A1.842 1.842 0 0 1 2 17.44v-5.88c0-1.015.825-1.84 1.84-1.84h3.01l4.661-3.729a1.826 1.826 0 0 1 1.946-.222c.644.31 1.043.945 1.043 1.659v14.145c0 .714-.399 1.349-1.043 1.658-.256.123-.53.184-.8.184zM4 17.28h3.2c.227 0 .447.077.625.219l4.675 3.74V7.761l-4.675 3.74a1.001 1.001 0 0 1-.625.219H4v5.56zM19.803 20.803a.999.999 0 0 1-.707-1.707C20.306 17.887 21 16.211 21 14.5s-.694-3.387-1.904-4.596A.999.999 0 1 1 20.51 8.49C22.092 10.071 23 12.262 23 14.5s-.908 4.429-2.49 6.01a.993.993 0 0 1-.707.293z"
+                        fill="#ffffff"
+                        class="color000000 svgShape"
+                      ></path>
+                      <path
+                        d="M22.632 23.632a.999.999 0 0 1-.707-1.707C23.879 19.97 25 17.264 25 14.5s-1.121-5.47-3.075-7.425a.999.999 0 1 1 1.414-1.414C25.666 7.988 27 11.209 27 14.5s-1.334 6.512-3.661 8.839a.997.997 0 0 1-.707.293zM16.975 17.975a1 1 0 0 1-.707-1.707c.465-.465.732-1.11.732-1.768s-.267-1.303-.732-1.768a1.002 1.002 0 0 1 0-1.415 1.002 1.002 0 0 1 1.415 0C18.52 12.156 19 13.316 19 14.5s-.48 2.344-1.317 3.182a1.001 1.001 0 0 1-.708.293z"
+                        fill="#ffffff"
+                        class="color000000 svgShape"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span class="count-text" data-speed="3000" data-stop="02"
+                    >0</span
+                  >
+                  <h4 class="counter-title">Speakers</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--End Fun Fact Section -->
+
+      <!-- Schedule Section -->
+      <section class="schedule-section">
+        <div class="anim-icons">
+          <span class="icon icon-circle-4 wow zoomIn"></span>
+          <span class="icon icon-circle-3 wow zoomIn"></span>
+        </div>
+
+        <div class="auto-container">
+          <div class="sec-title text-center">
+            <span class="title">About Conference</span>
+            <h2>Schedule Plan</h2>
+          </div>
+
+          <div class="schedule-tabs tabs-box">
+            <div class="btns-box">
+              <!--Tabs Box-->
+              <ul class="tab-buttons clearfix">
+                <li class="tab-btn active-btn" data-tab="#tab-1">
+                  <span class="day">Conference Day</span>
+                  <span class="date">29</span>
+                  <span class="month">Aug</span> 2025
+                </li>
+              </ul>
+            </div>
+
+            <div class="tabs-content">
+              <!--Tab-->
+              <div class="tab active-tab" id="tab-1">
+                <div class="schedule-timeline">
+                  <!-- schedule Block -->
+                  <div class="schedule-block">
+                    <div class="inner-box">
+                      <div class="inner">
+                        <div class="date">
+                          09:00 AM <br />
+                          09:45 AM
+                        </div>
+
+                        <div class="speaker-info">
+                          <figure class="thumb">
+                            <img
+                              src="../images/patterns/precious.jpg"
+                              alt=""
+                              style="
+                                width: 60px;
+                                height: 60px;
+                                object-fit: cover;
+                              "
+                            />
+                          </figure>
+                          <h5 class="name">Izoduwa Precious Asemota</h5>
+                          <span class="designation">Speaker</span>
+                        </div>
+
+                        <h4>
+                          <a href="#"
+                            >If life were a game - these are the rules
+                            (Foundation)</a
+                          >
+                        </h4>
+
+                        <div class="text">
+                          Uniben Main Auditorium, Ugbowo
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 64 64"
+                            id="location"
+                            style="width: 24px; height: 24px"
+                          >
+                            <path
+                              fill="#1e252d"
+                              d="M50.4,18.41a18.4,18.4,0,1,0-36.8,0C13.6,28.57,32,54.26,32,54.26S50.4,28.57,50.4,18.41ZM20,18.41a12,12,0,1,1,12,12A12,12,0,0,1,20,18.41Z"
+                            ></path>
+                            <path
+                              fill="#1e252d"
+                              d="M41.26,43c-1.38,2.25-2.72,4.33-3.9,6.11,5,.68,8.5,2.28,8.5,4.16,0,2.48-6.2,4.5-13.86,4.5s-13.86-2-13.86-4.5c0-1.89,3.52-3.49,8.51-4.16-1.18-1.78-2.52-3.87-3.9-6.12C10.65,44.36,1.91,48.42,1.91,53.23,1.91,59.18,15.38,64,32,64s30.09-4.82,30.09-10.77C62.09,48.42,53.35,44.36,41.26,43Z"
+                            ></path>
+                          </svg>
+                        </div>
+
+                        <div class="btn-box">
+                          <a href="/register/" class="theme-btn">Register</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- schedule Block -->
+                  <div class="schedule-block even">
+                    <div class="inner-box">
+                      <div class="inner">
+                        <div class="date">
+                          10:00 AM <br />
+                          10:50 AM
+                        </div>
+
+                        <div class="speaker-info">
+                          <figure class="thumb">
+                            <img
+                              src="../images/resource/thumb-1.jpg"
+                              alt=""
+                              style="
+                                width: 60px;
+                                height: 60px;
+                                object-fit: cover;
+                              "
+                            />
+                          </figure>
+                          <h5 class="name">ID Casaba</h5>
+                          <span class="designation">Speaker</span>
+                        </div>
+
+                        <h4>
+                          <a href="#"
+                            >If life were a game - these are the rules (What The Future Holds)</a
+                          >
+                        </h4>
+
+                        <div class="text">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 64 64"
+                            id="location"
+                            style="width: 24px; height: 24px"
+                          >
+                            <path
+                              fill="#1e252d"
+                              d="M50.4,18.41a18.4,18.4,0,1,0-36.8,0C13.6,28.57,32,54.26,32,54.26S50.4,28.57,50.4,18.41ZM20,18.41a12,12,0,1,1,12,12A12,12,0,0,1,20,18.41Z"
+                            ></path>
+                            <path
+                              fill="#1e252d"
+                              d="M41.26,43c-1.38,2.25-2.72,4.33-3.9,6.11,5,.68,8.5,2.28,8.5,4.16,0,2.48-6.2,4.5-13.86,4.5s-13.86-2-13.86-4.5c0-1.89,3.52-3.49,8.51-4.16-1.18-1.78-2.52-3.87-3.9-6.12C10.65,44.36,1.91,48.42,1.91,53.23,1.91,59.18,15.38,64,32,64s30.09-4.82,30.09-10.77C62.09,48.42,53.35,44.36,41.26,43Z"
+                            ></path>
+                          </svg>
+                          Uniben Main Auditorium, Ugbowo
+                        </div>
+
+                        <div class="btn-box">
+                          <a href="/register/" class="theme-btn">Register</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- schedule Block: Mike Mpanya -->
+                  <div class="schedule-block">
+                    <div class="inner-box">
+                      <div class="inner">
+                        <div class="date">
+                          10:50 AM <br />
+                          11:15 AM
+                        </div>
+                        <div class="speaker-info">
+                          <figure class="thumb">
+                            <img
+                              src="../images/patterns/mike.jpeg"
+                              alt="Mike Mpanya"
+                              style="
+                                width: 60px;
+                                height: 60px;
+                                object-fit: cover;
+                              "
+                            />
+                          </figure>
+                          <h5 class="name">Mike Mpanya</h5>
+                          <span class="designation">Speaker</span>
+                        </div>
+                        <h4>
+                          <a href="#"
+                            >If life were a game - these are the rules (The
+                            Dream Perspective)</a
+                          >
+                        </h4>
+                        <div class="text">
+                          Uniben Main Auditorium, Ugbowo
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 64 64"
+                            id="location"
+                            style="width: 24px; height: 24px"
+                          >
+                            <path
+                              fill="#1e252d"
+                              d="M50.4,18.41a18.4,18.4,0,1,0-36.8,0C13.6,28.57,32,54.26,32,54.26S50.4,28.57,50.4,18.41ZM20,18.41a12,12,0,1,1,12,12A12,12,0,0,1,20,18.41Z"
+                            ></path>
+                            <path
+                              fill="#1e252d"
+                              d="M41.26,43c-1.38,2.25-2.72,4.33-3.9,6.11,5,.68,8.5,2.28,8.5,4.16,0,2.48-6.2,4.5-13.86,4.5s-13.86-2-13.86-4.5c0-1.89,3.52-3.49,8.51-4.16-1.18-1.78-2.52-3.87-3.9-6.12C10.65,44.36,1.91,48.42,1.91,53.23,1.91,59.18,15.38,64,32,64s30.09-4.82,30.09-10.77C62.09,48.42,53.35,44.36,41.26,43Z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <div class="btn-box">
+                          <a href="/register/" class="theme-btn">Register</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- schedule Block: Stephane Nwolley Jnr. -->
+                  <div class="schedule-block even">
+                    <div class="inner-box">
+                      <div class="inner">
+                        <div class="date">
+                          11:15 AM <br />
+                          11:40 AM
+                        </div>
+                        <div class="speaker-info">
+                          <figure class="thumb">
+                            <img
+                              src="../images/patterns/stephane.webp"
+                              alt="Stephane Nwolley Jnr."
+                              style="
+                                width: 60px;
+                                height: 60px;
+                                object-fit: cover;
+                              "
+                            />
+                          </figure>
+                          <h5 class="name">Stephane Nwolley Jnr.</h5>
+                          <span class="designation">Speaker</span>
+                        </div>
+                        <h4>
+                          <a href="#"
+                            >If life were a game - these are the rules (The
+                            Education Perspective)</a
+                          >
+                        </h4>
+                        <div class="text">
+                          Uniben Main Auditorium, Ugbowo
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 64 64"
+                            id="location"
+                            style="width: 24px; height: 24px"
+                          >
+                            <path
+                              fill="#1e252d"
+                              d="M50.4,18.41a18.4,18.4,0,1,0-36.8,0C13.6,28.57,32,54.26,32,54.26S50.4,28.57,50.4,18.41ZM20,18.41a12,12,0,1,1,12,12A12,12,0,0,1,20,18.41Z"
+                            ></path>
+                            <path
+                              fill="#1e252d"
+                              d="M41.26,43c-1.38,2.25-2.72,4.33-3.9,6.11,5,.68,8.5,2.28,8.5,4.16,0,2.48-6.2,4.5-13.86,4.5s-13.86-2-13.86-4.5c0-1.89,3.52-3.49,8.51-4.16-1.18-1.78-2.52-3.87-3.9-6.12C10.65,44.36,1.91,48.42,1.91,53.23,1.91,59.18,15.38,64,32,64s30.09-4.82,30.09-10.77C62.09,48.42,53.35,44.36,41.26,43Z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <div class="btn-box">
+                          <a href="/register/" class="theme-btn">Register</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--End schedule Section -->
+
+      <!-- Pricing Section -->
+      <section class="pricing-section">
+        <div class="anim-icons">
+          <span class="icon icon-circle-green wow fadeIn"></span>
+          <span class="icon icon-circle-blue wow fadeIn"></span>
+          <span class="icon icon-circle-pink wow fadeIn"></span>
+        </div>
+
+        <div class="auto-container">
+          <div class="sec-title text-center">
+            <span class="title">Register Now</span>
+            <h2>Join the Conference</h2>
+          </div>
+
+          <div class="outer-box">
+            <div class="row" style="display: flex; justify-content: center">
+              <!-- Pricing Block -->
+              <div
+                class="pricing-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
+                data-wow-delay="400ms"
+              >
+                <div class="inner-box">
+                  <div class="icon-box">
+                    <div class="icon-outer">
+                      <span class="icon flaticon-diamond-1"></span>
+                    </div>
+                  </div>
+
+                  <div class="price-box">
+                    <div class="title">Full Pass</div>
+                    <h4 class="price"><del>$99.99</del></h4>
+                  </div>
+
+                  <ul class="features">
+                    <li class="true">Access to Keynote Speeches</li>
+                    <li class="true">Hands-on Workshops & Demos</li>
+                    <li class="true">Networking with Industry Leaders</li>
+                  </ul>
+
+                  <div class="btn-box">
+                    <a aria-disabled="true" href="#" class="theme-btn"
+                      >Free Tickets</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--End Pricing Section -->
+
+      <!-- Video Section -->
+      <section
+        class="video-section"
+        style="background-image: url(../images/background/1.jpg)"
+      >
+        <div class="auto-container">
+          <div class="content-box">
+            <div class="text">SIC 2025</div>
+            <h2>The Gathering of Change Agents</h2>
+            <p style="color: #f4f4f4; font-size: 16px">
+              Join us for an inspiring event where visionaries, innovators, and
+              leaders come together to share insights, foster collaboration, and
+              drive impactful change. Don't miss out on this opportunity to be
+              part of a transformative experience.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!--End Video Section -->
+
+      <!-- Why Choose Us -->
+      <section class="why-choose-us">
+        <div class="auto-container">
+          <div class="row">
+            <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+              <div class="inner-column">
+                <div class="sec-title">
+                  <span class="title">JOIN THE EVENT</span>
+                  <h2>Why Attend SIC 2025?</h2>
+                  <div class="text">
+                    SIC 2025 is more than just an event—it's a movement designed
+                    to equip you with the tools, insights, and connections
+                    needed to drive impactful change. Whether you're an
+                    entrepreneur, a professional, or a student, this conference
+                    offers unparalleled opportunities for growth and success.
+                  </div>
+                </div>
+                <ul class="list-style-one">
+                  <li>Exclusive insights from global thought leaders</li>
+                  <li>
+                    Opportunities to network with top industry professionals
+                  </li>
+                  <li>Interactive workshops and panel discussions</li>
+                  <li>Faith-integrated business and leadership sessions</li>
+                </ul>
+                <div class="btn-box">
+                  <a href="../register/" class="theme-btn btn-style-two"
+                    ><span class="btn-title">Get Tickets</span></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="image-column col-lg-6 col-md-12 col-sm-12">
+              <div class="image-box">
+                <figure class="image">
+                  <img
+                    src="../images/background/3.jpg"
+                    alt="SIC 2025 Conference"
+                  />
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Why Choose Us -->
+
+      <!--Clients Section-->
+      <section class="clients-section">
+        <div class="anim-icons">
+          <span class="icon icon-dots-3 wow zoomIn"></span>
+          <span class="icon icon-circle-blue wow zoomIn"></span>
+        </div>
+
+        <div class="auto-container">
+          <div class="sec-title">
+            <span class="title">Clients</span>
+            <h2>Official Sponsors</h2>
+          </div>
+
+          <div class="sponsors-outer">
+            <div class="row">
+              <!-- Client Block -->
+              <div class="client-block col-lg-3 col-md-6 col-sm-12">
+                <figure class="image-box">
+                  <a href="#"><img src="../images/clients/1.png" alt="" /></a>
+                </figure>
+              </div>
+  
+              <!-- Client Block -->
+              <div class="client-block col-lg-3 col-md-6 col-sm-12">
+                <figure class="image-box">
+                  <a href="#"><img src="../images/clients/nubi.jpg" alt="" /></a>
+                </figure>
+              </div>
+  
+              <!-- Client Block -->
+              <div class="client-block col-lg-3 col-md-6 col-sm-12">
+                <figure style="height: 153.25px" class="image-box">
+                  <a href="#"><img style="object-fit: contain; width: 100%; height: 100%"
+                      src="../images/clients/surfspot.jpg" alt="" /></a>
+                </figure>
+              </div>
+  
+              <!-- Client Block -->
+              <div class="client-block col-lg-3 col-md-6 col-sm-12">
+                <figure style="height: 153.25px" class="image-box">
+                  <a href="#"><img style="object-fit: contain; width: 100%; height: 100%"
+                      src="../images/clients/thrillz.jpeg" alt="" /></a>
+                </figure>
+              </div>
+  
+              <!-- Client Block -->
+              <div class="client-block col-lg-3 col-md-6 col-sm-12">
+                <figure style="height: 153.25px" class="image-box">
+                  <a href="#"><img style="object-fit: contain; width: 100%; height: 100%"
+                      src="../images/clients/THNA LOO.png" alt="" /></a>
+                </figure>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--End Clients Section-->
+
+      <!-- Register Section -->
+      <section class="register-section">
+        <div class="auto-container">
+          <div class="anim-icons full-width">
+            <span class="icon icon-circle-3 wow zoomIn"></span>
+          </div>
+
+          <div class="outer-box">
+            <div class="row no-gutters">
+              <div class="title-column col-lg-4 col-md-6 col-sm-12">
+                <div class="inner">
+                  <div class="sec-title light">
+                    <div class="icon-box">
+                      <span class="icon flaticon-rocket-ship"></span>
+                    </div>
+                    <h2>REGISTER NOW</h2>
+                    <div class="text">
+                      Join us for an immersive tech conference where innovation
+                      meets expertise! Secure your spot today to gain exclusive
+                      access to keynote speeches, hands-on workshops, and
+                      networking opportunities with industry leaders. Register
+                      now and be part of the future of technology!
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--Register Form-->
+              <div class="register-form col-lg-8 col-md-6 col-sm-12">
+                <div class="form-inner">
+                  <form method="post" action="/contact/">
+                    <div class="form-group">
+                      <span class="icon fa fa-user"></span>
+                      <input
+                        type="text"
+                        name="username"
+                        placeholder="Full name"
+                        required=""
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <span class="icon fa fa-envelope"></span>
+                      <input
+                        type="email"
+                        name="email"
+                        value=""
+                        placeholder="Email address"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <span class="icon fa fa-phone"></span>
+                      <input
+                        type="text"
+                        name="phone"
+                        placeholder="Phone"
+                        required=""
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <span class="icon fa fa-edit"></span>
+                      <textarea
+                        name="message"
+                        placeholder="Additional Message"
+                      ></textarea>
+                    </div>
+
+                    <div class="form-group text-end">
+                      <button type="submit" class="theme-btn btn-style-four">
+                        <span class="btn-title">Register Now</span>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--End Register Section -->
+
+      <!-- Main Footer -->
+      <footer class="main-footer">
+        <!--Widgets Section-->
+        <div class="widgets-section">
+          <div class="auto-container">
+            <div class="row">
+              <!--Big Column-->
+              <div class="big-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                <div class="row">
+                  <!--Footer Column-->
+                  <div
+                    class="footer-column col-xl-7 col-lg-6 col-md-6 col-sm-12"
+                  >
+                    <div class="footer-widget about-widget">
+                      <div class="logo">
+                        <a href="index.html"
+                          ><img src="../images/logo.png" alt="SIC 2025 Logo"
+                        /></a>
+                      </div>
+
+                      <div class="text">
+                        <p>
+                          The Scale and Ideas Conference 2025 is a premier event
+                          focused on Social Change, Technology and Innovation,
+                          Business and Entrepreneurship, and Marketplace (Faith
+                          in the Workplace). Join us in shaping the future!
+                        </p>
+                      </div>
+
+                      <ul class="social-icon-one social-icon-colored">
+                        <li>
+                          <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fab fa-youtube"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!--Footer Column-->
+                  <div
+                    class="footer-column col-xl-5 col-lg-6 col-md-6 col-sm-12"
+                  >
+                    <div class="footer-widget useful-links">
+                      <h2 class="widget-title">Quick Links</h2>
+                      <ul class="user-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/conference/">Conference</a></li>
+                        <li><a href="/agenda/">Agenda</a></li>
+                        <li><a href="/speakers/">Speakers</a></li>
+                        <li><a href="/register/">Register</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--Big Column-->
+              <div class="big-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                <div class="row">
+                  <!--Footer Column-->
+                  <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                    <div class="footer-widget contact-widget">
+                      <h2 class="widget-title">Contact Us</h2>
+                      <div class="widget-content">
+                        <ul class="contact-list">
+                          <li>
+                            <span class="icon flaticon-clock"></span>
+                            <div class="text">Mon - Fri: 09:00 - 18:00</div>
+                          </li>
+                          <li>
+                            <span class="icon flaticon-phone"></span>
+                            <div class="text">
+                              <a href="tel:+2348132120048">+234 813 212 0048</a>
+                            </div>
+                          </li>
+                          <li>
+                            <span class="icon flaticon-phone"></span>
+                            <div class="text">
+                              <a href="tel:+2348095630414">+234 809 563 0414</a>
+                            </div>
+                          </li>
+                          <li>
+                            <span class="icon flaticon-paper-plane"></span>
+                            <div class="text">
+                              <a href="mailto:projects@cyan.academy"
+                                >projects@cyan.academy</a
+                              >
+                            </div>
+                          </li>
+                          <li>
+                            <span class="icon flaticon-worldwide"></span>
+                            <div class="text">
+                              Nigeria (Physical & Virtual Event)
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Footer Column-->
+                  <div class="footer-column col-lg-6 col-md-6 col-sm-12"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Footer Bottom-->
+        <div class="footer-bottom">
+          <div class="auto-container">
+            <div class="inner-container clearfix">
+              <div class="copyright-text">
+                <p>© 2025 Scale and Ideas Conference. All Rights Reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- End Footer -->
     </div>
-    <!-- End Page Wrapper -->
+    <!--End pagewrapper-->
 
-    <!-- Scroll To Top -->
+    <!--Scroll to top-->
     <div class="scroll-to-top scroll-to-target" data-target="html">
-        <span class="fa fa-angle-up"></span>
+      <span class="fa fa-angle-double-up"></span>
     </div>
 
-    <!-- JS -->
+    <!-- Scripts -->
     <script src="../js/jquery.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
     <script src="../js/jquery.fancybox.js"></script>
-    <script src="../js/owl.js"></script>
-    <script src="../js/jquery.countdown.js"></script>
-    <script src="../js/wow.js"></script>
     <script src="../js/appear.js"></script>
+    <script src="../js/owl.js"></script>
+    <script src="../js/wow.js"></script>
     <script src="../js/script.js"></script>
-
-    <script>
-        // Hero Carousel Functionality
-        let slideIndex = 1;
-        showSlide(slideIndex);
-        
-        // Auto-advance slides every 5 seconds
-        setInterval(function() {
-            slideIndex++;
-            if (slideIndex > 3) slideIndex = 1;
-            showSlide(slideIndex);
-        }, 5000);
-        
-        function currentSlide(n) {
-            showSlide(slideIndex = n);
-        }
-        
-        function showSlide(n) {
-            const slides = document.querySelectorAll('.carousel-slide');
-            const indicators = document.querySelectorAll('.indicator');
-            
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
-            
-            slides.forEach(slide => slide.classList.remove('active'));
-            indicators.forEach(indicator => indicator.classList.remove('active'));
-            
-            if (slides[slideIndex - 1]) {
-                slides[slideIndex - 1].classList.add('active');
-            }
-            if (indicators[slideIndex - 1]) {
-                indicators[slideIndex - 1].classList.add('active');
-            }
-        }
-        
-        // Enhanced Gallery Functionality
-        const images = [
-            '../images/recap-assets/uniben-auditorium/BEE05215.jpg',
-            '../images/recap-assets/uniben-auditorium/BEE05370.jpg',
-            '../images/recap-assets/uniben-auditorium/BEE05375.jpg',
-            '../images/recap-assets/uniben-auditorium/BEE05437.jpg',
-            '../images/recap-assets/uniben-auditorium/BEE05486.jpg',
-            '../images/recap-assets/uniben-auditorium/BEE05639.jpg',
-            '../images/recap-assets/uniben-auditorium/BEE05753.jpg',
-            '../images/recap-assets/uniben-auditorium/BEE05949.jpg'
-        ];
-
-        let currentImageIndex = 0;
-
-        function openLightbox(index) {
-            currentImageIndex = index;
-            const lightbox = document.getElementById('lightbox');
-            const img = document.getElementById('lightbox-img');
-            
-            lightbox.style.display = 'block';
-            img.src = images[index];
-            
-            // Prevent body scroll when lightbox is open
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        function changeImage(direction) {
-            currentImageIndex += direction;
-            if (currentImageIndex >= images.length) {
-                currentImageIndex = 0;
-            } else if (currentImageIndex < 0) {
-                currentImageIndex = images.length - 1;
-            }
-            document.getElementById('lightbox-img').src = images[currentImageIndex];
-        }
-
-        // Enhanced lightbox interactions
-        document.getElementById('lightbox').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeLightbox();
-            }
-        });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            if (document.getElementById('lightbox').style.display === 'block') {
-                if (e.key === 'Escape') {
-                    closeLightbox();
-                } else if (e.key === 'ArrowLeft') {
-                    changeImage(-1);
-                } else if (e.key === 'ArrowRight') {
-                    changeImage(1);
-                }
-            }
-        });
-        
-        // Gallery item zoom effect on click
-        document.querySelectorAll('.gallery-item').forEach((item, index) => {
-            item.addEventListener('click', function() {
-                openLightbox(index);
-            });
-        });
-    </script>
-</body>
+    <script src="../js/color-settings.js"></script>
+  </body>
 </html>

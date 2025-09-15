@@ -47,115 +47,6 @@
     />
 
     <style>
-      /* Modern Navigation Dropdown */
-      .nav-dropdown {
-        position: relative;
-        display: inline-block;
-      }
-      
-      .nav-dropdown-btn {
-        background: linear-gradient(135deg, #101130e6 0%, rgba(16, 17, 48, 0.8) 100%);
-        color: white;
-        padding: 12px 24px;
-        font-size: 16px;
-        font-weight: 600;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-      
-      .nav-dropdown-btn:hover {
-        background: linear-gradient(135deg, rgba(16, 17, 48, 0.9) 0%, rgba(16, 17, 48, 0.7) 100%);
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(16, 17, 48, 0.4);
-      }
-      
-      .nav-dropdown-content {
-        position: absolute;
-        right: 0;
-        background: white;
-        min-width: 280px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        border-radius: 12px;
-        z-index: 1000;
-        padding: 12px 0;
-        top: 100%;
-        margin-top: 0;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(8px);
-        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.2s;
-        pointer-events: none;
-      }
-      
-      .nav-dropdown::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 100%;
-        height: 12px;
-      }
-      
-      .nav-dropdown:hover .nav-dropdown-content,
-      .nav-dropdown:focus-within .nav-dropdown-content,
-      .nav-dropdown-content:hover,
-      .nav-dropdown.active .nav-dropdown-content {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-        transition-delay: 0s;
-        animation: fadeInDown 0.3s ease;
-        pointer-events: auto;
-      }
-      
-      @keyframes fadeInDown {
-        from {
-          opacity: 0;
-          transform: translateY(-10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      
-      .nav-dropdown-content a {
-        color: #333;
-        padding: 12px 20px;
-        text-decoration: none;
-        display: block;
-        transition: all 0.3s ease;
-        font-weight: 500;
-        border-left: 3px solid transparent;
-      }
-      
-      .nav-dropdown-content a:hover {
-        background: linear-gradient(90deg, rgba(16, 17, 48, 0.1), transparent);
-        border-left-color: #101130e6;
-        color: #101130e6;
-        transform: translateX(5px);
-      }
-      
-      .nav-dropdown-content a.current {
-        background: linear-gradient(90deg, rgba(16, 17, 48, 0.15), transparent);
-        border-left-color: #101130e6;
-        color: #101130e6;
-        font-weight: 600;
-      }
-      
-      /* Hide default navigation on desktop, show dropdown */
-      @media (min-width: 992px) {
-        .main-menu .navigation {
-          display: none;
-        }
-      }
       
       .registration-section {
         background: linear-gradient(135deg, #101130e6 0%, rgba(16, 17, 48, 0.9) 50%, rgba(16, 17, 48, 0.8) 100%);
@@ -446,24 +337,11 @@
 
               <!-- Outer box -->
               <div class="outer-box">
-                <!-- Navigation Dropdown -->
-                <div class="nav-dropdown">
-                  <button class="nav-dropdown-btn">
-                    <span>Menu</span>
-                    <i class="fas fa-chevron-down"></i>
-                  </button>
-                  <div class="nav-dropdown-content">
-                    <a href="/">Home</a>
-                    <a href="/conference/">Conference</a>
-                    <a href="/pillars/">Pillars</a>
-                    <a href="/speakers/">Speakers</a>
-                    <a href="/schedule/">Agenda</a>
-                    <a href="/showcase/">Showcase</a>
-                    <a href="/recap/">Event Recap</a>
-                    <a href="/sic-tech/">SIC Tech</a>
-                    <a href="/register/" class="current">Register</a>
-                    <a href="/contact/">Contact</a>
-                  </div>
+                <!-- Button Box -->
+                <div class="btn-box">
+                  <a href="/register/" class="theme-btn btn-style-one"
+                    ><span class="btn-title">Register</span></a
+                  >
                 </div>
               </div>
             </div>

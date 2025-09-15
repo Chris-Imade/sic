@@ -2571,15 +2571,15 @@ img {
 
 .about-section .image-column .image-box {
   position: relative;
-  padding-left: 80px;
+  /* padding-left: 80px; */
 }
 
 .about-section .image-column .image-box img {
   position: relative;
   z-index: 1;
-  border-radius: 50%;
-  border: 15px solid #ffffff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  /* border-radius: 50%; */
+  /* border: 5px solid #ffffff; */
+  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
 }
 
 .about-section .image-column .image {
