@@ -20,8 +20,99 @@
   <link href="../css/color-switcher-design.css" rel="stylesheet" />
 
   <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon" />
-
   <link rel="icon" href="../images/favicon.png" type="image/x-icon" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  
+  <style>
+    /* Modern Navigation Dropdown */
+    .nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .nav-dropdown-btn {
+      background: linear-gradient(135deg, #382e61 0%, #131335 100%);
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .nav-dropdown-btn:hover {
+      background: linear-gradient(135deg, #131335 0%, #2c1810 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(56, 46, 97, 0.3);
+    }
+    
+    .nav-dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background: white;
+      min-width: 280px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      z-index: 1000;
+      padding: 12px 0;
+      margin-top: 8px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .nav-dropdown:hover .nav-dropdown-content {
+      display: block;
+      animation: fadeInDown 0.3s ease;
+    }
+    
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .nav-dropdown-content a {
+      color: #333;
+      padding: 12px 20px;
+      text-decoration: none;
+      display: block;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      border-left: 3px solid transparent;
+    }
+    
+    .nav-dropdown-content a:hover {
+      background: linear-gradient(90deg, rgba(56, 46, 97, 0.1), transparent);
+      border-left-color: #382e61;
+      color: #382e61;
+      transform: translateX(5px);
+    }
+    
+    .nav-dropdown-content a.current {
+      background: linear-gradient(90deg, rgba(56, 46, 97, 0.15), transparent);
+      border-left-color: #382e61;
+      color: #382e61;
+      font-weight: 600;
+    }
+    
+    /* Hide default navigation on desktop, show dropdown */
+    @media (min-width: 992px) {
+      .main-menu .navigation {
+        display: none;
+      }
+    }
+  </style>
 
   <!-- Responsive -->
 
@@ -106,9 +197,24 @@
             <!-- Outer box -->
 
             <div class="outer-box">
-              <!-- Button Box -->
-              <div class="btn-box">
-                <a href="/register/" class="theme-btn btn-style-one"><span class="btn-title">Register</span></a>
+              <!-- Navigation Dropdown -->
+              <div class="nav-dropdown">
+                <button class="nav-dropdown-btn">
+                  <span>Menu</span>
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="nav-dropdown-content">
+                  <a href="/">Home</a>
+                  <a href="/conference/">Conference</a>
+                  <a href="/pillars/">Pillars</a>
+                  <a href="/speakers/" class="current">Speakers</a>
+                  <a href="/schedule/">Agenda</a>
+                  <a href="/showcase/">Showcase</a>
+                  <a href="/recap/">Event Recap</a>
+                  <a href="/sic-tech/">SIC Tech</a>
+                  <a href="/register/">Register</a>
+                  <a href="/contact/">Contact</a>
+                </div>
               </div>
             </div>
           </div>
