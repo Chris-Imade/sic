@@ -14,7 +14,6 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 
   <style>
-
     /* Hero Carousel Styles */
     .hero-carousel {
       position: relative;
@@ -534,6 +533,74 @@
     .activity-card-modern:hover .activity-glow {
       opacity: 1;
     }
+
+    .contact-container {
+        background: linear-gradient(45deg, #1a1a1a, #333333);
+        border-radius: 12px;
+        padding: 60px 40px;
+        text-align: center;
+        color: #ffffff;
+      }
+
+      .contact-content h3 {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .contact-content p {
+        font-size: 16px;
+        margin-bottom: 30px;
+        opacity: 0.9;
+      }
+
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        opacity: 0.9;
+        transition: opacity 0.3s ease;
+      }
+
+      .contact-link:hover {
+        opacity: 1;
+      }
+
+      .theme-btn.btn-style-one {
+        background: #ff7200;
+        color: #ffffff;
+        padding: 15px 35px;
+        border-radius: 30px;
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.3s ease;
+      }
+
+      .theme-btn.btn-style-one:hover {
+        background: #d61472;
+      }
+
+      @media (max-width: 768px) {
+        .showcase-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-info {
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
   </style>
 
   <!-- Responsive -->
@@ -609,9 +676,7 @@
             <div class="outer-box">
               <!-- Button Box -->
               <div class="btn-box">
-                <a href="/register/" class="theme-btn btn-style-one"
-                  ><span class="btn-title">Register</span></a
-                >
+                <a href="/register/" class="theme-btn btn-style-one"><span class="btn-title">Register</span></a>
               </div>
             </div>
           </div>
@@ -737,7 +802,8 @@
           <!-- Image Column -->
           <div class="image-column col-lg-6 col-md-12 col-sm-12">
             <div class="image-box" style="height: 800px;">
-              <img src="../images/recap-assets/DSC_5014.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;" />
+              <img src="../images/recap-assets/DSC_5014.jpg" alt=""
+                style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;" />
             </div>
           </div>
         </div>
@@ -825,7 +891,7 @@
       </div>
     </section>
     -->
-    
+
     <!-- Coming Soon Placeholder for Speakers -->
     <section class="speakers-tech-section">
       <div class="auto-container">
@@ -836,12 +902,14 @@
             Amazing speakers lineup coming soon!
           </div>
         </div>
-        
+
         <div style="text-align: center; padding: 80px 20px;">
-          <div style="background: linear-gradient(135deg, #101130 0%, #1a1a3a 100%); color: white; padding: 60px 40px; border-radius: 20px; display: inline-block; min-width: 400px;">
+          <div
+            style="background: linear-gradient(135deg, #101130 0%, #1a1a3a 100%); color: white; padding: 60px 40px; border-radius: 20px; display: inline-block; min-width: 400px;">
             <i class="fas fa-microphone" style="font-size: 4rem; margin-bottom: 30px; opacity: 0.8;"></i>
             <h3 style="font-size: 2.5rem; margin-bottom: 20px; color: white;">Coming Soon</h3>
-            <p style="font-size: 1.2rem; opacity: 0.9; margin: 0;">Our incredible speaker lineup will be announced shortly. Stay tuned!</p>
+            <p style="font-size: 1.2rem; opacity: 0.9; margin: 0;">Our incredible speaker lineup will be announced
+              shortly. Stay tuned!</p>
           </div>
         </div>
       </div>
@@ -1021,8 +1089,7 @@
     <!--End Fun Fact Section -->
 
     <!-- Parallax Section 1 -->
-    <section class="parallax-section"
-      style="background-image: url('../images/recap-assets/DSC_5014.jpg')">
+    <section class="parallax-section" style="background-image: url('../images/recap-assets/DSC_5014.jpg')">
       <div class="parallax-content">
         <h2>"The best way to predict the future is to invent it."</h2>
         <p>- Alan Kay, Computer Scientist</p>
@@ -1041,9 +1108,9 @@
           </div>
         </div>
 
-        <div class="row">
-          <!-- Starter Tier -->
-          <div class="col-lg-4 col-md-6">
+        <!-- <div class="row"> -->
+        <!-- Starter Tier -->
+        <!-- <div class="col-lg-4 col-md-6">
             <div class="exhibition-tier">
               <div class="tier-header">
                 <div class="tier-name">Startup Showcase</div>
@@ -1065,10 +1132,10 @@
                 Reserve Space
               </button>
             </div>
-          </div>
+          </div> -->
 
-          <!-- Professional Tier -->
-          <div class="col-lg-4 col-md-6">
+        <!-- Professional Tier -->
+        <!-- <div class="col-lg-4 col-md-6">
             <div class="exhibition-tier premium-tier">
               <div class="premium-badge">Most Popular</div>
               <div class="tier-header">
@@ -1093,10 +1160,10 @@
                 Reserve Space
               </button>
             </div>
-          </div>
+          </div> -->
 
-          <!-- Enterprise Tier -->
-          <div class="col-lg-4 col-md-6">
+        <!-- Enterprise Tier -->
+        <!-- <div class="col-lg-4 col-md-6">
             <div class="exhibition-tier">
               <div class="tier-header">
                 <div class="tier-name">Enterprise</div>
@@ -1121,6 +1188,30 @@
                 Reserve Space
               </button>
             </div>
+          </div> -->
+        <!-- </div> -->
+        <div class="contact-container wow fadeInUp" data-wow-delay="0.6s">
+          <div class="contact-content">
+            <h3>Ready to Partner With Us?</h3>
+            <p>
+              Join Africa's premier innovation conference and position your
+              brand for success.
+            </p>
+            <div class="contact-info">
+              <a href="mailto:projects@cyan.academy" class="contact-link">
+                <i class="fas fa-envelope"></i>
+                projects@cyan.academy
+              </a>
+              <a href="tel:+2348132120048" class="contact-link">
+                <i class="fas fa-phone"></i>
+                +234 813 212 0048
+              </a>
+              <a href="tel:+2348132120048" class="contact-link">
+                <i class="fas fa-phone"></i>
+                +234 809 563 0414
+              </a>
+            </div>
+            <a href="/contact/" class="theme-btn btn-style-one">Get Started</a>
           </div>
         </div>
       </div>
