@@ -1066,3 +1066,35 @@
 
 @media only screen and (max-width: 479px) {
 }
+
+@media only screen and (max-width: 767px) {
+  .training-info h1 {
+    font-size: 36px;
+  }
+
+  .training-section .col-lg-6 {
+    margin-bottom: 40px;
+  }
+
+  .form-section {
+    padding: 30px;
+  }
+
+  .partners-item {
+    flex-direction: column;
+    text-align: center;
+    max-height: none;
+    padding: 15px;
+  }
+
+  .partners-item img {
+    border-right: none;
+    border-bottom: 1px solid #e6e6e6;
+    margin-right: 0;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+  }
+}
