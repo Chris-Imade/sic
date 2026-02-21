@@ -93,9 +93,6 @@
                   <li class="">
                     <a href="/showcase/">Showcase</a>
                   </li>
-                  <li class="">
-                    <a href="/recap/">Event Recap</a>
-                  </li>
                   <li><a href="/contact/">Contact</a></li>
                 </ul>
               </div>
@@ -136,68 +133,41 @@
     <!--End Main Header -->
 
     <!--Page Title-->
-    <section
-      class="page-title"
-      style="background-image: url(../images/background/5.jpg)"
-    >
-      <div class="auto-container">
-        <h1>Coming Soon</h1>
-      </div>
-    </section>
+    <style>
+      @media (max-width: 768px) {
+        section {
+          margin-top: 5rem !important;
+        }
+      }
+    </style>
 
-    <!--End Page Title-->
-
-    <!-- Countdown Section -->
-    <section class="countdown-section" style="padding: 80px 0; background: linear-gradient(135deg, #101130 0%, #1a1a3a 100%); text-align: center;">
-      <div class="auto-container">
-        <div class="timer">
-          <div
-            class="cs-countdown clearfix"
-            data-countdown="12/01/2025"
-          ></div>
+    <!-- Coming Soon Section for Agenda -->
+    <section class="agenda-coming-soon" style="background: linear-gradient(135deg, rgba(56, 46, 97, 0.95) 0%, rgba(16, 17, 48, 0.95) 100%); min-height: 80vh; display: flex; align-items: center; padding: 120px 0;">
+      <div class="auto-container" style="position: relative; z-index: 2;">
+        <div class="sec-title light text-center">
+          <span class="title" style="color: #fff; opacity: 0.9;">Event Schedule</span>
+          <h2 style="color: #fff; font-size: 3rem; margin-bottom: 20px;">Conference Agenda</h2>
+        </div>
+        
+        <div style="text-align: center; padding: 60px 20px;">
+          <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); color: white; padding: 70px 50px; border-radius: 25px; display: inline-block; max-width: 650px; border: 2px solid rgba(255, 255, 255, 0.2); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);">
+            <div style="width: 120px; height: 120px; margin: 0 auto 30px; background: rgba(255, 255, 255, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid rgba(255, 255, 255, 0.3);">
+              <i class="fas fa-calendar-alt" style="font-size: 3.5rem; color: #fff;"></i>
+            </div>
+            <h3 style="font-size: 2.8rem; margin-bottom: 25px; color: white; font-weight: 700;">Coming Soon</h3>
+            <p style="font-size: 1.3rem; opacity: 0.95; margin: 0 0 20px 0; line-height: 1.6; color: #fff;">Our detailed conference agenda and schedule will be released soon. Stay tuned for an exciting lineup of sessions!</p>
+            <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 15px; margin-top: 30px;">
+              <p style="font-size: 1.1rem; margin: 0; opacity: 0.9;"><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i><strong>Venue:</strong> University of Benin</p>
+              <p style="font-size: 1.1rem; margin: 10px 0 0 0; opacity: 0.9;"><i class="fas fa-calendar" style="margin-right: 10px;"></i><strong>Date:</strong> June 6th, 2026</p>
+            </div>
+            <div style="margin-top: 35px;">
+              <a href="/register/" style="background: #fff; color: rgba(56, 46, 97, 1); padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);">Register Now</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    <style>
-      .countdown-section {
-        padding: 80px 0;
-        background: linear-gradient(135deg, #101130 0%, #1a1a3a 100%);
-        text-align: center;
-        color: #fff;
-        font-family: "Poppins", sans-serif;
-      }
-    
-      .countdown-section .timer {
-        display: inline-block;
-        margin-top: 20px;
-      }
-    
-      .cs-countdown {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        font-size: 28px;
-        font-weight: 600;
-      }
-    
-      .cs-countdown div {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 20px 25px;
-        border-radius: 12px;
-        min-width: 80px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      }
-    
-      .cs-countdown div span {
-        display: block;
-        font-size: 14px;
-        font-weight: 400;
-        margin-top: 8px;
-        opacity: 0.8;
-      }
-    </style>
-    
-    <!--End Countdown Section-->
+    <!--End Coming Soon Section-->
 
     <!-- Newsletter Section -->
 
