@@ -355,6 +355,80 @@
       .episode-image:hover .play-button.disabled {
         opacity: 0.65 !important; /* Ensure hover doesn't make it appear active */
       }
+
+      /* Skeleton loading styles */
+      @keyframes skeleton-pulse {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+      }
+
+      .skeleton-card {
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+      }
+
+      .skeleton-img {
+        width: 100%;
+        height: 200px;
+        background: linear-gradient(90deg, #e9ecef 25%, #f8f9fa 50%, #e9ecef 75%);
+        background-size: 200% 100%;
+        animation: skeleton-pulse 1.5s ease-in-out infinite;
+      }
+
+      .skeleton-body {
+        padding: 25px;
+      }
+
+      .skeleton-line {
+        height: 14px;
+        border-radius: 7px;
+        background: linear-gradient(90deg, #e9ecef 25%, #f8f9fa 50%, #e9ecef 75%);
+        background-size: 200% 100%;
+        animation: skeleton-pulse 1.5s ease-in-out infinite;
+        margin-bottom: 12px;
+      }
+
+      .skeleton-line.short { width: 40%; }
+      .skeleton-line.medium { width: 70%; }
+      .skeleton-line.long { width: 100%; }
+      .skeleton-line.title { height: 20px; margin-bottom: 16px; width: 85%; }
+
+      .skeleton-badge {
+        width: 80px;
+        height: 26px;
+        border-radius: 20px;
+        background: linear-gradient(90deg, #e9ecef 25%, #f8f9fa 50%, #e9ecef 75%);
+        background-size: 200% 100%;
+        animation: skeleton-pulse 1.5s ease-in-out infinite;
+        margin-bottom: 15px;
+      }
+
+      /* Recent episode embed card */
+      .recent-episode-card {
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+        transition: all 0.3s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .recent-episode-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+
+      .recent-episode-card iframe {
+        flex: 1;
+        min-height: 352px;
+      }
+
     </style>
   </head>
 
@@ -526,111 +600,98 @@
       <section class="podcast-section">
         <div class="auto-container">
           <div class="section-heading text-center">
-            <h2>Upcoming Episodes</h2>
+            <h2>Recent Episodes</h2>
           </div>
 
-          <div class="row">
-            <!-- Episode Card 1 -->
-            <div class="col-lg-4 col-md-6">
-              <div class="episode-card">
-                <div class="episode-image">
-                  <img
-                    src="/images/patterns/AfricanMarkets.jpeg"
-                    alt="Episode 1"
-                  />
-                  <div class="play-button disabled">
-                    <i class="fas fa-play"></i>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <span class="episode-number">Episode 01</span>
-                  <h3 class="episode-title">
-                    Building Tech Solutions for African Markets
-                  </h3>
-                  <div class="episode-meta">
-                    <span><i class="far fa-clock"></i> 45 min</span>
-                    <span><i class="far fa-calendar"></i> August, 2026</span>
-                  </div>
-                  <p>
-                    Exploring how innovators are creating technology solutions
-                    that address Africa's unique challenges and opportunities.
-                  </p>
-                  <a href="#" class="btn btn-outline-podcast mt-3"
-                    >Coming in August</a
-                  >
+          <!-- Skeleton Loading (shown while iframes load) -->
+          <div class="row" id="skeleton-loader">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="skeleton-card">
+                <div class="skeleton-img"></div>
+                <div class="skeleton-body">
+                  <div class="skeleton-badge"></div>
+                  <div class="skeleton-line title"></div>
+                  <div class="skeleton-line long"></div>
+                  <div class="skeleton-line medium"></div>
+                  <div class="skeleton-line short"></div>
                 </div>
               </div>
             </div>
-
-            <!-- Episode Card 2 -->
-            <div class="col-lg-4 col-md-6">
-              <div class="episode-card">
-                <div class="episode-image">
-                  <img
-                    src="/images/patterns/AfricanStartups.jpg"
-                    alt="Episode 2"
-                  />
-                  <div class="play-button disabled">
-                    <i class="fas fa-play"></i>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <span class="episode-number">Episode 02</span>
-                  <h3 class="episode-title">
-                    Funding the Future: Investment in African Startups
-                  </h3>
-                  <div class="episode-meta">
-                    <span><i class="far fa-clock"></i> 52 min</span>
-                    <span><i class="far fa-calendar"></i> August, 2026</span>
-                  </div>
-                  <p>
-                    A deep dive into the funding landscape for African startups
-                    and how entrepreneurs can position themselves for
-                    investment.
-                  </p>
-                  <a href="#" class="btn btn-outline-podcast mt-3"
-                    >Coming in August</a
-                  >
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="skeleton-card">
+                <div class="skeleton-img"></div>
+                <div class="skeleton-body">
+                  <div class="skeleton-badge"></div>
+                  <div class="skeleton-line title"></div>
+                  <div class="skeleton-line long"></div>
+                  <div class="skeleton-line medium"></div>
+                  <div class="skeleton-line short"></div>
                 </div>
               </div>
             </div>
-
-            <!-- Episode Card 3 -->
-            <div class="col-lg-4 col-md-6">
-              <div class="episode-card">
-                <div class="episode-image">
-                  <img
-                    src="/images/patterns/WomenInnovationAfrica.jpg"
-                    alt="Episode 3"
-                  />
-                  <div class="play-button disabled">
-                    <i class="fas fa-play"></i>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <span class="episode-number">Episode 03</span>
-                  <h3 class="episode-title">
-                    Women Leading Innovation in Africa
-                  </h3>
-                  <div class="episode-meta">
-                    <span><i class="far fa-clock"></i> 49 min</span>
-                    <span><i class="far fa-calendar"></i> August, 2026</span>
-                  </div>
-                  <p>
-                    Highlighting female entrepreneurs and leaders who are
-                    shaping Africa's innovation ecosystem and breaking barriers.
-                  </p>
-                  <a href="#" class="btn btn-outline-podcast mt-3"
-                    >Coming in August</a
-                  >
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="skeleton-card">
+                <div class="skeleton-img"></div>
+                <div class="skeleton-body">
+                  <div class="skeleton-badge"></div>
+                  <div class="skeleton-line title"></div>
+                  <div class="skeleton-line long"></div>
+                  <div class="skeleton-line medium"></div>
+                  <div class="skeleton-line short"></div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- <div class="text-center mt-5">
-            <a href="#" class="btn btn-podcast">View All Episodes</a>
-          </div> -->
+          <!-- Actual Episode Embeds (hidden until loaded) -->
+          <div class="row" id="episodes-container" style="display: none;">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+              <div class="recent-episode-card">
+                <iframe
+                  style="border-radius: 12px;"
+                  src="https://open.spotify.com/embed/episode/6d49OzqYgsVzq3EwHvCnBm?utm_source=generator&theme=0"
+                  width="100%"
+                  height="352"
+                  frameborder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  class="episode-iframe"
+                ></iframe>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+              <div class="recent-episode-card">
+                <iframe
+                  style="border-radius: 12px;"
+                  src="https://open.spotify.com/embed/episode/10ZJbnP5VAejgF2wo33bMt?utm_source=generator&theme=0"
+                  width="100%"
+                  height="352"
+                  frameborder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  class="episode-iframe"
+                ></iframe>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+              <div class="recent-episode-card">
+                <iframe
+                  style="border-radius: 12px;"
+                  src="https://open.spotify.com/embed/episode/0WaHLfjHYKdnBwMNZgidHb?utm_source=generator&theme=0"
+                  width="100%"
+                  height="352"
+                  frameborder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  class="episode-iframe"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-4">
+            <a href="https://open.spotify.com/show/1NWfCxDZNFs1qmIQ6zjDeR" target="_blank" class="btn btn-podcast">View All Episodes on Spotify</a>
+          </div>
         </div>
       </section>
 
@@ -914,5 +975,45 @@
     <script src="js/wow.js"></script>
     <script src="js/appear.js"></script>
     <script src="js/script.js"></script>
+
+    <script>
+      (function() {
+        var iframes = document.querySelectorAll('.episode-iframe');
+        var loaded = 0;
+        var total = iframes.length;
+        var skeleton = document.getElementById('skeleton-loader');
+        var container = document.getElementById('episodes-container');
+        var timeout;
+
+        function showEpisodes() {
+          if (skeleton && container) {
+            skeleton.style.display = 'none';
+            container.style.display = 'flex';
+            container.style.flexWrap = 'wrap';
+          }
+        }
+
+        if (total === 0) {
+          showEpisodes();
+          return;
+        }
+
+        for (var i = 0; i < iframes.length; i++) {
+          iframes[i].addEventListener('load', function() {
+            loaded++;
+            if (loaded >= total) {
+              clearTimeout(timeout);
+              showEpisodes();
+            }
+          });
+        }
+
+        // Fallback: show episodes after 5 seconds even if iframes haven't loaded
+        timeout = setTimeout(function() {
+          showEpisodes();
+        }, 5000);
+      })();
+    </script>
+
   </body>
 </html>
